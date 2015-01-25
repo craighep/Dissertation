@@ -1,7 +1,7 @@
 # whitelist
 branches:
   only:
-    - github-pages
+    - gh-pages
 
 language: node_js
 node_js:
