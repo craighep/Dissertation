@@ -11,6 +11,6 @@ node_js:
   - "0.6"
 
 before_script:
-  - sudo npm install -g grunt
+  - sudo nvm install -g grunt
 
 script: grunt test --verbose --force
