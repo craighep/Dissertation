@@ -1,3 +1,8 @@
+before_install:
+- npm install n
+- sudo ./node_modules/.bin/n stable
+- rm -rf ~/.nvm
+
 # whitelist
 branches:
   only:
