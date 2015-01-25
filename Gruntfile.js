@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         qunit: {
-            files: ['tests/tests.html']
+            files: ['js/tests/tests.js']
         }
     });
 
