@@ -1,9 +1,0 @@
-box: wercker/nodejs
-build:
-  steps:
-    npm install -g grunt-cli
-    - script:
-        name: Grunt tests
-        code: grunt test --verbose --force
-
-      
