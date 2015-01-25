@@ -15,9 +15,9 @@ node_js:
   - "0.6"
 
 before_script:
-  cd tests
+  - cd tests
   - npm install -g grunt-cli
   - npm install -g grunt
-  grunt --version
+  - grunt --version
 
 script: grunt test --verbose --force
