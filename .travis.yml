@@ -1,7 +1,6 @@
 before_install:
-- npm install n
-- sudo ./node_modules/.bin/n stable
-- rm -rf ~/.nvm
+- '[ "${TRAVIS_NODE_VERSION}" != "0.8" ] || npm install -g npm@1.4.28'
+- npm install -g npm@latest
 
 # whitelist
 branches:
@@ -16,6 +15,6 @@ node_js:
   - "0.6"
 
 before_script:
-  - sudo $(type -P npm) install -g grunt
+  - sudo npm install -g grunt
 
 script: grunt test --verbose --force
