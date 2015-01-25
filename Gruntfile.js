@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         qunit: {
-            files: ['js/tests/*.html']
+            files: ['http://craighep.github.io/Dissertation/js/tests/*.html']
         }
     });
 
