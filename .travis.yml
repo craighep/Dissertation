@@ -18,5 +18,6 @@ before_script:
   cd tests
   - npm install -g grunt-cli
   - npm install -g grunt
+  grunt --version
 
 script: grunt test --verbose --force
