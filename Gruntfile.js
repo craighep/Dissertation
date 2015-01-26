@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     qunit: {
-      all: ['http://craighep.github.io/Dissertation/js/tests/*.html']
+      all: ['http://craighep.github.io/Dissertation/js/tests/tests.html']
     },
   });
   grunt.loadNpmTasks('grunt-contrib-qunit');
