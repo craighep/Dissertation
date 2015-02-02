@@ -1,0 +1,103 @@
+\documentclass[11pt,fleqn,twoside]{article}
+\usepackage{makeidx}
+\makeindex
+\usepackage{palatino} %or {times} etc
+\usepackage{plain} %bibliography style 
+\usepackage{amsmath} %math fonts - just in case
+\usepackage{amsfonts} %math fonts
+\usepackage{amssymb} %math fonts
+\usepackage{lastpage} %for footer page numbers
+\usepackage{fancyhdr} %header and footer package
+\usepackage{mmpv2} 
+\usepackage{url}
+
+% the following packages are used for citations - You only need to include one. 
+%
+% Use the cite package if you are using the numeric style (e.g. IEEEannot). 
+% Use the natbib package if you are using the author-date style (e.g. authordate2annot). 
+% Only use one of these and comment out the other one. 
+\usepackage{cite}
+%\usepackage{natbib}
+
+\begin{document}
+
+\name{Craig Heptinstall}
+\userid{crh13}
+\projecttitle{Create a WebGL based application that calculates and visualises the OLAN(One letter aerobatic notation) catalogue in the form of a 3D plane performing aerobatic manoeuvres}
+\projecttitlememoir{A WebGL OLAN flight simulator} %same as the project title or abridged version for page header
+\reporttitle{Outline Project Specification}
+\version{1.0}
+\docstatus{Release}
+\modulecode{CS39440}
+\degreeschemecode{G601}
+\degreeschemename{Software Engineering}
+\supervisor{Neal Snooke} % e.g. Neil Taylor
+\supervisorid{nns}
+\wordcount{}
+
+%optional - comment out next line to use current date for the document
+%\documentdate{10th February 2014} 
+\mmp
+
+\setcounter{tocdepth}{3} %set required number of level in table of contents
+
+
+%==============================================================================
+\section{Project description}
+%==============================================================================
+My major project will be looking into the implementation of a WebGL flight simulator, though more importantly it will be based from manoeuvres outlined in the OLAN(One letter aerobatic notation) format. The simulator should be web based, so run through any WebGL compatible browsers(Chrome, Opera, Firefox).\\
+In more specific detail, the simulator should firstly allow for a range of different inputs(as string values) each of which should represent different manoeuvres according to OLAN. These will be space separated, and the previous move should link to the next in the most fluid means possible. Once the string of notations have been read in, then the system will use a list of predefined instructions from a JSON file which will allow each of the notations to be converted into a set of broken procedural movements(rotations, flips, angled movements).\\
+Currently, there is a standard for drawing out these manoeuvres known as Aresti. In addition to this, there is already current systems that allow input of OLAN, and ribbon diagrams are produced. These ribbon diagrams entail a 3d ribbon shape of the moves, showing where both tips of the wings would be on a plane. However, I am to improve on this, by making my application show the moves live, in a more aesthetic format. The ribbon will not be shown, but instead a plane will be shown flying the course defined, with smoke trails showing where it has already flown.  \\
+To help the system achieve the different manoeuvres and physics required to perform them, I will be considering the use of a set of libraries such as Three.js and glMatrix. Both these will provide some easier predefined methods allowing to perform some of the movements described previously. \\
+Alongside the main functionality, additional features such as different camera angles, allowing the saving and loading of entire diagrams and adding pyshics will be considered. These though will be only be implimented once a good basis for the program is established. Overall, the main challenges that I will come across during this project will be issues in turning each OLAN figure into the appropriate translation in terms of the plane. With the project delivering a WebGL based product, it is easy to see the vast amount of the project will be created in Javascript. 
+
+%==============================================================================
+\section{Proposed tasks}
+%==============================================================================
+In order to perform my project, I can break down the process into a selection for different tasks:
+\begin{enumerate}
+\item Read up on the OLAN and Aresti notations- This will involve looking through the various possible manoeuvres that aerobatic planes can fly.
+\item Investigate various WebGL technologies, especially Three.js, to see what forms of movements are possible using the library. For this I can spend plenty of time looking at other projects around the web to see how certain transformations are done to objects on a canvas.
+\item Look into how the site should look on completion- This will consider the size of the canvas on the site, and if mobile users should be able to view the product.
+\item Look at the example OLAN to Aresti online program- Analyse each of the different ribbon diagrams, and see how different OLAN figures relate to one another. This key process will allow me to see what primary moves the entire collective notations can be made from. This could be compared to how every colour can be created from red, green, blue.
+\item Create a set of functions relating to the findings to allow the program to create some form of ribbons, which can then be 'flown" by an object(a plane). This should utilise some form of stored list of moves and required actions.
+\item Combine these into a clean, good looking WebGL product, to allow for inputs of OLAN, and controls such as camera angles.
+\item Throughout the process, blog daily to log each task and time taken- This will allow an easier to create set of graphs, tables and references to project time taken on certain processes.
+\end{enumerate}
+
+%==============================================================================
+\section{Project deliverables}
+%==============================================================================
+Following on from the 
+
+%
+% Start to comment out / remove the following lines. They are only provided for instruction for this example template.  You don't need the following section title, because it will be added as part of the bibliography section. 
+%
+%==============================================================================
+\section*{Your Bibliography - REMOVE this title and text for final version}
+%==============================================================================
+%
+You need to include an annotated bibliography. This should list all relevant web pages, books, journals etc. that you have consulted in researching your project. Each reference should include an annotation. 
+
+The purpose of the section is to understand what sources you are looking at.  A correctly formatted list of items and annotations is sufficient. You might go further and make use of bibliographic tools, e.g. BibTeX in a LaTeX document, could be used to provide citations, for example \cite{NumericalRecipes} \cite{MarksPaper} \cite[99-101]{FailBlog} \cite{kittenpic_ref}.  The bibliographic tools are not a requirement, but you are welcome to use them.   
+
+You can remove the above {\em Your Bibliography} section heading because it will be added in by the renewcommand which is part of the bibliography. The correct annotated bibliography information is provided below. 
+%
+% End of comment out / remove the lines. They are only provided for instruction for this example template. 
+%
+
+
+\nocite{*} % include everything from the bibliography, irrespective of whether it has been referenced.
+
+% the following line is included so that the bibliography is also shown in the table of contents. There is the possibility that this is added to the previous page for the bibliography. To address this, a newline is added so that it appears on the first page for the bibliography. 
+\newpage
+\addcontentsline{toc}{section}{Initial Annotated Bibliography} 
+
+%
+% example of including an annotated bibliography. The current style is an author date one. If you want to change, comment out the line and uncomment the subsequent line. You should also modify the packages included at the top (see the notes earlier in the file) and then trash your aux files and re-run. 
+%\bibliographystyle{authordate2annot}
+\bibliographystyle{IEEEannot}
+\renewcommand{\refname}{Annotated Bibliography}  % if you put text into the final {} on this line, you will get an extra title, e.g. References. This isn't necessary for the outline project specification. 
+\bibliography{mmp} % References file
+
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass{tufte-handout}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{A WebGL based flight simulator derived from OLAN (One letter aerobatic notation) inputs.}
+\author{Craig Heptinstall (Crh13)}
+
+\usepackage{booktabs}
+\usepackage{units}
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+\usepackage{multicol}
+\usepackage{lipsum}
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent This document describes initial requirements and features proposed for the simulator and a brad set of terms detailing technologies and processes used during the project.
+\end{abstract}
+
+\section{Initial general requirements}\label{sec:page-layout}
+The listed general requirements are as follows:
+\begin{enumerate}
+\item Provide a web-implemented tool\footnote{None-IE due to WebGL capabilities. Will it use a simple JSON file to store notations?} that allows input of the OLAN characters as a string format, alongside possible click functionality. 
+\item Relate each notation or set of notations to a certain procedural movement\footnote{Must consider parameters in some of the notations, such as the speed of entry into moves, or the angle of the plane.} (rotations, movements etc.).
+\item Provide a means of linking up these movements in such a way they produce a fluid manoeuvre.
+\item Display this using WebGL\footnote{Begin by initially testing simple shapes to move and fly around, then add textures, and plane strcture.}. Libraries\footnote{Are libraries ok to use?} to consider that could help with some of the movements:
+    \begin{itemize}
+    \item glMatrix- Javascript library for helping with performing actions to matrices- http://glmatrix.net
+    \item ThreeJS- Another Javascript library, good with handling cameras and different views- http://threejs.org
+    \end{itemize}
+\item Allow user to add different effects such as wind, gravity changes and other physics\footnote{Could be better to implement these last, as it will be easier to test pure functionality of rolls etc first, then figure out natural physics.}.
+\item Add functionalities of different viewpoints(on-board views, side views) to application.
+\item Possibility to add function to save (using local storage?) users different sets of manoeuvres?
+\end{enumerate}
+
+\section{Development environments, testing and bug tracking}
+To develop the project, I have decided on a set of technologies I wish to use:
+\begin{itemize}
+\item To develop on a Github basis- Easier to maintain, links up to build trackers, good room for documentation, code comments etc.
+\item Use a Travis build server to run tests after each commit- This can be done automatically, provide me some nice statistics, links up to test libraries well.
+\item Testing frameworks- I plan to use either libraries such as PhantomJS or Grunt to test my client side code.\footnote{Need to ensure good de-coupling between data and the shaders etc within WebGL.}
+\item Bug-trackers- For instance inbuilt into Github. Allows me to prioritise higher importance issues. Also helpful for time tracking when adding functionality.
+\end{itemize}
+
+\section{Project course specifics}
+Alongside the functionality of the actual simulator, there are the methods and stages of the project I need to consider:
+\begin{itemize}
+\item Using FDD as a methodology through the process.
+    \begin{itemize}
+    \item Using the list given in the first section, make a list of requirements(change these into features).\footnote{This could include an overall plan of the project, timing using Gantt charts?}
+    \item Plan each feature, and design functionality logically and narratively.\footnote{Sketch-up of plane and angles, and maths behind different transformations.} 
+    \item Implement each feature accordingly, running through coding and testing, then reviewing.
+    \item Iterate over each feature, until all(or as many as possible) have been completed.
+    \end{itemize}
+\item Document throughout process, any issues, and findings
+\item Use LaTeX to document\footnote{Perhaps initial tests or large sets of data can be done by hand and transferred later}
+\end{itemize}
+\end{document}
