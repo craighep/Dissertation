@@ -207,15 +207,7 @@
 			addTube();
 
 			// Debug point
-			var rectLength = 30, rectWidth = 20;
-
-			var rectShape = new THREE.Shape();
-			rectShape.moveTo( 0,0 );
-			rectShape.lineTo( 0, rectWidth );
-			rectShape.lineTo( rectLength, rectWidth );
-			rectShape.lineTo( rectLength, 0 );
-			rectShape.lineTo( 0, 0 );
-			cameraEye = new THREE.Mesh( new THREE.ShapeGeometry( rectShape ), new THREE.MeshBasicMaterial( { color: 0x8B0000 } ) );
+			cameraEye = new THREE.Mesh( new THREE.SphereGeometry( 5, 32, 32 ), new THREE.MeshBasicMaterial( { color: 0x8B0000 } ) );
 			parent.add( cameraEye );
 
 			cameraHelper.visible = showCameraHelper;

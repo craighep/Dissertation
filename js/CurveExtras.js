@@ -334,10 +334,12 @@ THREE.Curves.Straight = THREE.Curve.create(
 
   function(t) {
 
-    var t2 = 0;
-    var tx = t * Math.PI * 30,
-      ty = 0,
-      tz = 1;
+    var a = 50; // radius
+    var b = 150; //height
+    var t2 = 2 * Math.PI * t * b / 30;
+    var tx = Math.cos(t2) * a,
+      ty = Math.sin(t2) * a,
+      tz = t;
 
     return new THREE.Vector3(tx, ty, tz);
 
