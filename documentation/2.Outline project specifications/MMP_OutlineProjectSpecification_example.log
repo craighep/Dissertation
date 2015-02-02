@@ -1,0 +1,362 @@
+This is LuaTeX, Version beta-0.76.0-2013062821 (rev 4627)  (format=lualatex 2014.8.22)  2 FEB 2015 19:06
+**MMP_OutlineProjectSpecification_example.tex
+
+("C:/Users/Craig/Documents/GitHub/Dissertation/documentation/2.Outline project 
+specifications/MMP_OutlineProjectSpecification_example.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+("C:/Program Files/MiKTeX 2.9/tex/latex/base/article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:/Program Files/MiKTeX 2.9/tex/latex/base/fleqn.clo"
+File: fleqn.clo 1998/08/17 v1.1c Standard LaTeX option (flush left equations)
+\mathindent=\dimen102
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/base/size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen103
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/base/makeidx.sty"
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write3
+
+Writing index file MMP_OutlineProjectSpecification_example.idx
+("C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/palatino.sty"
+Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/carlisle/plain.sty"
+Package: plain 1996/04/22 Plain TeX emulation (DPC)
+\tabs@latex=\box26
+\tabsyet@latex=\box27
+\tabsdone@latex=\box28
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+("C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box29
+\strutbox@=\box30
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks15
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/lastpage/lastpage.sty"
+Package: lastpage 2013/01/28 v1.2l Refers to last page's name (HMM; JPG)
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/fancyhdr/fancyhdr.sty"
+\fancy@headwidth=\skip46
+\f@ncyO@elh=\skip47
+\f@ncyO@erh=\skip48
+\f@ncyO@olh=\skip49
+\f@ncyO@orh=\skip50
+\f@ncyO@elf=\skip51
+\f@ncyO@erf=\skip52
+\f@ncyO@olf=\skip53
+\f@ncyO@orf=\skip54
+)
+("C:/Users/Craig/Documents/GitHub/Dissertation/documentation/2.Outline project 
+specifications/mmpv2.sty"
+Package: mmpv2 
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/graphics/keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+("C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count99
+\Gm@cntv=\count100
+\c@Gm@tempcnt=\count101
+\Gm@bindingoffset=\dimen113
+\Gm@wd@mp=\dimen114
+\Gm@odd@mp=\dimen115
+\Gm@even@mp=\dimen116
+\Gm@layoutwidth=\dimen117
+\Gm@layoutheight=\dimen118
+\Gm@layouthoffset=\dimen119
+\Gm@layoutvoffset=\dimen120
+\Gm@dimlist=\toks20
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.cfg"))
+("C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/graphics/trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/00miktex/graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/pdftex-def/pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+("C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/pdftexcmds.sty"
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO)
+
+
+("C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX detected.
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+
+("C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/luatex-loader.sty"
+Package: luatex-loader 2010/03/09 v0.4 Lua module loader (HO)
+
+(C:/Program Files/MiKTeX 2.9/scripts/oberdiek/oberdiek.luatex.lua))
+\pdftexcmds@toks=\toks21
+)
+\Gread@gobject=\count102
+))
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
+))
+("C:/Program Files/MiKTeX 2.9/tex/latex/url/url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:/Program Files/MiKTeX 2.9/tex/latex/cite/cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
+)
+("C:/Users/Craig/Documents/GitHub/Dissertation/documentation/2.Outline project 
+specifications/MMP_OutlineProjectSpecification_example.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 22.
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/ot1ppl.fd"
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pageslts/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
+(lastpage)             ! on input line 22.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-106.49637pt
+* \headheight=85.35826pt
+* \headsep=20.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=113.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+("C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen123
+\scratchbox=\box31
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen124
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks23
+)
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 40.
+ ("C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/ot1phv.fd"
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
+
+("C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+! I can't write on file `MMP_OutlineProjectSpecification_example.pdf'.
+Please type another file name for output: pp
+[1
+
+]
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 46.
+
+Overfull \hbox (16.47574pt too wide) in paragraph at lines 60--61
+[][]\OT1/ppl/m/n/10.95 Investigate various WebGL technologies, especially Three
+.js, to see what forms of movements
+ []
+
+[1]
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 82.
+
+
+LaTeX Warning: Citation `NumericalRecipes' on page 2 undefined on input line 82.
+
+
+
+LaTeX Warning: Citation `MarksPaper' on page 2 undefined on input line 82.
+
+
+LaTeX Warning: Citation `FailBlog' on page 2 undefined on input line 82.
+
+
+LaTeX Warning: Citation `kittenpic_ref' on page 2 undefined on input line 82.
+
+[2]
+No file MMP_OutlineProjectSpecification_example.bbl.
+
+AED: lastpage setting LastPage
+
+("C:/Users/Craig/Documents/GitHub/Dissertation/documentation/2.Outline project 
+specifications/MMP_OutlineProjectSpecification_example.aux")
+
+LaTeX Warning: There were undefined references.
+
+ )
+
+Here is how much of LuaTeX's memory you used:
+ 3347 strings out of 494905
+ 100000,106986 words of node,token memory allocated
+ 342 words of node memory still in use:
+    nodes
+   avail lists: 2:20,3:56,4:952,5:118,6:3224,7:42,9:99,10:10
+ 6653 multiletter control sequences out of 65536+200000
+ 66 fonts using 2604839 bytes
+ 41i,10n,43p,616b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+!LuaTeX error (file pplri8r): Font pplri8r at 657 not found
+ ==> Fatal error occurred, no output PDF file produced!
