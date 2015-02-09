@@ -1,17 +1,4 @@
-/*
- * A bunch of parametric curves
- * @author zz85
- *
- * Formulas collected from various sources
- *	http://mathworld.wolfram.com/HeartCurve.html
- *	http://mathdl.maa.org/images/upload_library/23/stemkoski/knots/page6.html
- *	http://en.wikipedia.org/wiki/Viviani%27s_curve
- *	http://mathdl.maa.org/images/upload_library/23/stemkoski/knots/page4.html
- *	http://www.mi.sanu.ac.rs/vismath/taylorapril2011/Taylor.pdf
- *	http://prideout.net/blog/?p=44
- */
 
-// Lets define some curves
 THREE.Curves = {};
 
 
@@ -334,15 +321,27 @@ THREE.Curves.Straight = THREE.Curve.create(
 
   function(t) {
 
-    var a = 50; // radius
+    var a = 10; // radius
     var b = 150; //height
-    var t2 = 2 * Math.PI * t * b / 30;
-    var tx = Math.cos(t2) * a,
-      ty = Math.sin(t2) * a,
+   // var t2 = 2 * Math.PI * t * b / 30;
+    var tx = Math.cos(t) * a,
+      ty = Math.sin(t) * a,
       tz = t;
 
-    return new THREE.Vector3(tx, ty, tz);
+    return new THREE.Vector3(tx, ty, 0);
 
   }
 
+);
+
+THREE.Curves.FFDegree = THREE.Curve.create(
+
+	function(start) {
+		var angledLine = new THREE.SplineCurve3([
+			new THREE.Vector3(0, 0, 0),
+			new THREE.Vector3(10, 0, 0),
+		  	new THREE.Vector3(20, 20, 20)
+		]);
+		return angledLine;
+	}
 );
