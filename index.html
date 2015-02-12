@@ -14,10 +14,12 @@
 
 		<script>
 		require.config({
-			baseUrl: 'js'
+			baseUrl: 'js',
+			paths: {
+			"jquery": "jquery" }
 		});
 		require(["main"]);
 		</script>
-
+		
 	</body>
 </html>

@@ -1,4 +1,4 @@
-define(['events'], function (events) {
+define(['events', 'html'], function (events, html) {
 
 	var container, stats;
 	var camera, scene, renderer, splineCamera, cameraHelper, cameraEye;
@@ -8,16 +8,6 @@ define(['events'], function (events) {
 	var normal = new THREE.Vector3();
 
 	extrudePath = new THREE.Curves.TrefoilKnot();
-
-	var dropdown = '<select id="dropdown" onchange="addTube(this.value)">';
-
-	var s;
-	for (s in splines) {
-	    dropdown += '<option value="' + s + '"';
-	    dropdown += '>' + s + '</option>';
-	}
-
-	dropdown += '</select>';
 
 	var closed2 = false;
 	var parent;
@@ -83,18 +73,8 @@ define(['events'], function (events) {
 
 	    container = document.createElement('div');
 	    document.body.appendChild(container);
-	    var info = document.createElement('div');
-	    info.style.position = 'absolute';
-	    info.style.top = '10px';
-	    info.style.width = '100%';
-	    info.style.textAlign = 'center';
-	    info.innerHTML += dropdown;
-	    info.innerHTML += '<br/>Scale: <select id="scale" onchange="setScale()"><option>1</option><option>2</option><option selected>4</option><option>6</option><option>10</option></select>';
-	    info.innerHTML += '<br/>Extrusion Segments: <select onchange="addTube()" id="segments"><option>50</option><option selected>100</option><option>200</option><option>400</option></select>';
-	    info.innerHTML += '<br/>Radius Segments: <select id="radiusSegments" onchange="addTube()"><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>12</option></select>';
-	    info.innerHTML += '<br/>Closed:<input id="closed" onchange="addTube()" type="checkbox" />';
-	    info.innerHTML += '<br/><br/><input id="animation" type="button" onclick="animateCamera(true)" value="Camera Spline Animation View: OFF"/><br/> Look Ahead <input id="lookAhead" type="checkbox" onchange="animateCamera()" /> Camera Helper <input id="cameraHelper" type="checkbox" onchange="animateCamera()" />';
-	    container.appendChild(info);
+	    var info = html.getInfo();
+		  container.appendChild(info);
 	    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
 	    camera.position.set(0, 50, 500);
 	    scene = new THREE.Scene();
@@ -128,6 +108,19 @@ define(['events'], function (events) {
 				stats.domElement.style.top = '0px';
 				container.appendChild( stats.domElement );*/
 			events.init(renderer);
+
+			document.getElementById('dropdown').onchange = function () {
+				addTube(this.value);
+			}
+			document.getElementById('radiusSegments').onchange = addTube;
+			document.getElementById('closed').onchange = addTube;
+			document.getElementById('segments').onchange = addTube;
+			document.getElementById('scale').onchange = setScale;
+			document.getElementById('lookAhead').onchange = animateCamera;
+			document.getElementById('cameraHelper').onchange = animateCamera;
+			document.getElementById('animation').onclick = function () {
+				 animateCamera(true);
+			}
 	}
 
 
