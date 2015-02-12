@@ -321,11 +321,11 @@ THREE.Curves.Straight = THREE.Curve.create(
 
   function(t) {
 
-    var a = 10; // radius
+    var a = 20; // radius
     var b = 150; //height
    // var t2 = 2 * Math.PI * t * b / 30;
-    var tx = Math.cos(t) * a,
-      ty = Math.sin(t) * a,
+    var tx = Math.cos(t) * a * b,
+      ty = Math.sin(t) * a * b,
       tz = t;
 
     return new THREE.Vector3(tx, ty, 0);
@@ -339,9 +339,51 @@ THREE.Curves.FFDegree = THREE.Curve.create(
 	function(start) {
 		var angledLine = new THREE.SplineCurve3([
 			new THREE.Vector3(0, 0, 0),
-			new THREE.Vector3(10, 0, 0),
-		  	new THREE.Vector3(20, 20, 20)
+			new THREE.Vector3(40, 40, 0),
+		  	new THREE.Vector3(60, 60, 60)
 		]);
 		return angledLine;
 	}
 );
+
+THREE.Curves.Circle = THREE.Curve.create(
+
+  function() {
+
+  },
+
+  function(t) {
+
+    var a = 30; // radius
+    var b = a*3; //height
+
+    var t2 = Math.PI /4 * t * b / 30;
+    var tx = Math.cos(t2) * a,
+      ty = Math.sin(t2) * a,
+      tz = b * t;
+
+    return new THREE.Vector3(tx, ty, 0);
+
+  }
+
+);
+
+var splines = {
+    Circle: new THREE.Curves.Circle(),
+    FortyFiveDegreeLine: THREE.Curves.FFDegree(),
+    Straight: new THREE.Curves.Straight(),
+    GrannyKnot: new THREE.Curves.GrannyKnot(),
+    HeartCurve: new THREE.Curves.HeartCurve(3.5),
+    VivianiCurve: new THREE.Curves.VivianiCurve(70),
+    KnotCurve: new THREE.Curves.KnotCurve(),
+    HelixCurve: new THREE.Curves.HelixCurve(),
+    TrefoilKnot: new THREE.Curves.TrefoilKnot(),
+    TorusKnot: new THREE.Curves.TorusKnot(20),
+    CinquefoilKnot: new THREE.Curves.CinquefoilKnot(20),
+    TrefoilPolynomialKnot: new THREE.Curves.TrefoilPolynomialKnot(14),
+    FigureEightPolynomialKnot: new THREE.Curves.FigureEightPolynomialKnot(),
+    DecoratedTorusKnot4a: new THREE.Curves.DecoratedTorusKnot4a(),
+    DecoratedTorusKnot4b: new THREE.Curves.DecoratedTorusKnot4b(),
+    DecoratedTorusKnot5a: new THREE.Curves.DecoratedTorusKnot5a(),
+    DecoratedTorusKnot5c: new THREE.Curves.DecoratedTorusKnot5c()
+};
