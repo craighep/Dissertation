@@ -7,19 +7,63 @@
 		<link href="css/main.css" rel="stylesheet">
 	</head>
 	<body>
+		<div id="container">
+			<div id="controls">
+				<select id="dropdown">
+				</select>
+				<br/>
+				Scale:
+				<select id="scale">
+					<option>1</option>
+					<option>2</option>
+					<option selected>4</option>
+					<option>6</option>
+					<option>10</option>
+				</select>
+				<br/>
+				Extrusion Segments:
+				<select id="segments">
+					<option>50</option>
+					<option selected>100</option>
+					<option>200</option>
+					<option>400</option>
+				</select>
+				<br/>
+				Radius Segments:
+				<select id="radiusSegments">
+					<option selected>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>8</option>
+					<option>12</option>
+				</select>
+				<br/>
+				Closed:
+				<input id="closed" type="checkbox" />
+				<br/><br/>
+				<input id="animation" type="button" value="Camera Spline Animation View: OFF"/>
+				<br/>
+				Look Ahead
+				<input id="lookAhead" type="checkbox" />
+				Camera Helper
+				<input id="cameraHelper" type="checkbox" />
+			</div>
+		</div>
+	</body>
 
-    <script src="js/require.js"></script>
-		<script src="js/three.min.js"></script>
-		<script src="js/CurveExtras.js"></script>
-
-		<script>
+  <script src="js/require.js"></script>
+	<script src="js/three.min.js"></script>
+	<script src="js/CurveExtras.js"></script>
+	<script>
 		require.config({
 			baseUrl: 'js',
 			paths: {
 			"jquery": "jquery" }
 		});
 		require(["main"]);
-		</script>
-		
-	</body>
+	</script>
+
 </html>

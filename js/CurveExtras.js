@@ -346,6 +346,8 @@ THREE.Curves.FFDegree = THREE.Curve.create(
 	}
 );
 
+var theta = 0;
+var counter = 0;
 THREE.Curves.Circle = THREE.Curve.create(
 
   function() {
@@ -353,14 +355,16 @@ THREE.Curves.Circle = THREE.Curve.create(
   },
 
   function(t) {
-
+    counter++;
+    console.log(counter);
+    theta = theta + 0.04;
+    console.log(t);
     var a = 30; // radius
-    var b = a*3; //height
 
-    var t2 = Math.PI /4 * t * b / 30;
-    var tx = Math.cos(t2) * a,
-      ty = Math.sin(t2) * a,
-      tz = b * t;
+    // var t2 = Math.PI  * t * b / 30;
+    var tx = Math.cos(t) * a,
+        ty = Math.sin(t) * a,
+        tz = tz;
 
     return new THREE.Vector3(tx, ty, 0);
 

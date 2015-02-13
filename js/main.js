@@ -1,4 +1,4 @@
-define(['events', 'html'], function (events, html) {
+define(['events', 'html', 'jquery'], function (events, html, $) {
 
 	var container, stats;
 	var camera, scene, renderer, splineCamera, cameraHelper, cameraEye;
@@ -18,21 +18,22 @@ define(['events', 'html'], function (events, html) {
 	var showCameraHelper = false;
 
 	function addTube() {
-	    var value = document.getElementById('dropdown').value;
-	    var segments = parseInt(document.getElementById('segments').value);
-	    closed2 = document.getElementById('closed').checked;
-	    var radiusSegments = parseInt(document.getElementById('radiusSegments').value);
-	  	console.log('adding tube', value, closed2, radiusSegments);
+	    var value = $('#dropdown').val();
+	    var segments = parseInt($('#segments').val());
+	    closed2 = $('#closed').is(':checked');
+	    var radiusSegments = parseInt($('#radiusSegments').val());
 	    if (tubeMesh)
 				 parent.remove(tubeMesh);
-	    extrudePath = splines[value];
+
+	    	extrudePath = splines[value];
+
 	    tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
 	    addGeometry(tube, 0xff00ff);
 	    setScale();
 	}
 
 	function setScale() {
-	    scale = parseInt(document.getElementById('scale').value);
+	    scale = parseInt($('#scale').val());
 	    tubeMesh.scale.set(scale, scale, scale);
 	}
 
@@ -57,24 +58,18 @@ define(['events', 'html'], function (events, html) {
 
 	    if (toggle) {
 	        animation = animation === false;
-	        document.getElementById('animation').value = 'Camera Spline Animation View: ' + (animation ? 'ON' : 'OFF');
+	        $('#animation').val() = 'Camera Spline Animation View: ' + (animation ? 'ON' : 'OFF');
 	    }
-	    lookAhead = document.getElementById('lookAhead').checked;
-	    showCameraHelper = document.getElementById('cameraHelper').checked;
+	    lookAhead = $('#lookAhead').is(':checked');
+	    showCameraHelper = $('#cameraHelper').is(':checked');
 	    cameraHelper.visible = showCameraHelper;
 	    cameraEye.visible = showCameraHelper;
 	}
-
 
 	init();
 	animate();
 
 	function init() {
-
-	    container = document.createElement('div');
-	    document.body.appendChild(container);
-	    var info = html.getInfo();
-		  container.appendChild(info);
 	    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
 	    camera.position.set(0, 50, 500);
 	    scene = new THREE.Scene();
@@ -88,26 +83,23 @@ define(['events', 'html'], function (events, html) {
 	    parent.add(splineCamera);
 	    cameraHelper = new THREE.CameraHelper(splineCamera);
 	    scene.add(cameraHelper);
-	    addTube();
-	    // Debug point
+
 	    cameraEye = new THREE.Mesh(new THREE.SphereGeometry(5, 32, 32), new THREE.MeshBasicMaterial({
 	        color: 0x8B0000
 	    }));
 	    parent.add(cameraEye);
 	    cameraHelper.visible = showCameraHelper;
-	    cameraEye.visible = showCameraHelper;
+	    cameraEye.visible = false;
 	    renderer = new THREE.WebGLRenderer({
 	        antialias: true
 	    });
 	    renderer.setClearColor(0xf0f0f0);
 	    renderer.setPixelRatio(window.devicePixelRatio);
 	    renderer.setSize(window.innerWidth, window.innerHeight);
-	    container.appendChild(renderer.domElement);
-	    /*stats = new Stats();
-				stats.domElement.style.position = 'absolute';
-				stats.domElement.style.top = '0px';
-				container.appendChild( stats.domElement );*/
-			events.init(renderer);
+
+			html.addContent(renderer);
+			events.init(renderer, camera);
+			addTube();
 
 			document.getElementById('dropdown').onchange = function () {
 				addTube(this.value);
@@ -122,10 +114,6 @@ define(['events', 'html'], function (events, html) {
 				 animateCamera(true);
 			}
 	}
-
-
-
-
 
 	function animate() {
 	    requestAnimationFrame(animate);

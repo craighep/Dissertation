@@ -4,3 +4,9 @@ body {
 	margin: 0px;
 	overflow: hidden;
 }
+
+#controls{
+	top: 10px;
+	width: 100%;
+	text-align: center;
+}

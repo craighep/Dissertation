@@ -3,6 +3,7 @@ define(function () {
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
   var renderer;
+  var camera;
 var targetRotationY = 0;
 var targetRotationOnMouseDownY = 0;
 var targetRotationX = 0;
@@ -78,8 +79,9 @@ function onWindowResize() {
 
 return {
 
-  init: function (r) {
+  init: function (r, c) {
     renderer = r;
+    camera = c;
     renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
     renderer.domElement.addEventListener('touchstart', onDocumentTouchStart, false);
     renderer.domElement.addEventListener('touchmove', onDocumentTouchMove, false);
