@@ -1,0 +1,36 @@
+body {
+	font-family: Monospace;
+	background-color: #f0f0f0;
+	margin: 0px;
+	overflow:hidden;
+}
+canvas{
+	width: 100%;
+	height: 50%;
+}
+.off-canvas-list li {
+	display: block;
+  padding: 0.66667rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid #262626;
+  transition: background 300ms ease;
+}
+.menu-icon {
+	  text-indent: 1.94444rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  padding: 0;
+  color: #FFFFFF;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+}
+#footer{
+	position: fixed;
+	z-index:1;
+	left:0px;
+	text-align: right;
+  bottom:0px;
+  height:30px;
+  width:100%;
+}
