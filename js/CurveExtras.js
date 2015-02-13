@@ -356,9 +356,9 @@ THREE.Curves.Circle = THREE.Curve.create(
 
   function(t) {
     counter++;
-    console.log(counter);
+  //  console.log(counter);
     theta = theta + 0.04;
-    console.log(t);
+  //  console.log(t);
     var a = 30; // radius
 
     // var t2 = Math.PI  * t * b / 30;
@@ -373,12 +373,12 @@ THREE.Curves.Circle = THREE.Curve.create(
 );
 
 var splines = {
+    VivianiCurve: new THREE.Curves.VivianiCurve(70),
     Circle: new THREE.Curves.Circle(),
     FortyFiveDegreeLine: THREE.Curves.FFDegree(),
     Straight: new THREE.Curves.Straight(),
     GrannyKnot: new THREE.Curves.GrannyKnot(),
     HeartCurve: new THREE.Curves.HeartCurve(3.5),
-    VivianiCurve: new THREE.Curves.VivianiCurve(70),
     KnotCurve: new THREE.Curves.KnotCurve(),
     HelixCurve: new THREE.Curves.HelixCurve(),
     TrefoilKnot: new THREE.Curves.TrefoilKnot(),

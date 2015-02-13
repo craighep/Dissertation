@@ -1,8 +1,6 @@
 define(['jquery'], function ($) {
   return {
       addContent: function(renderer) {
-      var controls = $('#controls');
-      console.log(controls.css);
       var dropdown = $('#dropdown');
       var s;
 

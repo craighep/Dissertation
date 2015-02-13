@@ -29,11 +29,11 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 
 	    tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
 	    addGeometry(tube, 0xff00ff);
-	    setScale();
+	    setScale(4);
 	}
 
-	function setScale() {
-	    scale = parseInt($('#scale').val());
+	function setScale(scale) {
+	  //  scale = parseInt($('#scale').val());
 	    tubeMesh.scale.set(scale, scale, scale);
 	}
 
@@ -95,7 +95,7 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 	    });
 	    renderer.setClearColor(0xf0f0f0);
 	    renderer.setPixelRatio(window.devicePixelRatio);
-	    renderer.setSize(window.innerWidth, window.innerHeight);
+	    renderer.setSize(window.innerWidth, window.innerHeight, false);
 
 			html.addContent(renderer);
 			events.init(renderer, camera);

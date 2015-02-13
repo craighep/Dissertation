@@ -12,6 +12,7 @@ var mouseX = 0;
 var mouseXOnMouseDown = 0;
 var mouseY = 0;
 var mouseYOnMouseDown = 0;
+var scale = 1;
 
 
   function onDocumentMouseDown(event) {
@@ -70,12 +71,30 @@ var mouseYOnMouseDown = 0;
   }
 
 function onWindowResize() {
-    windowHalfX = window.innerWidth / 2;
-    windowHalfY = window.innerHeight / 2;
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    // windowHalfX = window.innerWidth / 2;
+    // windowHalfY = window.innerHeight / 2;
+    // camera.aspect = window.innerWidth / window.innerHeight;
+    // camera.updateProjectionMatrix();
+    // renderer.setSize(window.innerWidth/2, window.innerHeight/2);
 }
+
+  function onMouseScroll(event) {
+    var event = window.event || e; // old IE support
+	  var d = ((typeof event.wheelDelta != "undefined")?(-event.wheelDelta):event.detail);
+     d = 100 * ((d>0)?1:-1);
+     var cPos = camera.position;
+     if (isNaN(cPos.x) || isNaN(cPos.y) || isNaN(cPos.y)) return;
+        // Your zomm limitation
+        // For X axe you can add anothers limits for Y / Z axes
+        if (cPos.x > 1 || cPos.x < 0 ){
+           return ;
+        }
+   mb = d>0 ? 1.1 : 0.9;
+   cPos.x = cPos.x * mb;
+   cPos.y = cPos.y * mb;
+   cPos.z = cPos.z * mb;
+   camera.updateProjectionMatrix();
+  }
 
 return {
 
@@ -86,6 +105,8 @@ return {
     renderer.domElement.addEventListener('touchstart', onDocumentTouchStart, false);
     renderer.domElement.addEventListener('touchmove', onDocumentTouchMove, false);
     window.addEventListener('resize', onWindowResize, false);
+    renderer.domElement.addEventListener("mousewheel", onMouseScroll, false);
+	  renderer.domElement.addEventListener("DOMMouseScroll", onMouseScroll, false);
   },
 
     getLatestTargetRotationX: function () {

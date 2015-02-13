@@ -1,69 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Test splines</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link href="css/main.css" rel="stylesheet">
-	</head>
-	<body>
-		<div id="container">
-			<div id="controls">
-				<select id="dropdown">
-				</select>
-				<br/>
-				Scale:
-				<select id="scale">
-					<option>1</option>
-					<option>2</option>
-					<option selected>4</option>
-					<option>6</option>
-					<option>10</option>
-				</select>
-				<br/>
-				Extrusion Segments:
-				<select id="segments">
-					<option>50</option>
-					<option selected>100</option>
-					<option>200</option>
-					<option>400</option>
-				</select>
-				<br/>
-				Radius Segments:
-				<select id="radiusSegments">
-					<option selected>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>8</option>
-					<option>12</option>
-				</select>
-				<br/>
-				Closed:
-				<input id="closed" type="checkbox" />
-				<br/><br/>
-				<input id="animation" type="button" value="Camera Spline Animation View: OFF"/>
-				<br/>
-				Look Ahead
-				<input id="lookAhead" type="checkbox" />
-				Camera Helper
-				<input id="cameraHelper" type="checkbox" />
-			</div>
-		</div>
-	</body>
+    <head>
+        <title>Test splines</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="css/site/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/site/foundation.css"/>
+        <script src="js/site/modernizr.js"></script>
+    </head>
+    <body>
+        <div class="row">
+            <nav class="top-bar" data-topbar>
+                <ul class="title-area">
+                    <li class="name">
+                        <h1>
+                            <a class="left-off-canvas-toggle menu-icon" href="#"><span>&#9776; Menu</span></a>
+                        </h1>
+                    </li>
+                </ul>
+                <section class="top-bar-section">
+                    <ul class="right">
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">Help</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">Terms</a>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+        </div>
+        <div class="row">
+        <div class="off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <aside class="left-off-canvas-menu">
+                    <ul class="off-canvas-list">
+                        <li>
+                            <label>Shape</label>
+                        </li>
+                        <li>
+                            <select id="dropdown">
+                            </select>
+                        </li>
+                        <li>
+                            <label>Scale</label>
+                        </li>
+                        <li>
+                            <select id="scale">
+                                <option>1</option>
+                                <option>2</option>
+                                <option selected>4</option>
+                                <option>6</option>
+                                <option>10</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>Extrusion Segments</label>
+                        </li>
+                        <li>
+                            <select id="segments">
+                                <option>50</option>
+                                <option selected>100</option>
+                                <option>200</option>
+                                <option>400</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>Radius Segments</label>
+                        </li>
+                        <li>
+                            <select id="radiusSegments">
+                                <option>1</option>
+                                <option selected>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>8</option>
+                                <option>12</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>Closed</label>
+                            <input id="closed" type="checkbox" />
+                        </li>
+                        <li>
+                            <input id="animation" type="button" value="Camera Spline Animation View: OFF"/>
+                        </li>
+                        <li>
+                            <label>Look Ahead</label>
+                            <input id="lookAhead" type="checkbox" />
+                        </li>
+                        <li>
+                            <label>Camera Helper</label>
+                            <input id="cameraHelper" type="checkbox" />
+                        </li>
+                    </ul>
+                </aside>
+                <div id="container"></div>
+                <a class="exit-off-canvas"></a>
+            </div>
+        </div>
+        <footer id="footer" class="row">
+            Copyright ©
+						<script type="text/javascript">
+								document.write(new Date().getFullYear());
+						</script>
+						<a href="../">Craig Mathew Heptinstall</a>
+        </footer>
+    </body>
+    <script src="js/require.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/CurveExtras.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/site/foundation.js"></script>
+    <script>
+        $(document).foundation();
+        var doc = document.documentElement;
+        doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <script>
+        require.config({
+        	baseUrl: 'js',
+        	paths: {
+        		"jquery": "jquery" }
+        	});
+        	require(["main"]);
 
-  <script src="js/require.js"></script>
-	<script src="js/three.min.js"></script>
-	<script src="js/CurveExtras.js"></script>
-	<script>
-		require.config({
-			baseUrl: 'js',
-			paths: {
-			"jquery": "jquery" }
-		});
-		require(["main"]);
-	</script>
 
+    </script>
 </html>
