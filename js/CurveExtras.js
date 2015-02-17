@@ -372,8 +372,23 @@ THREE.Curves.Circle = THREE.Curve.create(
 
 );
 
+THREE.Curves.CustomSinCurve = THREE.Curve.create(
+    function ( scale ) { //custom curve constructor
+        this.scale = (scale === undefined) ? 1 : scale;
+    },
+
+    function ( t ) { //getPoint: t is between 0-1
+        var tx = t * 3 - 1.5,
+            ty = Math.sin( 2 * Math.PI * t ),
+            tz = 0;
+
+        return new THREE.Vector3(tx, ty, tz).multiplyScalar(this.scale);
+    }
+);
+
 var splines = {
     VivianiCurve: new THREE.Curves.VivianiCurve(70),
+    CustomSinCurve: new THREE.Curves.CustomSinCurve(),
     Circle: new THREE.Curves.Circle(),
     FortyFiveDegreeLine: THREE.Curves.FFDegree(),
     Straight: new THREE.Curves.Straight(),

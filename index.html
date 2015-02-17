@@ -14,24 +14,33 @@
                 <ul class="title-area">
                     <li class="name">
                         <h1>
-                            <a class="left-off-canvas-toggle menu-icon" href="#"><span>&#9776; Menu</span></a>
+                            <a class="left-off-canvas-toggle menu-icon" href="#"><span>&#9776; Options</span></a>
                         </h1>
                     </li>
                 </ul>
                 <section class="top-bar-section">
-                    <ul class="right">
+                  <ul >
+                      <li class="divider"></li>
+                      <li>
+                        <span>Input OLAN:</span>
+                      </li>
+                      <li class="playControls">
+                          <input type="text" id="input"/>
+                      </li>
+                      <li>
+                        <a id="pause" type="button" value="Pause"></a>
+                      </li>
+                  </ul>
+                    <ul class="info">
                         <li class="divider"></li>
                         <li>
-                            <a href="#">About</a>
+                            <a id="about" href="#">About</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">Help</a>
+                            <a id="help" href="#">Help</a>
                         </li>
                         <li class="divider"></li>
-                        <li>
-                            <a href="#">Terms</a>
-                        </li>
                     </ul>
                 </section>
             </nav>
@@ -114,12 +123,38 @@
                         <li class="has-submenu"><a href="#">Save/Load</a>
                     <ul class="left-submenu">
                         <li class="back"><a href="#">Back</a></li>
-                        
+
                      </ul>
                     </li>
                     </ul>
                 </aside>
-                <div id="container"></div>
+                <div id="container">
+                  <div class="moveStrip">
+                    <ul class="moves">
+                    </ul>
+                  </div>
+                  <div id="aboutText" class="text">
+                    <h1>About this application</h1>
+                    <a id="close"></a>
+                    <em>Author: Craig Heptinstall<br>
+                      Version: 0.1 Alpha</em>
+                  </div>
+                  <div id="helpText" class="text">
+                    <h1>Getting started</h1>
+                    <a id="close"></a>
+                    <em>This free open application is easy to use:</em>
+                    <ul>
+                      <li>
+                        Point 1
+                      </li>
+                      <li>
+                        Point 2
+                      </li>
+                      <li>
+                        Point 3
+                      </li>
+                  </div>
+                </div>
                 <a class="exit-off-canvas"></a>
             </div>
         </div>

@@ -16,6 +16,10 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 	    lookAhead = false;
 	var scale;
 	var showCameraHelper = false;
+	var paused = false;
+	var moves = [1,2,3,4];
+	var pause = "img/pause.gif";
+	var play = "img/play.png";
 
 	function addTube() {
 	    var value = $('#dropdown').val();
@@ -29,14 +33,13 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 
 	    tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
 	    addGeometry(tube, 0xff00ff);
-	    setScale(4);
+			setScale();
 	}
 
-	function setScale(scale) {
-	  //  scale = parseInt($('#scale').val());
+	function setScale() {
+	    scale = parseInt($('#scale').val());
 	    tubeMesh.scale.set(scale, scale, scale);
 	}
-
 
 	function addGeometry(geometry, color) {
 	    // 3d shape
@@ -56,12 +59,14 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 
 	function animateCamera(toggle) {
 
-	    if (toggle) {
+	    if (!toggle) {
 	        animation = animation === false;
-	        $('#animation').val() = 'Camera Spline Animation View: ' + (animation ? 'ON' : 'OFF');
+					console.log($('#animation').attr("value"));
+	        $('#animation').prop('value','Camera Spline Animation View: ' + (animation ? 'ON' : 'OFF'));
 	    }
 	    lookAhead = $('#lookAhead').is(':checked');
 	    showCameraHelper = $('#cameraHelper').is(':checked');
+			console.log(lookAhead + " " + showCameraHelper);
 	    cameraHelper.visible = showCameraHelper;
 	    cameraEye.visible = showCameraHelper;
 	}
@@ -98,26 +103,52 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 	    renderer.setSize(window.innerWidth, window.innerHeight, false);
 
 			html.addContent(renderer);
+			html.addMoveReel(moves);
 			events.init(renderer, camera);
 			addTube();
 
-			document.getElementById('dropdown').onchange = function () {
-				addTube(this.value);
-			}
-			document.getElementById('radiusSegments').onchange = addTube;
-			document.getElementById('closed').onchange = addTube;
-			document.getElementById('segments').onchange = addTube;
-			document.getElementById('scale').onchange = setScale;
-			document.getElementById('lookAhead').onchange = animateCamera;
-			document.getElementById('cameraHelper').onchange = animateCamera;
-			document.getElementById('animation').onclick = function () {
-				 animateCamera(true);
-			}
+			initHtmlEvents();
+	}
+
+	function initHtmlEvents(){
+		document.getElementById('dropdown').onchange = function () {
+			addTube(this.value);
+		}
+		document.getElementById('radiusSegments').onchange = addTube;
+		document.getElementById('closed').onchange = addTube;
+		document.getElementById('segments').onchange = addTube;
+		document.getElementById('scale').onchange = setScale;
+		document.getElementById('lookAhead').onchange = animateCamera;
+		document.getElementById('cameraHelper').onchange = animateCamera;
+		document.getElementById('animation').onclick = function () {
+			animateCamera(false);
+		}
+		document.getElementById('pause').onclick = function () {
+				paused = !paused;
+				$('#pause').css({"background-image":"url("+(paused ? play : pause)+")"});
+		}
+		document.getElementById('about').onclick = function () {
+				paused = !paused;
+				html.showAbout(paused);
+		}
+		document.getElementById('help').onclick = function () {
+				paused = !paused;
+				html.showHelp(paused);
+		}
+		document.getElementById('close').onclick = function () {
+				paused = !paused;
+				html.showHelp(paused);
+				html.showAbout(paused);
+		}
 	}
 
 	function animate() {
 	    requestAnimationFrame(animate);
-	    render();
+			if (!paused)
+	    	render();
+			else {
+				id = requestAnimationFrame( animate );
+				cancelAnimationFrame(id);}
 	    //stats.update();
 	}
 
@@ -126,6 +157,7 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 	    var time = Date.now();
 	    var looptime = 20 * 1000;
 	    var t = (time % looptime) / looptime;
+		//	console.log(t);
 	    var pos = tube.parameters.path.getPointAt(t);
 	    pos.multiplyScalar(scale);
 	    // interpolation
@@ -133,7 +165,6 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 	    var pickt = t * segments;
 	    var pick = Math.floor(pickt);
 	    var pickNext = (pick + 1) % segments;
-
 	    binormal.subVectors(tube.binormals[pickNext], tube.binormals[pick]);
 	    binormal.multiplyScalar(pickt - pick).add(tube.binormals[pick]);
 
@@ -151,6 +182,7 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 	    if (!lookAhead)
 	        lookAt.copy(pos).add(dir);
 	    splineCamera.matrix.lookAt(splineCamera.position, lookAt, normal);
+
 	    splineCamera.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
 	    cameraHelper.update();
 	    parent.rotation.y += (events.getLatestTargetRotationX() - parent.rotation.y) * 0.05;

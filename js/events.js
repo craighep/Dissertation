@@ -14,7 +14,6 @@ var mouseY = 0;
 var mouseYOnMouseDown = 0;
 var scale = 1;
 
-
   function onDocumentMouseDown(event) {
 
       event.preventDefault();

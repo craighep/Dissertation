@@ -4,6 +4,11 @@ body {
 	margin: 0px;
 	overflow:hidden;
 }
+span {
+	color: #FFFFFF;
+  padding: 12px;
+  line-height: 43px;
+}
 canvas{
 	width: 100%;
 	height: 100%;
@@ -25,12 +30,83 @@ canvas{
   position: relative;
   transform: translate3d(0, 0, 0);
 }
+
+.playControls {
+	width: 60%;
+}
+
+#pause {
+	background-image: url("../../img/pause.gif");
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 43px;
+  width: 20px;
+}
+
+.info {
+	float: right;
+}
+
 #footer{
 	position: fixed;
 	z-index:1;
 	left:0px;
 	text-align: right;
-  bottom:0px;
+  bottom:15%;
   height:30px;
   width:100%;
+}
+
+.text {
+  position: absolute;
+	padding: 10px 20% 100px 20%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.93);
+  z-index: 5;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+	display: none;
+	color: white;
+}
+
+#close {
+	float: right;
+	margin-right: 20%;
+	display:block;
+	background-image: url("../../img/close.png");
+	width: 38px;
+	height: 38px;
+}
+
+.moveStrip {
+	bottom: 0px;
+	height: 15%;
+	width:100%;
+	position: fixed;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 4;
+}
+
+.moveStrip ul{
+	width: 100%;
+	height: 100%;
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.moveStrip ul li{
+	width: 20%;
+  height: 100%;
+  border-top: 0px;
+	border-left: 0px;
+	border-bottom: 0px;
+	border-color: white;
+  border-style: solid;
+	display: inline;
+	float: left;
 }
