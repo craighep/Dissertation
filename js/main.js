@@ -18,8 +18,6 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 	var showCameraHelper = false;
 	var paused = false;
 	var moves = [1,2,3,4];
-	var pause = "img/pause.gif";
-	var play = "img/play.png";
 
 	function addTube() {
 	    var value = $('#dropdown').val();
@@ -125,7 +123,7 @@ define(['events', 'html', 'jquery'], function (events, html, $) {
 		}
 		document.getElementById('pause').onclick = function () {
 				paused = !paused;
-				$('#pause').css({"background-image":"url("+(paused ? play : pause)+")"});
+				$('#pause').css({"background-image":"url(img/"+(paused ? "play" : "pause")+".png)"});
 		}
 		document.getElementById('about').onclick = function () {
 				paused = !paused;
