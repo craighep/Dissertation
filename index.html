@@ -19,18 +19,18 @@
                     </li>
                 </ul>
                 <section class="top-bar-section">
-                  <ul >
-                      <li class="divider"></li>
-                      <li>
-                        <span>Input OLAN:</span>
-                      </li>
-                      <li class="playControls">
-                          <input type="text" id="input"/>
-                      </li>
-                      <li>
-                        <a id="pause" type="button" value="Pause"></a>
-                      </li>
-                  </ul>
+                    <ul >
+                        <li class="divider"></li>
+                        <li>
+                            <span>Input OLAN:</span>
+                        </li>
+                        <li class="playControls">
+                            <input type="text" id="input"/>
+                        </li>
+                        <li>
+                            <a id="pause" type="button" value="Pause"></a>
+                        </li>
+                    </ul>
                     <ul class="info">
                         <li class="divider"></li>
                         <li>
@@ -51,119 +51,209 @@
             <div class="inner-wrap">
                 <aside class="left-off-canvas-menu">
                     <ul class="off-canvas-list">
-                    <li><label>Option Categories</label></li>
-                    <li class="has-submenu">
-                    <li class="has-submenu"><a href="#">OLAN</a>
-                    <ul class="left-submenu">
-                        <li class="back"><a href="#">Back</a></li>
-                        <li>
-                            <label>Shape</label>
+                        <li><label>Option Categories</label></li>
+                        <li class="has-submenu">
+                        <li class="has-submenu">
+                            <a href="#">OLAN</a>
+                            <ul class="left-submenu">
+                                <li class="back"><a href="#">Back</a></li>
+                                <li>
+                                    <label>Shape</label>
+                                </li>
+                                <li>
+                                    <select id="dropdown">
+                                    </select>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <select id="dropdown">
-                            </select>
+                        <li class="has-submenu">
+                            <a href="#">Physics</a>
+                            <ul class="left-submenu">
+                                <li class="back"><a href="#">Back</a></li>
+                                <li>
+                                    <label>Scale</label>
+                                </li>
+                                <li>
+                                    <select id="scale">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option selected>4</option>
+                                        <option>6</option>
+                                        <option>10</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label>Extrusion Segments</label>
+                                </li>
+                                <li>
+                                    <select id="segments">
+                                        <option>50</option>
+                                        <option selected>100</option>
+                                        <option>200</option>
+                                        <option>400</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label>Radius Segments</label>
+                                </li>
+                                <li>
+                                    <select id="radiusSegments">
+                                        <option>1</option>
+                                        <option selected>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>8</option>
+                                        <option>12</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label>Closed <input id="closed" type="checkbox" /></label>
+                                </li>
+                                <li>
+                                    <input id="animation" type="button" value="Camera Spline Animation View: OFF"/>
+                                </li>
+                                <li>
+                                    <label>Look Ahead <input id="lookAhead" type="checkbox" /></label>
+                                </li>
+                                <li>
+                                    <label>Camera Helper <input id="cameraHelper" type="checkbox" /></label>
+                                </li>
+                            </ul>
                         </li>
-                        </ul>
-                    </li>
-                    <li class="has-submenu"><a href="#">Physics</a>
-                    <ul class="left-submenu">
-                    <li class="back"><a href="#">Back</a></li>
-                        <li>
-                            <label>Scale</label>
+                        <li class="has-submenu">
+                            <a href="#">Save/Load</a>
+                            <ul class="left-submenu">
+                                <li class="back"><a href="#">Back</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <select id="scale">
-                                <option>1</option>
-                                <option>2</option>
-                                <option selected>4</option>
-                                <option>6</option>
-                                <option>10</option>
-                            </select>
-                        </li>
-                        <li>
-                            <label>Extrusion Segments</label>
-                        </li>
-                        <li>
-                            <select id="segments">
-                                <option>50</option>
-                                <option selected>100</option>
-                                <option>200</option>
-                                <option>400</option>
-                            </select>
-                        </li>
-                        <li>
-                            <label>Radius Segments</label>
-                        </li>
-                        <li>
-                            <select id="radiusSegments">
-                                <option>1</option>
-                                <option selected>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>8</option>
-                                <option>12</option>
-                            </select>
-                        </li>
-                        <li>
-                            <label>Closed <input id="closed" type="checkbox" /></label>
-                        </li>
-                        <li>
-                            <input id="animation" type="button" value="Camera Spline Animation View: OFF"/>
-                        </li>
-                        <li>
-                            <label>Look Ahead <input id="lookAhead" type="checkbox" /></label>
-                        </li>
-                        <li>
-                            <label>Camera Helper <input id="cameraHelper" type="checkbox" /></label>
-                        </li>
-                        </ul>
-                        </li>
-                        <li class="has-submenu"><a href="#">Save/Load</a>
-                    <ul class="left-submenu">
-                        <li class="back"><a href="#">Back</a></li>
-
-                     </ul>
-                    </li>
                     </ul>
                 </aside>
                 <div id="container">
-                  <div class="moveStrip">
-                    <ul class="moves">
-                    </ul>
-                  </div>
-                  <div id="aboutText" class="text">
-                    <h1>About this application</h1>
-                    <a id="close"></a>
-                    <em>Author: Craig Heptinstall<br>
-                      Version: 0.1 Alpha</em>
-                  </div>
-                  <div id="helpText" class="text">
-                    <h1>Getting started</h1>
-                    <a id="close"></a>
-                    <em>This free open application is easy to use:</em>
-                    <ul>
-                      <li>
-                        Point 1
-                      </li>
-                      <li>
-                        Point 2
-                      </li>
-                      <li>
-                        Point 3
-                      </li>
-                  </div>
+                    <div class="moveStrip">
+                        <ul class="moves">
+                        </ul>
+                    </div>
+                    <div id="aboutText" class="text">
+                        <div class="padText">
+                            <h1>About this application</h1>
+                            <a id="close"></a>
+                            <em>Author: Craig Heptinstall<br>
+                            Version: 0.1 Alpha</em>
+                        </div>
+                    </div>
+                    <div id="helpText" class="text">
+                        <div class="padText">
+                            <h1>Getting started</h1>
+                            <hr>
+                            <a id="close"></a>
+                            <em>This free open application is easy to use.</em>
+                            <p>Type into the bar at the top of the page to create a movement onto the canvas.
+                                As more are added, the movie reel at the bottom of the page shoudl update showing each individual moneuavre. Afterwoods, hit play to show the animation!
+                                <br>
+                                The comprehensive list of possible movements are as follows:
+                            </p>
+                            <ul>
+                            <li>
+                                A - Viviani Curve
+                            </li>
+                            <li>
+                                B - Heart Curve
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                            <li>
+                                Blank....
+                            </li>
+                        </div>
+                    </div>
                 </div>
                 <a class="exit-off-canvas"></a>
             </div>
         </div>
         <footer id="footer" class="row">
             Copyright ©
-						<script type="text/javascript">
-								document.write(new Date().getFullYear());
-						</script>
-						<a href="http://www.craighep.co.uk">Craig Mathew Heptinstall</a>
+            <script type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>
+            <a href="http://www.craighep.co.uk">Craig Mathew Heptinstall</a>
         </footer>
     </body>
     <script src="js/require.js"></script>
