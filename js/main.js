@@ -1,4 +1,4 @@
-define(['events', 'html', 'jquery', 'tube_events'], function (events, html, $, tubeEvents) {
+define(['events', 'html', 'jquery'], function (events, html, $) {
 
 	var container, stats;
 	var camera, scene, renderer, splineCamera, cameraHelper, cameraEye;
@@ -7,9 +7,11 @@ define(['events', 'html', 'jquery', 'tube_events'], function (events, html, $, t
 	var binormal = new THREE.Vector3();
 	var normal = new THREE.Vector3();
 
+	extrudePath = new THREE.Curves.TrefoilKnot();
+
 	var closed2 = false;
 	var parent;
-	var tube, tubeMesh, extrudePath;
+	var tube, tubeMesh;
 	var animation = false,
 	    lookAhead = false;
 	var scale;
@@ -17,13 +19,16 @@ define(['events', 'html', 'jquery', 'tube_events'], function (events, html, $, t
 	var paused = false;
 	var moves = [1,2,3,4];
 
-	function addTube(value) {
+	function addTube() {
+	    var value = $('#dropdown').val();
 	    var segments = parseInt($('#segments').val());
 	    closed2 = $('#closed').is(':checked');
 	    var radiusSegments = parseInt($('#radiusSegments').val());
 	    if (tubeMesh)
 				 parent.remove(tubeMesh);
-	    extrudePath = splines[value];
+
+	    	extrudePath = splines[value];
+
 	    tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
 	    addGeometry(tube, 0xff00ff);
 			setScale();
@@ -54,15 +59,18 @@ define(['events', 'html', 'jquery', 'tube_events'], function (events, html, $, t
 
 	    if (!toggle) {
 	        animation = animation === false;
+					console.log($('#animation').attr("value"));
 	        $('#animation').prop('value','Camera Spline Animation View: ' + (animation ? 'ON' : 'OFF'));
 	    }
 	    lookAhead = $('#lookAhead').is(':checked');
 	    showCameraHelper = $('#cameraHelper').is(':checked');
+			console.log(lookAhead + " " + showCameraHelper);
 	    cameraHelper.visible = showCameraHelper;
 	    cameraEye.visible = showCameraHelper;
 	}
 
 	init();
+	animate();
 
 	function init() {
 	    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
@@ -93,12 +101,11 @@ define(['events', 'html', 'jquery', 'tube_events'], function (events, html, $, t
 	    renderer.setSize(window.innerWidth, window.innerHeight, false);
 
 			html.addContent(renderer);
-		//	html.addMoveReel(moves);
+			html.addMoveReel(moves);
 			events.init(renderer, camera);
-			//addTube();
+			addTube();
 
 			initHtmlEvents();
-			renderer.render(scene, animation === true ? splineCamera : camera);
 	}
 
 	function initHtmlEvents(){
@@ -116,7 +123,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function (events, html, $, t
 		}
 		document.getElementById('pause').onclick = function () {
 				paused = !paused;
-				$('#pause').css({"background-image":"url(/img/"+(paused ? "play" : "pause")+".png)"});
+				$('#pause').css({"background-image":"url(img/"+(paused ? "play" : "pause")+".png)"});
 		}
 		document.getElementById('about').onclick = function () {
 				paused = !paused;
@@ -131,19 +138,6 @@ define(['events', 'html', 'jquery', 'tube_events'], function (events, html, $, t
 				html.showHelp(paused);
 				html.showAbout(paused);
 		}
-		$( "#input" ).keyup(function() {
-			tubes = tubeEvents.getTubes();
-			if( tubes.length === 0 && tubeMesh)
-				parent.remove(tubeMesh);
-			else {
-				for (t in tubes) {
-					addTube(tubes[t]);
-				}
-		  }
-			html.addMoveReel(tubes);
-			renderer.render(scene, animation === true ? splineCamera : camera);
-			animate();
-		});
 	}
 
 	function animate() {
@@ -152,8 +146,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function (events, html, $, t
 	    	render();
 			else {
 				id = requestAnimationFrame( animate );
-				cancelAnimationFrame(id);
-				}
+				cancelAnimationFrame(id);}
 	    //stats.update();
 	}
 

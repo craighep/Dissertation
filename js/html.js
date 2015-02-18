@@ -13,13 +13,12 @@ define(['jquery'], function ($) {
     },
     addMoveReel: function(moves) {
       var list = $('.moves');
-      var movesHtml = "";
+      console.log(moves);
       for (move in moves) {
-        movesHtml += '<li class="move"></li>';
+        list.append(
+          $('<li class="move"></li>')
+        );
       }
-      list.html(
-        $(movesHtml)
-      );
     },
     showAbout: function(show) {
       var display = "none";
