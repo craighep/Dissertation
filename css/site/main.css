@@ -32,11 +32,11 @@ canvas{
 }
 
 .playControls {
-	width: 60%;
+	width: 50%;
 }
 
 #pause {
-	background-image: url("../../img/pause.png");
+	background-image: url("http://craighep.github.io/Dissertation/img/play.png");
 	background-size: 20px 20px;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -68,13 +68,12 @@ canvas{
   top: 0;
   left: 0;
   margin-top: 0;
-	display: none;
-	color: white;
 }
 
 .padText {
 	height: 100%;
-	padding: 10px 10% 10% 10%;
+	padding: 4%;
+	margin-right: 2%;
 	overflow: auto;
 }
 

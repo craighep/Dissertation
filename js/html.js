@@ -20,20 +20,6 @@ define(['jquery'], function ($) {
       list.html(
         $(movesHtml)
       );
-    },
-    showAbout: function(show) {
-      var display = "none";
-      if(show)
-        display = "block";
-      $("#aboutText").css({"display":display});
-      $("#helpText").css({"display":"none"});
-    },
-    showHelp: function(show) {
-      var display = "none";
-      if(show)
-        display = "block";
-      $("#helpText").css({"display":display});
-      $("#aboutText").css({"display":"none"});
     }
   }
 });

@@ -34,11 +34,11 @@
                     <ul class="info">
                         <li class="divider"></li>
                         <li>
-                            <a id="about" href="#">About</a>
+                            <a id="about" href="#" data-reveal-id="aboutModal">About</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a id="help" href="#">Help</a>
+                            <a id="help" href="#" data-reveal-id="helpModal">Help</a>
                         </li>
                         <li class="divider"></li>
                     </ul>
@@ -135,18 +135,18 @@
                         <ul class="moves">
                         </ul>
                     </div>
-                    <div id="aboutText" class="text">
-                        <div class="padText">
+                    <div id="aboutModal" class="reveal-modal large text" data-reveal>
+                      <div class="padText">
                             <h1>About this application <a id="close"></a></h1>
                             <em>Author: Craig Heptinstall<br>
-                            Version: 0.1 Alpha</em>
-                        </div>
-                    </div>
-                    <div id="helpText" class="text">
-                        <div class="padText">
-                            <h1>Getting started <a id="close"></a></h1>
+                            Version: 0.1 Alpha</em></div>
+                            <a class="close-reveal-modal">&#215;</a>
+                  </div>
+                    <div id="helpModal" class="reveal-modal large text" data-reveal>
+                      <div class="padText">
+                            <h1>Getting started</h1>
                             <hr>
-                            <em>This free open application is easy to use.</em>
+                            <p class="lead">This free open application is easy to use.</p>
                             <p>Type into the bar at the top of the page to create a movement onto the canvas.
                                 As more are added, the movie reel at the bottom of the page shoudl update showing each individual moneuavre. Afterwoods, hit play to show the animation!
                                 <br>
@@ -239,9 +239,9 @@
                             </li>
                             <li>
                                 Blank....
-                            </li>
+                            </li></div>
+                            <a class="close-reveal-modal">&#215;</a>
                         </div>
-                    </div>
                 </div>
                 <a class="exit-off-canvas"></a>
             </div>
