@@ -10,28 +10,30 @@
     </head>
     <body>
         <div class="row">
-            <nav class="top-bar" data-topbar>
+            <nav class="top-bar" data-topbar role="navigation">
                 <ul class="title-area">
                     <li class="name">
                         <h1>
                             <a class="left-off-canvas-toggle menu-icon" href="#"><span>&#9776; Options</span></a>
                         </h1>
                     </li>
+                        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                 </ul>
                 <section class="top-bar-section">
-                    <ul >
-                        <li class="divider"></li>
-                        <li>
-                            <span>Input OLAN:</span>
-                        </li>
-                        <li class="playControls">
-                            <input type="text" id="input"/>
-                        </li>
-                        <li>
-                            <a id="pause" type="button" value="Pause"></a>
-                        </li>
+                    <ul class="left">
+                      <li class="divider"></li>
+                      <li class="has-form">
+                        <div class="row collapse">
+                          <div class="large-8 small-9 columns">
+                            <input type="text" id="input" placeholder="Input OLAN">
+                          </div>
+                          <div class="large-4 small-3 columns">
+                            <a id="pause" href="#" type="button" value="Pause"></a>
+                          </div>
+                        </div>
+                      </li>
                     </ul>
-                    <ul class="info">
+                    <ul class="right">
                         <li class="divider"></li>
                         <li>
                             <a id="about" href="#" data-reveal-id="aboutModal">About</a>
@@ -135,14 +137,14 @@
                         <ul class="moves">
                         </ul>
                     </div>
-                    <div id="aboutModal" class="reveal-modal large text" data-reveal>
+                    <div id="aboutModal" class="reveal-modal xlarge text" data-reveal>
                       <div class="padText">
                             <h1>About this application <a id="close"></a></h1>
                             <em>Author: Craig Heptinstall<br>
                             Version: 0.1 Alpha</em></div>
                             <a class="close-reveal-modal">&#215;</a>
                   </div>
-                    <div id="helpModal" class="reveal-modal large text" data-reveal>
+                    <div id="helpModal" class="reveal-modal xlarge text" data-reveal>
                       <div class="padText">
                             <h1>Getting started</h1>
                             <hr>
