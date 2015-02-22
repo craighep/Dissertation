@@ -2,29 +2,25 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 
     var container, stats;
     var camera, scene, renderer, splineCamera, cameraHelper, cameraEye;
-    var text, plane;
-
     var binormal = new THREE.Vector3();
     var normal = new THREE.Vector3();
-
-    var closed2 = false;
     var parent;
-    var tube, tubeMesh, extrudePath;
-    var animation = false,
-        lookAhead = false;
+    var tube, tubeMesh;
+    var onboard = false,
+        showCameraHelper = false;
+        lookAhead = false,
+        paused = true;
     var scale;
-    var showCameraHelper = false;
-    var paused = true;
-    var moves = [1, 2, 3, 4];
+    var speed = 20;
 
     function addTube(value) {
         var segments = parseInt($('#segments').val());
-        closed2 = $('#closed').is(':checked');
+        var closed2 = $('#closed').is(':checked');
         var radiusSegments = parseInt($('#radiusSegments').val());
-        if (tubeMesh)
-            parent.remove(tubeMesh);
-        extrudePath = splines[value];
+        var extrudePath = splines[value];
         tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
+        if (tubeMesh !== undefined )
+            parent.remove(tubeMesh)
         addGeometry(tube, 0xff00ff);
         setScale();
     }
@@ -57,51 +53,94 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 			cameraEye.visible = toggle;
 		}
 
-    function animateCamera(toggle) {
-        if (!toggle) {
-            animation = animation === false;
-            $('#animation').prop('value', 'Camera Animation View: ' + (toggle ? 'ON' : 'OFF'));
-        }
+    function setSpeed(){
+      speed = 41 - $('#speed').val(); // opposite becasue bigger means slower in terms of time
     }
+
+    function setOnboardCamera(toggle) {
+            onboard = toggle;
+            $('#onboardLabel').html('Camera onboard view: ' + (toggle ? 'ON' : 'OFF'));
+        }
 
     init();
 
-    function init() {
-        camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
-        camera.position.set(0, 50, 500);
-        scene = new THREE.Scene();
-        var light = new THREE.DirectionalLight(0xffffff);
-        light.position.set(0, 0, 1);
-        scene.add(light);
-        parent = new THREE.Object3D();
-        parent.position.y = 100;
-        scene.add(parent);
-        splineCamera = new THREE.PerspectiveCamera(84, window.innerWidth / window.innerHeight, 0.01, 1000);
-        parent.add(splineCamera);
-        cameraHelper = new THREE.CameraHelper(splineCamera);
-        scene.add(cameraHelper);
+    function createFloor() {
+        var geometry = new THREE.Geometry();
+        geometry.vertices.push(new THREE.Vector3( - 500, 0, 0 ) );
+        geometry.vertices.push(new THREE.Vector3( 500, 0, 0 ) );
+        linesMaterial = new THREE.LineBasicMaterial( { color: 0x787878, opacity: .2, linewidth: .1 } );
 
-        cameraEye = new THREE.Mesh(new THREE.SphereGeometry(5, 32, 32), new THREE.MeshBasicMaterial({
-            color: 0x8B0000
-        }));
-        parent.add(cameraEye);
-        cameraHelper.visible = showCameraHelper;
-        cameraEye.visible = false;
-        renderer = new THREE.WebGLRenderer({
-            antialias: true
-        });
-        renderer.setClearColor(0xf0f0f0);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(window.innerWidth, window.innerHeight, false);
-
-        html.addContent(renderer);
-        events.init(renderer, camera);
-        initHtmlEvents();
-
-        renderer.render(scene, animation === true ? splineCamera : camera);
+        for ( var i = 0; i <= 30; i ++ ) {
+            var line = new THREE.Line( geometry, linesMaterial );
+            line.position.z = ( i * 50 ) - 500;
+            scene.add( line );
+            var line = new THREE.Line( geometry, linesMaterial );
+            line.position.x = ( i * 50 ) - 500;
+            line.rotation.y = 90 * Math.PI / 180;
+            scene.add( line );
+        }
     }
 
-    function initHtmlEvents() {
+    function setupParent() {
+      parent = new THREE.Object3D();
+      parent.position.y = 0;
+    }
+
+    function setupScene(){
+      scene = new THREE.Scene();
+      createFloor();
+      var light = new THREE.DirectionalLight(0xffffff);
+      light.position.set(0, 0, 1);
+      scene.add(light);
+      scene.add(parent);
+    }
+
+    function setupRenderer(){
+      renderer = new THREE.WebGLRenderer({
+          antialias: true
+      });
+      renderer.setClearColor(0xf0f0f0);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight, false);
+    }
+
+    function setupCameras() {
+        splineCamera = new THREE.PerspectiveCamera(84, window.innerWidth / window.innerHeight, 0.01, 1000);
+        camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
+        camera.position.set(0, 50, 500);
+    }
+
+    function setupCameraHelper() {
+      cameraHelper = new THREE.CameraHelper(splineCamera);
+      cameraHelper.visible = showCameraHelper;
+    }
+
+    function setupCameraEye() {
+    var geometry = new THREE.BoxGeometry( 10, 10, 10 );
+    var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+    var cube = new THREE.Mesh( geometry, material );
+      cameraEye = cube;
+      cameraEye.visible = false;
+      //TODO create plane here! lOAD FROM JS PREFERRABLY
+    }
+
+    function init() {
+        setupParent(); // Creates 3D Object
+        setupScene(); // Creates scene and adds object
+        setupCameras(); // create standard and onboard cameras
+        parent.add(splineCamera);
+        setupCameraHelper();
+    //    scene.add(cameraHelper);
+        setupCameraEye();
+        parent.add(cameraEye);
+        setupRenderer();
+        html.addContent(renderer); // add options for dropdown
+        events.init(renderer, camera); // setup event listeners for canvas movements
+        initContolEvents(); // setup listeners for changes to controls
+        renderer.render(scene, onboard === true ? splineCamera : camera);
+    }
+
+    function initContolEvents() {
         $('#rdropdown').change(function() {
             addTube(this.value);
         });
@@ -111,9 +150,9 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
         $('#scale').change(setScale);
         $('#lookAhead').change(showCamera);
         $('#cameraHelper').change(showCamera);
-        $('#animation').onclick = function() {
-            showCamera(false);
-        }
+        $('#onboard').change(function() {
+            setOnboardCamera(!onboard);
+        });
         $('#pause').click(function() {
             pause(!paused); // Reverse current setting(pause / un-pause)
         });
@@ -123,22 +162,8 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
         $('#help').click(function() {
             pause(true);
         });
-        $("#input").keyup(function() {
-            tubes = tubeEvents.getTubes();
-						pause(true);
-            if (tubes.length === 0) {
-                showCamera(false);
-                parent.remove(tubeMesh);
-            } else {
-                showCamera(true);
-                for (t in tubes) {
-                    addTube(tubes[t]);
-                }
-            }
-            html.addMoveReel(tubes);
-            renderer.render(scene, animation === true ? splineCamera : camera);
-            animate();
-        });
+        $("#input").keyup(refreshScene);
+        $("#speed").change(setSpeed);
     }
 
     function animate() {
@@ -154,21 +179,38 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
         });
     }
 
+    function refreshScene() {
+      tubes = tubeEvents.getTubes();
+      pause(true);
+      if (tubes.length === 0) {
+          showCamera(false);
+          parent.remove(tubeMesh);
+      } else {
+          showCamera(true);
+          for (t in tubes) {
+              addTube(tubes[t]);
+          }
+      }
+      html.addMoveReel(tubes);
+      setOnboardCamera(false);
+      renderer.render(scene, onboard === true ? splineCamera : camera);
+      animate();
+    }
+
     function render() {
         if (!paused)
           renderPlane();
 
-        parent.rotation.y += (events.getLatestTargetRotationX() - parent.rotation.y) * 0.05;
-        parent.rotation.x += (events.getLatestTargetRotationY() - parent.rotation.x) * 0.05;
-        renderer.render(scene, animation === true ? splineCamera : camera);
+        scene.rotation.y += (events.getLatestTargetRotationX() - scene.rotation.y) * 0.05;
+        scene.rotation.x += (events.getLatestTargetRotationY() - scene.rotation.x) * 0.05;
+        renderer.render(scene, onboard === true ? splineCamera : camera);
     }
 
     function renderPlane(){
       // Try Animate Camera Along Spline
       var time = Date.now();
-      var looptime = 20 * 1000;
+      var looptime = speed * 1000;
       var t = (time % looptime) / looptime;
-      //	console.log(t);
       var pos = tube.parameters.path.getPointAt(t);
       pos.multiplyScalar(scale);
       // interpolation
@@ -187,7 +229,6 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
       pos.add(normal.clone().multiplyScalar(offset));
       splineCamera.position.copy(pos);
       cameraEye.position.copy(pos);
-      console.log(pos);
       // Camera Orientation 1 - default look at
       var lookAt = tube.parameters.path.getPointAt((t + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
       // Camera Orientation 2 - up orientation via normal
@@ -195,6 +236,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
           lookAt.copy(pos).add(dir);
       splineCamera.matrix.lookAt(splineCamera.position, lookAt, normal);
       splineCamera.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
-      cameraHelper.update();
+      cameraEye.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
+  //    cameraHelper.update();
     }
 });

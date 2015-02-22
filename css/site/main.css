@@ -20,6 +20,9 @@ canvas{
   border-bottom: 1px solid #262626;
   transition: background 300ms ease;
 }
+#speed {
+	width: 100%;
+}
 .menu-icon {
 	  text-indent: 1.94444rem;
   width: 2.5rem;
@@ -110,7 +113,7 @@ canvas{
 	width:100%;
 	position: fixed;
 	background-color: black;
-	opacity: 0.5;
+	opacity: 0.9;
 	z-index: 4;
 }
 

@@ -14,6 +14,18 @@ define(['jquery'], function ($) {
                 case "B":
                   returnMoves[i] = "HeartCurve"
                   break;
+                case "C":
+                  returnMoves[i] = "GrannyKnot";
+                  break;
+                case "D":
+                  returnMoves[i] = "HelixCurve"
+                  break;
+                case "E":
+                  returnMoves[i] = "FigureEightPolynomialKnot";
+                  break;
+                case "F":
+                  returnMoves[i] = "TorusKnot"
+                  break;
               }
               i++;
           }
