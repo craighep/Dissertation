@@ -212,6 +212,8 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 
         scene.rotation.y += (events.getLatestTargetRotationX() - scene.rotation.y) * 0.05;
         scene.rotation.x += (events.getLatestTargetRotationY() - scene.rotation.x) * 0.05;
+		scene.position.x += (events.getLatestMoveX() - scene.position.x);
+		scene.position.z += (events.getLatestMoveZ() - scene.position.z);
         renderer.render(scene, onboard === true ? splineCamera : camera);
     }
 
@@ -232,7 +234,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 
       var dir = tube.parameters.path.getTangentAt(t);
 
-      var offset = 1;
+      var offset = 15;
       normal.copy(binormal).cross(dir);
       // We move on a offset on its binormal
       pos.add(normal.clone().multiplyScalar(offset));

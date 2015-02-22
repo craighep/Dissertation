@@ -13,6 +13,8 @@ var mouseXOnMouseDown = 0;
 var mouseY = 0;
 var mouseYOnMouseDown = 0;
 var scale = 1;
+var getLatestMoveX = 0;
+var getLatestMoveZ = 0;
 
   function onDocumentMouseDown(event) {
 
@@ -95,6 +97,28 @@ function onWindowResize() {
    camera.updateProjectionMatrix();
   }
 
+function onKeyDown(event) {
+  var step = 5;
+  switch ( event.keyCode.toString() ) {
+    case "38":
+     // up
+     getLatestMoveZ += step;
+     break;
+    case "40":
+     // down
+     getLatestMoveZ -= step;
+     break;
+    case "37":
+     // left
+     getLatestMoveX += step;
+     break;
+    case "39":
+     // right
+     getLatestMoveX -= step;
+     break;
+   }
+}
+
 return {
 
   init: function (r, c) {
@@ -106,6 +130,7 @@ return {
     window.addEventListener('resize', onWindowResize, false);
     renderer.domElement.addEventListener("mousewheel", onMouseScroll, false);
 	  renderer.domElement.addEventListener("DOMMouseScroll", onMouseScroll, false);
+    window.addEventListener("keydown", onKeyDown, false);
   },
 
     getLatestTargetRotationX: function () {
@@ -114,6 +139,14 @@ return {
 
       getLatestTargetRotationY: function () {
          return targetRotationY;
+      },
+
+    getLatestMoveX: function () {
+       return getLatestMoveX;
+    },
+
+      getLatestMoveZ: function () {
+         return getLatestMoveZ;
       }
   }
 
