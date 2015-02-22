@@ -19,10 +19,14 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
         var radiusSegments = parseInt($('#radiusSegments').val());
         var extrudePath = splines[value];
         tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
+        
+            
         if (tubeMesh !== undefined )
             parent.remove(tubeMesh)
         addGeometry(tube, 0xff00ff);
         setScale();
+        if (radiusSegments == 0)
+        tubeMesh.visible = false;
     }
 
     function setScale() {
@@ -116,12 +120,15 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
     }
 
     function setupCameraEye() {
-    var geometry = new THREE.BoxGeometry( 10, 10, 10 );
-    var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-    var cube = new THREE.Mesh( geometry, material );
-      cameraEye = cube;
-      cameraEye.visible = false;
-      //TODO create plane here! lOAD FROM JS PREFERRABLY
+      var loader = new THREE.ObjectLoader();
+        loader.load("js/models/plane.json",function ( obj ) {
+        cameraEye = obj;
+        cameraEye.visible = true;
+        cameraEye.rotation.x = 0;
+	    cameraEye.rotation.y = 0;
+	    cameraEye.rotation.z = 0;
+        parent.add(cameraEye);
+      });
     }
 
     function init() {
@@ -130,23 +137,21 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
         setupCameras(); // create standard and onboard cameras
         parent.add(splineCamera);
         setupCameraHelper();
-    //    scene.add(cameraHelper);
         setupCameraEye();
-        parent.add(cameraEye);
         setupRenderer();
         html.addContent(renderer); // add options for dropdown
         events.init(renderer, camera); // setup event listeners for canvas movements
         initContolEvents(); // setup listeners for changes to controls
-        renderer.render(scene, onboard === true ? splineCamera : camera);
+        animate();
     }
 
     function initContolEvents() {
         $('#rdropdown').change(function() {
             addTube(this.value);
         });
-        $('#radiusSegments').change(addTube);
-        $('#closed').change(addTube);
-        $('#segments').change(addTube);
+        $('#radiusSegments').change(refreshScene);
+        $('#closed').change(refreshScene);
+        $('#segments').change(refreshScene);
         $('#scale').change(setScale);
         $('#lookAhead').change(showCamera);
         $('#cameraHelper').change(showCamera);
@@ -182,8 +187,12 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
     function refreshScene() {
       tubes = tubeEvents.getTubes();
       pause(true);
+      cameraEye.position.set(0,0,0);
+      cameraEye.rotation.x = 0;
+      cameraEye.rotation.y = 0;
+      cameraEye.rotation.z = 0;
       if (tubes.length === 0) {
-          showCamera(false);
+          showCamera(true);
           parent.remove(tubeMesh);
       } else {
           showCamera(true);
@@ -223,7 +232,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 
       var dir = tube.parameters.path.getTangentAt(t);
 
-      var offset = 15;
+      var offset = 1;
       normal.copy(binormal).cross(dir);
       // We move on a offset on its binormal
       pos.add(normal.clone().multiplyScalar(offset));
@@ -237,6 +246,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
       splineCamera.matrix.lookAt(splineCamera.position, lookAt, normal);
       splineCamera.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
       cameraEye.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
-  //    cameraHelper.update();
+      cameraEye.rotation.z += 90;
+ //    cameraHelper.update();
     }
 });
