@@ -76,7 +76,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 		grassTex.repeat.x = 500; 
 		grassTex.repeat.y = 500; 
 		var groundMat = new THREE.MeshBasicMaterial({map:grassTex}); 
-		var groundGeo = new THREE.PlaneGeometry(5000,5000); 
+		var groundGeo = new THREE.PlaneBufferGeometry(5000,5000); 
 		var ground = new THREE.Mesh(groundGeo,groundMat); 
 		ground.position.y = -1.9; //lower it 
 		ground.rotation.x = -Math.PI/2; //-90 degrees around the xaxis 
@@ -94,7 +94,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
       scene = new THREE.Scene();
       createGround();
       var light = new THREE.DirectionalLight(0xffffff);
-      light.position.set(0, 0, 1);
+      light.position.set(500, 1000, 1);
       scene.add(light);
       scene.add(parent);
     }
