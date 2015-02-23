@@ -68,21 +68,21 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 
     init();
 
-    function createFloor() {
-        var geometry = new THREE.Geometry();
-        geometry.vertices.push(new THREE.Vector3( - 500, 0, 0 ) );
-        geometry.vertices.push(new THREE.Vector3( 500, 0, 0 ) );
-        linesMaterial = new THREE.LineBasicMaterial( { color: 0x787878, opacity: .2, linewidth: .1 } );
-
-        for ( var i = 0; i <= 30; i ++ ) {
-            var line = new THREE.Line( geometry, linesMaterial );
-            line.position.z = ( i * 50 ) - 500;
-            scene.add( line );
-            var line = new THREE.Line( geometry, linesMaterial );
-            line.position.x = ( i * 50 ) - 500;
-            line.rotation.y = 90 * Math.PI / 180;
-            scene.add( line );
-        }
+    function createGround() {
+    	//add ground 
+		var grassTex = THREE.ImageUtils.loadTexture('img/grass.png'); 
+		grassTex.wrapS = THREE.RepeatWrapping; 
+		grassTex.wrapT = THREE.RepeatWrapping; 
+		grassTex.repeat.x = 500; 
+		grassTex.repeat.y = 500; 
+		var groundMat = new THREE.MeshBasicMaterial({map:grassTex}); 
+		var groundGeo = new THREE.PlaneGeometry(5000,5000); 
+		var ground = new THREE.Mesh(groundGeo,groundMat); 
+		ground.position.y = -1.9; //lower it 
+		ground.rotation.x = -Math.PI/2; //-90 degrees around the xaxis 
+		//IMPORTANT, draw on both sides 
+		ground.doubleSided = true; 
+		scene.add(ground); 
     }
 
     function setupParent() {
@@ -92,7 +92,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 
     function setupScene(){
       scene = new THREE.Scene();
-      createFloor();
+      createGround();
       var light = new THREE.DirectionalLight(0xffffff);
       light.position.set(0, 0, 1);
       scene.add(light);
@@ -109,8 +109,8 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
     }
 
     function setupCameras() {
-        splineCamera = new THREE.PerspectiveCamera(84, window.innerWidth / window.innerHeight, 0.01, 1000);
-        camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
+        splineCamera = new THREE.PerspectiveCamera(84, window.innerWidth / window.innerHeight, 0.01, 5000);
+        camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 5000);
         camera.position.set(0, 50, 500);
     }
 
@@ -178,7 +178,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 
     function pause(p) {
         paused = p;
-        var imgUrl = "http://craighep.github.io/Dissertation/img/"
+        var imgUrl = "img/"
         $('#pause').css({
             "background-image": "url(" + imgUrl + (paused ? "play" : "pause") + ".png)"
         });
@@ -210,8 +210,8 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
         if (!paused)
           renderPlane();
 
-        scene.rotation.y += (events.getLatestTargetRotationX() - scene.rotation.y) * 0.05;
-        scene.rotation.x += (events.getLatestTargetRotationY() - scene.rotation.x) * 0.05;
+        scene.rotation.y += (events.getLatestTargetRotationX() - scene.rotation.y) * 0.6;
+        scene.rotation.x += (events.getLatestTargetRotationY() - scene.rotation.x) * 0.6;
 		scene.position.x += (events.getLatestMoveX() - scene.position.x);
 		scene.position.z += (events.getLatestMoveZ() - scene.position.z);
         renderer.render(scene, onboard === true ? splineCamera : camera);
