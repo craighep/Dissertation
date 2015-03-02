@@ -1,4 +1,4 @@
-define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tubeEvents) {
+define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(events, html, $, tubeEvents, parseJSON) {
 
     var container, stats;
     var camera, scene, renderer, splineCamera, cameraHelper, cameraEye;
@@ -17,12 +17,13 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
         var segments = parseInt($('#segments').val());
         var closed2 = $('#closed').is(':checked');
         var radiusSegments = parseInt($('#radiusSegments').val());
-        var extrudePath = splines[value];
+        console.log(value["olan"])
+        var extrudePath = splines[tubeEvents.getTubes(value["olan"])];
         tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
         
             
         if (tubeMesh !== undefined )
-            parent.remove(tubeMesh)
+            parent.remove(tubeMesh);
         addGeometry(tube, 0xff00ff);
         setScale();
         if (radiusSegments == 0)
@@ -36,7 +37,7 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 
     function addGeometry(geometry, color) {
         // 3d shape
-        tubeMesh = THREE.SceneUtils.createMultiMaterialObject(geometry, [
+        tubeMesh = new THREE.SceneUtils.createMultiMaterialObject(geometry, [
             new THREE.MeshLambertMaterial({
                 color: color
             }),
@@ -69,20 +70,20 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
     init();
 
     function createGround() {
-    	//add ground 
-		var grassTex = THREE.ImageUtils.loadTexture('img/grass.png'); 
-		grassTex.wrapS = THREE.RepeatWrapping; 
-		grassTex.wrapT = THREE.RepeatWrapping; 
-		grassTex.repeat.x = 500; 
-		grassTex.repeat.y = 500; 
-		var groundMat = new THREE.MeshBasicMaterial({map:grassTex}); 
-		var groundGeo = new THREE.PlaneBufferGeometry(5000,5000); 
-		var ground = new THREE.Mesh(groundGeo,groundMat); 
-		ground.position.y = -1.9; //lower it 
-		ground.rotation.x = -Math.PI/2; //-90 degrees around the xaxis 
-		//IMPORTANT, draw on both sides 
-		ground.doubleSided = true; 
-		scene.add(ground); 
+    	//add ground
+		var grassTex = THREE.ImageUtils.loadTexture('img/grass.png');
+		grassTex.wrapS = THREE.RepeatWrapping;
+		grassTex.wrapT = THREE.RepeatWrapping;
+		grassTex.repeat.x = 500;
+		grassTex.repeat.y = 500;
+		var groundMat = new THREE.MeshBasicMaterial({map:grassTex});
+		var groundGeo = new THREE.PlaneBufferGeometry(5000,5000);
+		var ground = new THREE.Mesh(groundGeo,groundMat);
+		ground.position.y = -1.9; //lower it
+		ground.rotation.x = -Math.PI/2; //-90 degrees around the xaxis
+		//IMPORTANT, draw on both sides
+		ground.doubleSided = true;
+		scene.add(ground);
     }
 
     function setupParent() {
@@ -134,11 +135,13 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
     function init() {
         setupParent(); // Creates 3D Object
         setupScene(); // Creates scene and adds object
+
         setupCameras(); // create standard and onboard cameras
         parent.add(splineCamera);
         setupCameraHelper();
         setupCameraEye();
         setupRenderer();
+        parseJSON.init();
         html.addContent(renderer); // add options for dropdown
         events.init(renderer, camera); // setup event listeners for canvas movements
         initContolEvents(); // setup listeners for changes to controls
@@ -185,22 +188,24 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
     }
 
     function refreshScene() {
-      tubes = tubeEvents.getTubes();
+      var manoeuvres = [];
+      manoeuvres = parseJSON.parseManoeuvreInput();
       pause(true);
       cameraEye.position.set(0,0,0);
       cameraEye.rotation.x = 0;
       cameraEye.rotation.y = 0;
       cameraEye.rotation.z = 0;
-      if (tubes.length === 0) {
+      if (manoeuvres.length < 1) {
           showCamera(true);
           parent.remove(tubeMesh);
       } else {
           showCamera(true);
-          for (t in tubes) {
-              addTube(tubes[t]);
+
+          for (m in manoeuvres) {
+              addTube(manoeuvres[m]);
           }
       }
-      html.addMoveReel(tubes);
+      html.addMoveReel(manoeuvres);
       setOnboardCamera(false);
       renderer.render(scene, onboard === true ? splineCamera : camera);
       animate();
@@ -212,8 +217,8 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
 
         scene.rotation.y += (events.getLatestTargetRotationX() - scene.rotation.y) * 0.6;
         scene.rotation.x += (events.getLatestTargetRotationY() - scene.rotation.x) * 0.6;
-		scene.position.x += (events.getLatestMoveX() - scene.position.x);
-		scene.position.z += (events.getLatestMoveZ() - scene.position.z);
+    		scene.position.x += (events.getLatestMoveX() - scene.position.x);
+    		scene.position.z += (events.getLatestMoveZ() - scene.position.z);
         renderer.render(scene, onboard === true ? splineCamera : camera);
     }
 
@@ -252,3 +257,4 @@ define(['events', 'html', 'jquery', 'tube_events'], function(events, html, $, tu
  //    cameraHelper.update();
     }
 });
+

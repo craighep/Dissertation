@@ -49,9 +49,9 @@ THREE.Curves.VivianiCurve = THREE.Curve.create(
 
 		t = t * 4 * Math.PI; // Normalized to 0..1
 		var a = this.radius / 2;
-		var tx = a * (1 + Math.cos(t)),
+		var tx = a * Math.cos(t),
 			ty = a * Math.sin(t),
-			tz = 2 * a * Math.sin(t / 2);
+			tz = 1;
 
 		return new THREE.Vector3(tx, ty, tz);
 
@@ -355,18 +355,14 @@ THREE.Curves.Circle = THREE.Curve.create(
   },
 
   function(t) {
-    counter++;
-  //  console.log(counter);
-    theta = theta + 0.04;
-  //  console.log(t);
-    var a = 30; // radius
+    var a = 15; // radius
 
     // var t2 = Math.PI  * t * b / 30;
     var tx = Math.cos(t) * a,
         ty = Math.sin(t) * a,
-        tz = tz;
+        tz = 0;
 
-    return new THREE.Vector3(tx, ty, 0);
+    return new THREE.Vector3(tx, ty, tz);
 
   }
 
@@ -387,7 +383,7 @@ THREE.Curves.CustomSinCurve = THREE.Curve.create(
 );
 
 var splines = {
-    VivianiCurve: new THREE.Curves.VivianiCurve(70),
+    VivianiCurve: new THREE.Curves.VivianiCurve(30),
     CustomSinCurve: new THREE.Curves.CustomSinCurve(),
     Circle: new THREE.Curves.Circle(),
     FortyFiveDegreeLine: THREE.Curves.FFDegree(),

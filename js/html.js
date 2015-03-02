@@ -14,6 +14,11 @@ define(['jquery'], function ($) {
     addMoveReel: function(moves) {
       var list = $('.moves');
       var movesHtml = "";
+      var bottom = "0%";
+      if (moves.length > 0 )
+        bottom = "15%";
+      $('#footer').css({"bottom" : bottom});
+
       for (move in moves) {
         movesHtml += '<li class="move"></li>';
       }

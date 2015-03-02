@@ -1,35 +1,31 @@
 define(['jquery'], function ($) {
   return {
-        getTubes: function() {
-          var input = $('#input').val();
-          var moves = input.split(" ");
-          var returnMoves = [];
-          var i = 0;
-
-          for (move in moves) {
-              switch (moves[move]) {
-                case "A":
-                  returnMoves[i] = "VivianiCurve";
+        getTubes: function(move) {
+              var returnMove = "";
+              switch (move.toLowerCase()) {
+                case "a":
+                  returnMove = "VivianiCurve";
                   break;
-                case "B":
-                  returnMoves[i] = "HeartCurve"
+                case "b":
+                  returnMove = "HeartCurve"
                   break;
-                case "C":
-                  returnMoves[i] = "GrannyKnot";
+                case "c":
+                  returnMove = "GrannyKnot";
                   break;
-                case "D":
-                  returnMoves[i] = "HelixCurve"
+                case "d":
+                  returnMove = "HelixCurve"
                   break;
-                case "E":
-                  returnMoves[i] = "FigureEightPolynomialKnot";
+                case "e":
+                  returnMove = "FigureEightPolynomialKnot";
                   break;
-                case "F":
-                  returnMoves[i] = "TorusKnot"
+                case "f":
+                  returnMove = "TorusKnot"
+                  break;
+                case "o":
+                  returnMove = "Circle"
                   break;
               }
-              i++;
-          }
-          return returnMoves;
+          return returnMove;
       }
   }
 });
