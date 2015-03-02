@@ -144,6 +144,13 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
         parseJSON.init();
         html.addContent(renderer); // add options for dropdown
         events.init(renderer, camera); // setup event listeners for canvas movements
+        stats = new Stats();
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.height = '30px';
+stats.domElement.style.left = '0px';
+stats.domElement.style.top = '0px';
+stats.setMode(0); // 0: fps, 1: ms
+      $('#container').append(stats.domElement);
         initContolEvents(); // setup listeners for changes to controls
         animate();
     }
@@ -177,6 +184,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
     function animate() {
         requestAnimationFrame(animate);
         render();
+        stats.update();
     }
 
     function pause(p) {
