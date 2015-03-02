@@ -1,149 +1,133 @@
 body {
-	font-family: Monospace;
-	background-color: #f0f0f0;
-	margin: 0px;
-	overflow:hidden;
+    font-family: Monospace;
+    background-color: #f0f0f0;
+    margin: 0px;
+    overflow: hidden;
 }
 span {
-	color: #FFFFFF;
-  padding: 12px;
-  line-height: 43px;
+    color: #FFFFFF;
+    padding: 12px;
+    line-height: 43px;
 }
-canvas{
-	width: 100%;
-	height: 100%;
+canvas {
+    width: 100%;
+    height: 100%;
 }
 .off-canvas-list li {
-	display: block;
-  padding: 0.66667rem;
-  color: rgba(255, 255, 255, 0.7);
-  border-bottom: 1px solid #262626;
-  transition: background 300ms ease;
+    display: block;
+    padding: 0.66667rem;
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid #262626;
+    transition: background 300ms ease;
 }
 #speed {
-	width: 100%;
+    width: 100%;
 }
 .menu-icon {
-	  text-indent: 1.94444rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: block;
-  padding: 0;
-  color: #FFFFFF;
-  position: relative;
-  transform: translate3d(0, 0, 0);
+    text-indent: 1.94444rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+    padding: 0;
+    color: #FFFFFF;
+    position: relative;
+    transform: translate3d(0, 0, 0);
 }
-
 @media screen and (max-width: 642px) {
-		.top-bar {
-			padding-right: 10%;
-		}
+    .top-bar {
+        padding-right: 10%;
+    }
 }
-
 @media screen and (min-width: 643px) {
-		#input {
-				width: 300px;
-		}
+    #input {
+        width: 300px;
+    }
 }
-
 @media screen and (min-width: 850px) {
-		#input {
-				width: 500px;
-		}
+    #input {
+        width: 500px;
+    }
 }
-
 @media screen and (min-width: 1024px) {
-		#input {
-				width: 675px;
-		}
+    #input {
+        width: 675px;
+    }
 }
-
 @media screen and (min-width: 1400px) {
-		#input {
-				width: 1000px;
-		}
+    #input {
+        width: 1000px;
+    }
 }
-
 .playControls {
-	width: 50%;
+    width: 50%;
 }
-
 #pause {
-	background-image: url("http://craighep.github.io/Dissertation/img/play.png");
-	background-size: 20px 20px;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 43px;
-  width: 20px;
-	float: right;
+    background-image: url("http://craighep.github.io/Dissertation/img/play.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 43px;
+    width: 20px;
+    float: right;
 }
-
-#footer{
-	position: fixed;
-	z-index:1;
-	right:0px;
-	text-align: left;
-	bottom:0%;
-	height:30px;
-	width:100%;
+#footer {
+    position: fixed;
+    z-index: 1;
+    right: 0px;
+    text-align: left;
+    bottom: 0%;
+    height: 30px;
+    width: 100%;
 }
-
 #footer a {
-	color: #C3C3C3;
+    color: #C3C3C3;
 }
-
 .text {
-  position: absolute;
-	padding: 10px 10% 12% 10%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.93);
-  z-index: 5;
-  top: 0;
-  left: 0;
-  margin-top: 0;
+    position: absolute;
+    padding: 10px 10% 12% 10%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.93);
+    z-index: 5;
+    top: 0;
+    left: 0;
+    margin-top: 0;
 }
-
 .padText {
-	height: 100%;
-	padding: 4% 4% 10% 4%;
-	margin-right: 2%;
-	overflow: auto;
+    height: 100%;
+    padding: 4% 4% 10% 4%;
+    margin-right: 2%;
+    overflow: auto;
 }
-
 .moveStrip {
-	bottom: 0px;
-	height: 15%;
-	width:100%;
-	position: fixed;
-	z-index: 4;
+    bottom: 0px;
+    height: 15%;
+    width: 100%;
+    position: fixed;
+    z-index: 4;
 }
-
-.moveStrip ul{
-	width: 100%;
-	height: 100%;
+.moveStrip ul {
+    width: 100%;
+    height: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-
-.moveStrip ul li{
-	width: 19.9%;
+.moveStrip ul li {
+    width: 19.9%;
     height: 100%;
     border-top: 0px;
-	border-left: 0px;
-	border-bottom: 0px;
-	opacity: 0.9;
-	background-color: black;
+    border-left: 0px;
+    border-bottom: 0px;
+    opacity: 0.9;
+    background-color: black;
     margin-left: 0.12%;
-	display: inline;
-	float: left;
+    display: inline;
+    float: left;
 }
-
-.moveStrip ul li:first-child{
-	margin-left: 0;
+.moveStrip ul li:first-child {
+    margin-left: 0;
 }
-
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -155,4 +139,12 @@ canvas{
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: #aaa;
+}
+#stats {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+}
+#stats span {
+    padding: 0;
 }

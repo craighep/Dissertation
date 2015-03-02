@@ -1,170 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>OLAN Prototype | Craig Heptinstall</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <link href="css/site/main.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/site/foundation.css"/>
-        <script src="js/site/modernizr.js"></script>
-    </head>
-    <body>
-        <div class="row">
-            <nav class="top-bar" data-topbar role="navigation">
-                <ul class="title-area">
-                    <li class="name">
-                        <h1>
+
+<head>
+    <title>OLAN Prototype | Craig Heptinstall</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="css/site/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/site/foundation.css" />
+    <script src="js/site/modernizr.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <li class="name">
+                    <h1>
                             <a class="left-off-canvas-toggle menu-icon" href="#"><span>&#9776; Options</span></a>
                         </h1>
-                    </li>
-                        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                </ul>
-                <section class="top-bar-section">
-                    <ul class="left">
-                      <li class="divider"></li>
-                      <li class="has-form">
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="left">
+                    <li class="divider"></li>
+                    <li class="has-form">
                         <div class="row collapse">
-                          <div class="large-8 small-9 columns">
-                            <input type="text" id="input" placeholder="Input OLAN">
-                          </div>
-                          <div class="large-4 small-3 columns">
-                            <a id="pause" href="#" type="button" value="Pause"></a>
-                          </div>
+                            <div class="large-8 small-9 columns">
+                                <input type="text" id="input" placeholder="Input OLAN">
+                            </div>
+                            <div class="large-4 small-3 columns">
+                                <a id="pause" href="#" type="button" value="Pause"></a>
+                            </div>
                         </div>
-                      </li>
-                    </ul>
-                    <ul class="right">
-                        <li class="divider"></li>
-                        <li>
-                            <a id="about" href="#" data-reveal-id="aboutModal">About</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a id="help" href="#" data-reveal-id="helpModal">Help</a>
-                        </li>
-                        <li class="divider"></li>
-                    </ul>
-                </section>
-            </nav>
-        </div>
-        </div>
-        <div class="row">
+                    </li>
+                </ul>
+                <ul class="right">
+                    <li class="divider"></li>
+                    <li>
+                        <a id="about" href="#" data-reveal-id="aboutModal">About</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a id="help" href="#" data-reveal-id="helpModal">Help</a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+    </div>
+    <div class="row">
         <div class="off-canvas-wrap" data-offcanvas>
             <div class="inner-wrap">
                 <aside class="left-off-canvas-menu">
                     <ul class="off-canvas-list">
-                        <li><label>Option Categories</label></li>
-                        <li class="has-submenu">
-                        <li class="has-submenu">
-                            <a href="#">OLAN</a>
-                            <ul class="left-submenu">
-                                <li class="back"><a href="#">Back</a></li>
-                                <li>
-                                    <label>Shape</label>
-                                </li>
-                                <li>
-                                    <select id="dropdown">
-                                    </select>
-                                </li>
-                            </ul>
+                        <li>
+                            <label>Option Categories</label>
                         </li>
                         <li class="has-submenu">
-                            <a href="#">Physics</a>
-                            <ul class="left-submenu">
-                                <li class="back"><a href="#">Back</a></li>
-                                <li>
-                                    <label>Scale</label>
-                                </li>
-                                <li>
-                                    <select id="scale">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option selected>4</option>
-                                        <option>6</option>
-                                        <option>10</option>
-                                    </select>
-                                </li>
-                                <li>
-                                    <label>Extrusion Segments</label>
-                                </li>
-                                <li>
-                                    <select id="segments">
-                                        <option>50</option>
-                                        <option selected>100</option>
-                                        <option>200</option>
-                                        <option>400</option>
-                                    </select>
-                                </li>
-                                <li>
-                                    <label>Radius Segments</label>
-                                </li>
-                                <li>
-                                    <select id="radiusSegments">
-                                        <option>0</option>
-                                        <option selected>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>8</option>
-                                        <option>12</option>
-                                    </select>
-                                </li>
-                                <li>
-                                    <label>Closed</label>
-                                </li>
-                                <li>
-                                  <div class="switch">
-                                    <input id="closed" type="checkbox">
-                                    <label for="closed"></label>
-                                  </div>
-                                </li>
-                                <li>
-                                  <label>Camera onboard View</label>
-                                </li>
-                                <li>
-                                  <div class="switch">
-                                    <input id="onboard" type="checkbox">
-                                    <label for="onboard"></label>
-                                  </div>
-                                </li>
-                                <li>
-                                    <label>Look Ahead</label>
-                                </li>
-                                <li>
-                                  <div class="switch">
-                                    <input id="lookAhead" type="checkbox">
-                                    <label for="lookAhead"></label>
-                                  </div>
-                                </li>
-                                <li>
-                                    <label>Camera Helper</label>
-                                </li>
-                                <li>
-                                  <div class="switch">
-                                    <input id="cameraHelper" type="checkbox">
-                                    <label for="cameraHelper"></label>
-                                  </div>
-                                </li>
-                                <li>
-                                    <label>Animation Speed</label>
-                                </li>
-                                <li>
-                                    <input id="speed" type="range" value="20" min="1" max="40" step="1" />
-                                </li>
-                                <li class="divider">
-                                </li>
-                                <li class="divider">
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-submenu">
-                            <a href="#">Save/Load</a>
-                            <ul class="left-submenu">
-                                <li class="back"><a href="#">Back</a></li>
-                            </ul>
-                        </li>
+                            <li class="has-submenu">
+                                <a href="#">OLAN</a>
+                                <ul class="left-submenu">
+                                    <li class="back"><a href="#">Back</a>
+                                    </li>
+                                    <li>
+                                        <label>Shape</label>
+                                    </li>
+                                    <li>
+                                        <select id="dropdown">
+                                        </select>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="#">Physics</a>
+                                <ul class="left-submenu">
+                                    <li class="back"><a href="#">Back</a>
+                                    </li>
+                                    <li>
+                                        <label>Scale</label>
+                                    </li>
+                                    <li>
+                                        <select id="scale">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option selected>4</option>
+                                            <option>6</option>
+                                            <option>10</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <label>Extrusion Segments</label>
+                                    </li>
+                                    <li>
+                                        <select id="segments">
+                                            <option>50</option>
+                                            <option selected>100</option>
+                                            <option>200</option>
+                                            <option>400</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <label>Radius Segments</label>
+                                    </li>
+                                    <li>
+                                        <select id="radiusSegments">
+                                            <option>0</option>
+                                            <option selected>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>8</option>
+                                            <option>12</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <label>Closed</label>
+                                    </li>
+                                    <li>
+                                        <div class="switch">
+                                            <input id="closed" type="checkbox">
+                                            <label for="closed"></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>Camera onboard View</label>
+                                    </li>
+                                    <li>
+                                        <div class="switch">
+                                            <input id="onboard" type="checkbox">
+                                            <label for="onboard"></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>Look Ahead</label>
+                                    </li>
+                                    <li>
+                                        <div class="switch">
+                                            <input id="lookAhead" type="checkbox">
+                                            <label for="lookAhead"></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>Camera Helper</label>
+                                    </li>
+                                    <li>
+                                        <div class="switch">
+                                            <input id="cameraHelper" type="checkbox">
+                                            <label for="cameraHelper"></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>Animation Speed</label>
+                                    </li>
+                                    <li>
+                                        <input id="speed" type="range" value="20" min="1" max="40" step="1" />
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="#">Save/Load</a>
+                                <ul class="left-submenu">
+                                    <li class="back"><a href="#">Back</a>
+                                    </li>
+                                </ul>
+                            </li>
                     </ul>
                 </aside>
                 <div id="container">
@@ -173,148 +181,146 @@
                         </ul>
                     </div>
                     <div id="aboutModal" class="reveal-modal xlarge text" data-reveal>
-                      <div class="padText">
+                        <div class="padText">
                             <h1>About this application <a id="close"></a></h1>
                             <p class="lead">This free open application is easy to use.</p>
-                            <p>This application represents my major project for university, exploring the
-                              possibility of allowing a user (primarily radio control, and real-life pilots of
-                              areobatic planes) to input a range
+                            <p>This application represents my major project for university, exploring the possibility of allowing a user (primarily radio control, and real-life pilots of areobatic planes) to input a range
                             </p>
                             <em>Author: Craig Heptinstall<br>
-                            Version: 0.1 Alpha</em></div>
-                            <a class="close-reveal-modal">&#215;</a>
-                  </div>
+                            Version: 0.1 Alpha</em>
+                        </div>
+                        <a class="close-reveal-modal">&#215;</a>
+                    </div>
                     <div id="helpModal" class="reveal-modal xlarge text" data-reveal>
-                      <div class="padText">
+                        <div class="padText">
                             <h1>Getting started</h1>
                             <hr>
                             <p class="lead">A WebGL based OLAN flight path simulator.</p>
-                            <p>Type into the bar at the top of the page to create a movement onto the canvas.
-                                As more are added, the movie reel at the bottom of the page shoudl update showing each individual moneuavre. Afterwoods, hit play to show the animation!
-                                <br>
-                                The comprehensive list of possible movements are as follows:
+                            <p>Type into the bar at the top of the page to create a movement onto the canvas. As more are added, the movie reel at the bottom of the page shoudl update showing each individual moneuavre. Afterwoods, hit play to show the animation!
+                                <br> The comprehensive list of possible movements are as follows:
                             </p>
                             <ul>
-                            <li>
-                                A - Viviani Curve
-                            </li>
-                            <li>
-                                B - Heart Curve
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li>
-                            <li>
-                                Blank....
-                            </li></div>
-                            <a class="close-reveal-modal">&#215;</a>
+                                <li>
+                                    A - Viviani Curve
+                                </li>
+                                <li>
+                                    B - Heart Curve
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
+                                <li>
+                                    Blank....
+                                </li>
                         </div>
+                        <a class="close-reveal-modal">&#215;</a>
+                    </div>
                 </div>
-                 <footer id="footer" class="row">
+                <footer id="footer" class="row">
                     Copyright ©
                     <script type="text/javascript">
-                        document.write(new Date().getFullYear());
+                    document.write(new Date().getFullYear());
                     </script>
                     <a href="http://www.craighep.co.uk">Craig Mathew Heptinstall</a>
                 </footer>
                 <a class="exit-off-canvas"></a>
             </div>
         </div>
-    </body>
-    <script src="js/require.js"></script>
-    <script src="js/three.min.js"></script>
-    <script src="js/CurveExtras.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/site/foundation.js"></script>
-    <script src="js/stats/Stats.js"></script>
-    <script>
-        $(document).foundation();
-        var doc = document.documentElement;
-        doc.setAttribute('data-useragent', navigator.userAgent);
-    </script>
-    <script>
-        require.config({
-        	baseUrl: 'js',
-        	paths: {
-        		"jquery": "jquery" }
-        	});
-        	require(["main"]);
+</body>
+<script src="js/require.js"></script>
+<script src="js/three.min.js"></script>
+<script src="js/CurveExtras.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/site/foundation.js"></script>
+<script src="js/stats/stats.min.js"></script>
+<script>
+$(document).foundation();
+var doc = document.documentElement;
+doc.setAttribute('data-useragent', navigator.userAgent);
+</script>
+<script>
+require.config({
+    baseUrl: 'js',
+    paths: {
+        "jquery": "jquery"
+    }
+});
+require(["main"]);
+</script>
 
-
-    </script>
 </html>
