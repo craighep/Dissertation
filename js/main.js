@@ -1,12 +1,12 @@
 /** 
  * Main runnable class.
- * This is the main class for general communication to other modules, 
- * and in charge of overall animation, and represnting manoeuvres on the WebGL scene. 
+ * This is the main class for general communication to other modules,
+ * and in charge of overall animation, and represnting manoeuvres on the WebGL scene.
  * @name Main
  * @class Main
  * @constructor
  */
-define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(events, html, $, tubeEvents, parseJSON) {
+define(['events', 'html', 'jquery', 'tubeEvents', 'parseJson'], function(Events, Html, $, TubeEvents, ParseJson) {
 
 
     /** @global */
@@ -18,13 +18,13 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
     var tube, tubeMesh;
     var onboard = false,
         showCameraHelper = false;
-    lookAhead = false,
+        lookAhead = false,
         paused = true;
     var scale;
     var speed = 20;
 
     /**
-     * Function responsible for creating geometry lines based on an array of instructions. Combines this with 
+     * Function responsible for creating geometry lines based on an array of instructions. Combines this with
      * interopobility to smooth out edges. Gets parameters from GUI options to set segment/ radius sengment amounts.
      * Creates geometry and then passes to tube constructor.
      * @name Main#addTube
@@ -37,7 +37,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
         var closed2 = $('#closed').is(':checked');
         var radiusSegments = parseInt($('#radiusSegments').val());
         console.log(value["olan"])
-        var extrudePath = splines[tubeEvents.getTubes(value["olan"])];
+        var extrudePath = splines[TubeEvents.getTubes(value["olan"])];
         tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
 
 
@@ -51,7 +51,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
 
     /**
      * Sets the scale of the manoeuvre based on the input in the GUI controls. Can be from 1 to 8 multiplied.
-     * 
+     *
      * @name Main#setScale
      * @function
      */
@@ -61,7 +61,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
     }
 
     /**
-     * Creates an object that represents a 3D model of a manoeuvre. Creates a mesh based on colour, and adds 
+     * Creates an object that represents a 3D model of a manoeuvre. Creates a mesh based on colour, and adds
      * this to the scene (parent).
      * @name Main#addGeometry
      * @function
@@ -124,7 +124,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
     }
 
     /**
-     * Creates the ground grass-effect that covers a large area enough for a reasonable amount of 
+     * Creates the ground grass-effect that covers a large area enough for a reasonable amount of
      * manoeuvres. Places the ground at a slightly lower level than 0 on Y axis for plane to look grounded.
      * @name Main#createGround
      * @function
@@ -149,7 +149,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
     }
 
     /**
-     * Creates and returns a directional light that lights up the scene and aeroplane. Colour and positon of light 
+     * Creates and returns a directional light that lights up the scene and aeroplane. Colour and positon of light
      * affects appearence.
      * @name Main#setupLight
      * @function
@@ -229,7 +229,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
     }
 
     /**
-     * Creates the areoplane model in the scene, by loading up an external JSON file containing a model. 
+     * Creates the areoplane model in the scene, by loading up an external JSON file containing a model.
      * Sets initial rotation and location values.
      * @name Main#setupCameraEye
      * @function
@@ -248,9 +248,9 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
     }
 
     /**
-     * Initial function, starts all critical modules, including scene, objects, event listeners and html events. 
+     * Initial function, starts all critical modules, including scene, objects, event listeners and html events.
      * Self-calling function runs on startup, and after modules are loaded the animation begins and allows for
-     * user interaction. 
+     * user interaction.
      * @name Main#init
      * @function
      *
@@ -262,18 +262,19 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
         setupCameraHelper();
         setupCameraEye();
         setupRenderer();
-        parseJSON.init();
-        html.addContent(renderer); // add options for dropdown 
+        ParseJson.init();
+        Html.addContent(renderer); // add options for dropdown 
         stats = new Stats();
-        html.addStatsBar(stats);
-        events.init(renderer, camera); // setup event listeners for canvas movements
+        Html.addStatsBar(stats);
+        Html.addHelpManoeuvreList(ParseJson.getManoeuvreArray());
+        Events.init(renderer, camera); // setup event listeners for canvas movements
         initContolEvents(); // setup listeners for changes to controls
         animate();
     })();
 
     /**
      * Sets up listeners for GUI controls. Each listener links to its own event, onclick, on change and
-     * on key events where the user types into the OLAN box. 
+     * on key events where the user types into the OLAN box.
      * @name Main#initContolEvents
      * @function
      *
@@ -344,7 +345,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
      */
     function refreshScene() {
         var manoeuvres = [];
-        manoeuvres = parseJSON.parseManoeuvreInput();
+        manoeuvres = ParseJson.parseManoeuvreInput();
         pause(true);
         cameraEye.position.set(0, 0, 0);
         cameraEye.rotation.x = 0;
@@ -360,7 +361,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
                 addTube(manoeuvres[m]);
             }
         }
-        html.addMoveReel(manoeuvres);
+        Html.addMoveReel(manoeuvres);
         setOnboardCamera(false);
         renderer.render(scene, onboard === true ? splineCamera : camera);
         animate();
@@ -368,7 +369,7 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
 
     /**
      * Renderes the scene with the camera, to allow for the the scene to be looked at from different angles.
-     * Uses the event class to get the rotation required to be done to the scene from the last time the 
+     * Uses the event class to get the rotation required to be done to the scene from the last time the
      * user dragged the scene in an X or Y axis mean.
      * @name Main#render
      * @function
@@ -378,10 +379,10 @@ define(['events', 'html', 'jquery', 'tube_events', 'parse_json'], function(event
         if (!paused)
             renderPlane();
 
-        scene.rotation.y += (events.getLatestTargetRotationX() - scene.rotation.y) * 0.6;
-        scene.rotation.x += (events.getLatestTargetRotationY() - scene.rotation.x) * 0.6;
-        scene.position.x += (events.getLatestMoveX() - scene.position.x);
-        scene.position.z += (events.getLatestMoveZ() - scene.position.z);
+        scene.rotation.y += (Events.getLatestTargetRotationX() - scene.rotation.y) * 0.6;
+        scene.rotation.x += (Events.getLatestTargetRotationY() - scene.rotation.x) * 0.6;
+        scene.position.x += (Events.getLatestMoveX() - scene.position.x);
+        scene.position.z += (Events.getLatestMoveZ() - scene.position.z);
         renderer.render(scene, onboard === true ? splineCamera : camera);
     }
 

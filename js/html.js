@@ -72,6 +72,28 @@ define(['jquery'], function($) {
          */
         addStatsBar: function(stats) {
             $('#container').append(stats.domElement);
-        }
+        },
+
+        /**
+         * Adds the list of manoeuvres from the JSON file to the help section, and adds each manoeuvre with 
+         * its name and OLAN string to a list element. This means no need to write the html statically.
+         * @name Html#addHelpManoeuvreList
+         * @function
+         *
+         * @param {Array} manoeuvres  Array of all the manoeuvres from the JSON file
+         */
+        addHelpManoeuvreList: function(manoeuvres) {
+            var list = $('#manoeuvres');
+            var manoeuvre;
+            var listString = '';
+
+            for (m in manoeuvres) {
+                manoeuvre = manoeuvres[m];
+                listString = "<b>" + manoeuvre["olan"] + "</b> - " + manoeuvre["name"];
+                list.append(
+                    $('<li></li>').html(listString)
+                );
+            }
+        },
     }
 });

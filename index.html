@@ -199,94 +199,8 @@
                             <p>Type into the bar at the top of the page to create a movement onto the canvas. As more are added, the movie reel at the bottom of the page shoudl update showing each individual moneuavre. Afterwoods, hit play to show the animation!
                                 <br> The comprehensive list of possible movements are as follows:
                             </p>
-                            <ul>
-                                <li>
-                                    A - Viviani Curve
-                                </li>
-                                <li>
-                                    B - Heart Curve
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
-                                <li>
-                                    Blank....
-                                </li>
+                            <ul id="manoeuvres">
+                            </ul>
                         </div>
                         <a class="close-reveal-modal">&#215;</a>
                     </div>
@@ -302,23 +216,20 @@
             </div>
         </div>
 </body>
-<script src="js/require.js"></script>
-<script src="js/three.min.js"></script>
+<script src="js/require/require.js"></script>
+<script src="js/three/three.min.js"></script>
 <script src="js/CurveExtras.js"></script>
-<script src="js/jquery.js"></script>
+<script src="js/jquery/jquery.js"></script>
 <script src="js/site/foundation.js"></script>
 <script src="js/stats/stats.min.js"></script>
 <script>
-$(document).foundation();
-var doc = document.documentElement;
-doc.setAttribute('data-useragent', navigator.userAgent);
+	$(document).foundation();
+	var doc = document.documentElement;
+	doc.setAttribute('data-useragent', navigator.userAgent);
 </script>
 <script>
 require.config({
     baseUrl: 'js',
-    paths: {
-        "jquery": "jquery"
-    }
 });
 require(["main"]);
 </script>
