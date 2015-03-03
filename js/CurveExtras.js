@@ -1,7 +1,6 @@
 
 THREE.Curves = {};
 
-
  THREE.Curves.GrannyKnot = THREE.Curve.create( function(){},
 
 	 function(t) {

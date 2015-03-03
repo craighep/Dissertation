@@ -1,3 +1,11 @@
+/** 
+ * Class creates listeners for a range of user events on the canvas.
+ * This class is responsible for setting up and implimenting listeners for different sets of actions performed
+ * on the canvas area. Including zooming, rotating and moving around the scene.
+ * @name Events
+ * @class Events
+ * @constructor
+ */
 define(function() {
 
     var windowHalfX = window.innerWidth / 2;
@@ -16,6 +24,15 @@ define(function() {
     var getLatestMoveX = 0;
     var getLatestMoveZ = 0;
 
+    /**
+     * Event that calculates the rotation and movement performed by the user starting from the mouse down to 
+     * mouse up events. Sets global variables holding these values for use in the get methods used by the 
+     * {@link Main} class.
+     * @name Events#onDocumentMouseDown
+     * @function
+     *
+     * @param {Event} event  Event triggured
+     */
     function onDocumentMouseDown(event) {
         event.preventDefault();
         renderer.domElement.addEventListener('mousemove', onDocumentMouseMove, false);
@@ -28,6 +45,13 @@ define(function() {
         targetRotationOnMouseDownY = targetRotationY;
     }
 
+    /**
+     * Multiplies the rotating by 0.02 each time the mouse is moved whilst held down on the canvas.
+     * @name Events#onDocumentMouseMove
+     * @function
+     *
+     * @param {Event} event  Event triggured
+     */
     function onDocumentMouseMove(event) {
         mouseX = event.clientX - windowHalfX;
         mouseY = event.clientY - windowHalfY;
@@ -35,18 +59,39 @@ define(function() {
         targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.02;
     }
 
+    /**
+     * Removes the listeners for mouse events once a user releases the mouse click button on the canvas.
+     * @name Events#onDocumentMouseUp
+     * @function
+     *
+     * @param {Event} event  Event triggured
+     */
     function onDocumentMouseUp(event) {
         renderer.domElement.removeEventListener('mousemove', onDocumentMouseMove, false);
         renderer.domElement.removeEventListener('mouseup', onDocumentMouseUp, false);
         renderer.domElement.removeEventListener('mouseout', onDocumentMouseOut, false);
     }
 
+    /**
+     * Removes the listeners for mouse events once a user moves the mouse out of the canvas.
+     * @name Events#onDocumentMouseOut
+     * @function
+     *
+     * @param {Event} event  Event triggured
+     */
     function onDocumentMouseOut(event) {
         renderer.domElement.removeEventListener('mousemove', onDocumentMouseMove, false);
         renderer.domElement.removeEventListener('mouseup', onDocumentMouseUp, false);
         renderer.domElement.removeEventListener('mouseout', onDocumentMouseOut, false);
     }
 
+    /**
+     * Adds the listener for different mouse actions once a user clicks onto the canvas, holding the mouse down/
+     * @name Events#onDocumentTouchStart
+     * @function
+     *
+     * @param {Event} event  Event triggured
+     */
     function onDocumentTouchStart(event) {
 
         if (event.touches.length == 1) {
@@ -58,6 +103,14 @@ define(function() {
         }
     }
 
+    /**
+     * Alternative event for calculating rotation, for touch devices. Will work on phones and rotate scene 
+     * when user drags across the screen.
+     * @name Events#onDocumentTouchMove
+     * @function
+     *
+     * @param {Event} event  Event triggured
+     */
     function onDocumentTouchMove(event) {
 
         if (event.touches.length == 1) {
@@ -69,6 +122,13 @@ define(function() {
         }
     }
 
+    /**
+     * Resizes the canvas in relation to the window size. Resizes all the objects too, and changes the 
+     * camera perspective to view from the correct range.
+     * @name Events#onWindowResize
+     * @function
+     *
+     */
     function onWindowResize() {
         windowHalfX = window.innerWidth;
         windowHalfY = window.innerHeight;
@@ -77,6 +137,13 @@ define(function() {
         renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
+    /**
+     * Updates the camera zoom parameter based on the amount scrolled. Has a maximum and minimum value of scroll.
+     * @name Events#onMouseScroll
+     * @function
+     *
+     * @param {Event} event  Event triggured
+     */
     function onMouseScroll(event) {
         var event = window.event || e; // old IE support
         var d = ((typeof event.wheelDelta != "undefined") ? (-event.wheelDelta) : event.detail);
@@ -95,6 +162,14 @@ define(function() {
         camera.updateProjectionMatrix();
     }
 
+    /**
+     * A listener to run each time the up, down, left and right arrows are pressed. Sets the global variables
+     * which are acesses in get methods to navigate the camera about the canvas.
+     * @name Events#onKeyDown
+     * @function
+     *
+     * @param {Event} event  Event triggured
+     */
     function onKeyDown(event) {
         var step = 5;
         switch (event.keyCode.toString()) {
@@ -119,6 +194,15 @@ define(function() {
 
     return {
 
+        /**
+         * Initial function which is called on startup for creating event listeners in the canvas area. 
+         * Including scroll, mouse drag, touch drag and keyboard events. 
+         * @name Events#init
+         * @function
+         *
+         * @param {Renderer} r  Renderer object to have listeners added to
+         * @param {Camera} c  Camera object to have zoom and aspect ratio modified by events
+         */
         init: function(r, c) {
             renderer = r;
             camera = c;
@@ -131,23 +215,48 @@ define(function() {
             window.addEventListener("keydown", onKeyDown, false);
         },
 
+        /**
+         * Returns the last accumulated rotatoion on X axis
+         * @name Events#getLatestTargetRotationX
+         * @function
+         *
+         * @returns {Integer} targetRotationX  Amount of rotation along x axis in degrees.
+         */
         getLatestTargetRotationX: function() {
             return targetRotationX;
         },
 
+        /**
+         * Returns the last accumulated rotation on Y axis
+         * @name Events#getLatestTargetRotationY
+         * @function
+         *
+         * @returns {Integer} targetRotationY  Amount of rotation along y axis in degrees.
+         */
         getLatestTargetRotationY: function() {
             return targetRotationY;
         },
 
+        /**
+         * Returns the last accumulated movement along X axis
+         * @name Events#getLatestMoveX
+         * @function
+         *
+         * @returns {Integer} getLatestMoveX  Amount of movement along x axis in pixels.
+         */
         getLatestMoveX: function() {
             return getLatestMoveX;
         },
 
+        /**
+         * Returns the last accumulated movement along Z axis
+         * @name Events#getLatestMoveZ
+         * @function
+         *
+         * @returns {Integer} getLatestMoveZ  Amount of movement along z axis in pixels.
+         */
         getLatestMoveZ: function() {
             return getLatestMoveZ;
         }
     }
-
-
-
 });
