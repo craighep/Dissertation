@@ -6,7 +6,7 @@
  * @class ManoeuvreController
  * @constructor
  */
-define(['TubeEvents'],function(TubeEvents) {
+define(['tubeEvents'],function(TubeEvents) {
     var tube;
     var tubeMesh;
 
