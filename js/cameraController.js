@@ -2,8 +2,8 @@
  * Camera handler class fro creating and modifyng cameras in the scene. This includes the
  * aeroplane, which is created from a model and added to the environment. Contains all the
  * initialisers for each camera, edit methdods, and get methods.
- * @name Cameras
- * @class Cameras
+ * @name CameraController
+ * @class CameraController
  * @constructor 
  */
 define(['jquery'], function($) {
@@ -16,21 +16,8 @@ define(['jquery'], function($) {
     var onboard = false;
 
     /**
-     * A toggle function for switching to the onboard camera on the aeroplane. Gets toggle view from
-     * parameter and then sets the switch in the GUI to reflect this.
-     * @name Main#setOnboardCamera
-     * @function
-     *
-     * @param {Boolean} toggle  Used to set onboard camera on or off
-     */
-    function setOnboardCamera(toggle) {
-        onboard = toggle;
-        $('#onboardLabel').html('Camera onboard view: ' + (toggle ? 'ON' : 'OFF'));
-    }
-
-    /**
      * Camera Helper created, and sets the spline camera to stick to the edge of the manoeuvre line.
-     * @name Main#setupCameraHelper
+     * @name CameraController#setupCameraHelper
      * @function
      *
      */
@@ -42,7 +29,7 @@ define(['jquery'], function($) {
     /**
      * Creates the areoplane model in the scene, by loading up an external JSON file containing a model.
      * Sets initial rotation and location values.
-     * @name Main#setupCameraEye
+     * @name CameraController#setupCameraEye
      * @function
      *
      * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
@@ -62,7 +49,7 @@ define(['jquery'], function($) {
     /**
      * Creates the camera to look along the tube splines. Used to calculate where the plane should be in
      * relation to time. Adds to the parent.
-     * @name Cameras#setupSplineCamera
+     * @name CameraController#setupSplineCamera
      * @function
      *
      * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
@@ -75,7 +62,7 @@ define(['jquery'], function($) {
     /**
      * Creates the birds eye view camera, looking over the entire scene. Sets the initial camera location and 
      * how far it can see.
-     * @name Cameras#setupStandardCamera
+     * @name CameraController#setupStandardCamera
      * @function
      *
      */
@@ -87,7 +74,7 @@ define(['jquery'], function($) {
     return {
         /**
          * Initiates the creation of all the different camera elements.
-         * @name Cameras#initCameras
+         * @name CameraController#initCameras
          * @function
          *
          * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
@@ -101,10 +88,10 @@ define(['jquery'], function($) {
 
         /**
          * Returns the aeroplane.
-         * @name Cameras#setupStandardCamera
+         * @name CameraController#setupStandardCamera
          * @function
          *
-         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         * @returns {Object} cameraEye  Aeroplane model for animating
          */
         getCameraEye: function() {
             return cameraEye;
@@ -112,10 +99,10 @@ define(['jquery'], function($) {
 
         /**
          * Returns the standard camera.
-         * @name Cameras#getStandardCamera
+         * @name CameraController#getStandardCamera
          * @function
          *
-         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         * @returns {PerspectiveCamera} standardCamera  Standard birds eye view camera
          */
         getStandardCamera: function() {
             return standardCamera;
@@ -123,10 +110,10 @@ define(['jquery'], function($) {
 
         /**
          * Returns the camera to run along the spline.
-         * @name Cameras#getSplineCamera
+         * @name CameraController#getSplineCamera
          * @function
          *
-         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         * @returns {PerspectiveCamera} splineCamera  Camera responsible for working out where to place aeroplane
          */
         getSplineCamera: function() {
             return splineCamera;
@@ -134,10 +121,10 @@ define(['jquery'], function($) {
 
         /**
          * Returns guides to be shown along the camer path.
-         * @name Cameras#getCameraHelper
+         * @name CameraController#getCameraHelper
          * @function
          *
-         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         * @returns {CameraHelper} cameraHelper  Draws lines and shows current tradgectory of spline camera
          */
         getCameraHelper: function() {
             return cameraHelper;
@@ -145,15 +132,21 @@ define(['jquery'], function($) {
 
         /**
          * Returns the boolean saying if on board camera is enabled.
-         * @name Cameras#getIsOnboard
+         * @name CameraController#getIsOnboard
          * @function
          *
-         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         * @param {Boolean} onBoard  Onboard toggle
          */
         getIsOnboard: function() {
             return onboard;
         },
 
+        /**
+         * Resets the position of the aeroplane/camera eye. This is called when any changes to path is perfomred.
+         * @name CameraController#cameraReset
+         * @function
+         *
+         */
         cameraReset: function() {
             cameraEye.position.set(0, 0, 0);
             cameraEye.rotation.x = 0;
@@ -164,7 +157,7 @@ define(['jquery'], function($) {
         /**
          * Toggles the visibilty of the camera (aeroplane) to true or false. Also gets the value of the
          * look-ahead checkbox to set this on update of the scene.
-         * @name AnimationControls#showCamera
+         * @name CameraController#showCamera
          * @function
          *
          * @param {Boolean} toggle  Turns camera view on or off
@@ -179,7 +172,7 @@ define(['jquery'], function($) {
         /**
          * A toggle function for switching to the onboard camera on the aeroplane. Gets toggle view from
          * parameter and then sets the switch in the GUI to reflect this.
-         * @name Main#setOnboardCamera
+         * @name CameraController#setOnboardCamera
          * @function
          *
          * @param {Boolean} toggle  Used to set onboard camera on or off
@@ -189,20 +182,49 @@ define(['jquery'], function($) {
             $('#onboard').prop('checked', onboard);
         },
 
+        /**
+         * Sets the rotation of the spline camera whilst animating along a manoeuvre.
+         * Also rotates the aeroplane accordingly.
+         * @name CameraController#setRenderCamerasRotation
+         * @function
+         *
+         */
         setRenderCamerasRotation: function() {
             splineCamera.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
             cameraEye.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
-             cameraEye.rotation.z += 90;
+            cameraEye.rotation.z += 90;
         },
 
+        /**
+         * Ensures the aeroplane looks in the correct directoion when naviagting a manoeuvre.
+         * @name CameraController#setSplineCameraLookAt
+         * @function
+         *
+         * @param {Vector} lookAt  A vector ahead of the current position for the camera to be looking towards.
+         * @param {Vector} normal  
+         */
         setSplineCameraLookAt: function(lookAt, normal) {
             splineCamera.matrix.lookAt(splineCamera.position, lookAt, normal);
         },
 
+        /**
+         * Sets the location of the spline camera based on the current manoeuvre in relation to time.
+         * @name CameraController#setSplineCameraPosition
+         * @function
+         *
+         * @param {Vector} pos  Vector position
+         */
         setSplineCameraPosition: function(pos) {
             splineCamera.position.copy(pos);
         },
 
+        /**
+         * Sets the location of the aeroplane passed from the spline camera's location.
+         * @name CameraController#setCameraEyePosition
+         * @function
+         *
+         * @param {Vector} pos  Vector position
+         */
         setCameraEyePosition: function(pos) {
         	cameraEye.position.copy(pos);
         }
