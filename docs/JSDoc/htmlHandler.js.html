@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: htmlHandler.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: htmlHandler.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** 
+ * Class responsible for adding and editing html related elements.
+ * This class adds to and creates Html elements such as dropdown options for manoeuvres, the movie reel
+ * for represnting a break down of moves, and the stats bar displayed on top of the canvas.
+ * @name HtmlHandler
+ * @class HtmlHandler
+ * @constructor
+ */
+define(['jquery'], function($) {
+    return {
+        /**
+         * Adds options to manoeuvre drop down list, each from the manoeuvre array gained from the JSON file.
+         * Also appends the renderer element to the container div, which will contain the scene.
+         * @name HtmlHandler#addContent
+         * @function
+         *
+         * @param {Renderer} renderer  Renderer object where objects and effects will be added. Represents the
+         * canvas on the HTML side
+         */
+        addContent: function(renderer) {
+            var dropdown = $('#dropdown');
+            var s;
+
+            for (s in splines) {
+                dropdown.append(
+                    $('&lt;option>&lt;/option>').val(s).html(s)
+                );
+            }
+            $('#container').append(renderer.domElement);
+        },
+
+        /**
+         * Creates and edits the move reel display at bottom of canvas, depending on how many moves there are in
+         * the OLAN input. Divides into 5, and any extra will be hidden as the play runs through the scenario.
+         * Also compensates for the location of the footer by moving items up above the reel, to prevent blocks
+         * from being covered by the copywrite or stats elements.
+         * @name HtmlHandler#addMoveReel
+         * @function
+         *
+         * @param {Array} moves  Array of moves each representing an OLAN string.
+         */
+        addMoveReel: function(moves) {
+            var list = $('.moves');
+            var movesHtml = "";
+            var bottom = "0%";
+            if (moves.length > 0)
+                bottom = "15%";
+            $('#footer').css({
+                "bottom": bottom
+            });
+            bottom = "10px";
+            if (moves.length > 4)
+                bottom = "16%";
+            $('#stats').css({
+                "bottom": bottom
+            });
+
+            for (move in moves) {
+                movesHtml += '&lt;li class="move">&lt;/li>';
+            }
+            list.html(
+                $(movesHtml)
+            );
+        },
+
+        /**
+         * Adds the statistics element based from the Stats.js script for showing FPS whilst running.
+         * @name HtmlHandler#addStatsBar
+         * @function
+         *
+         * @param {Stats} stats  Statistical appearence object of Frames per second using Stats,js library.
+         */
+        addStatsBar: function() {
+            var stats = new Stats();
+            $('#container').append(stats.domElement);
+            return stats;
+        },
+
+        /**
+         * Adds the list of manoeuvres from the JSON file to the help section, and adds each manoeuvre with 
+         * its name and OLAN string to a list element. This means no need to write the html statically.
+         * @name HtmlHandler#addHelpManoeuvreList
+         * @function
+         *
+         * @param {Array} manoeuvres  Array of all the manoeuvres from the JSON file
+         */
+        addHelpManoeuvreList: function(manoeuvres) {
+            var list = $('#manoeuvres');
+            var manoeuvre;
+            var listString = '';
+
+            for (m in manoeuvres) {
+                manoeuvre = manoeuvres[m];
+                listString = "&lt;b>" + manoeuvre["olan"] + "&lt;/b> - " + manoeuvre["name"];
+                list.append(
+                    $('&lt;li>&lt;/li>').html(listString)
+                );
+            }
+        },
+    }
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="TubeEvents.html">TubeEvents</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Wed Mar 04 2015 13:41:29 GMT+0000 (GMT Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
