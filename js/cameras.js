@@ -1,10 +1,10 @@
 /** 
- * Class containing listeners for events concerning HTML elements, buttons and inputs.
- * This class creates listeners which act on events of the user with the GUI, and sets values which are
- * retrieved from the {@link Main} class.
- * @name AnimateEvents
- * @class AnimateEvents
- * @constructor
+ * Camera handler class fro creating and modifyng cameras in the scene. This includes the
+ * aeroplane, which is created from a model and added to the environment. Contains all the
+ * initialisers for each camera, edit methdods, and get methods.
+ * @name Cameras
+ * @class Cameras
+ * @constructor 
  */
 define(['jquery'], function($) {
 
@@ -45,6 +45,7 @@ define(['jquery'], function($) {
      * @name Main#setupCameraEye
      * @function
      *
+     * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
      */
     function setupCameraEye(parent) {
         var loader = new THREE.ObjectLoader();
@@ -58,18 +59,39 @@ define(['jquery'], function($) {
         });
     }
 
+    /**
+     * Creates the camera to look along the tube splines. Used to calculate where the plane should be in
+     * relation to time. Adds to the parent.
+     * @name Cameras#setupSplineCamera
+     * @function
+     *
+     * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+     */
     function setupSplineCamera(parent) {
         splineCamera = new THREE.PerspectiveCamera(84, window.innerWidth / window.innerHeight, 0.01, 5000);
         parent.add(splineCamera);
     }
 
+    /**
+     * Creates the birds eye view camera, looking over the entire scene. Sets the initial camera location and 
+     * how far it can see.
+     * @name Cameras#setupStandardCamera
+     * @function
+     *
+     */
     function setupStandardCamera() {
         standardCamera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 5000);
         standardCamera.position.set(0, 50, 500);
     }
 
     return {
-
+        /**
+         * Initiates the creation of all the different camera elements.
+         * @name Cameras#initCameras
+         * @function
+         *
+         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         */
         initCameras: function(parent) {
             setupSplineCamera(parent);
             setupStandardCamera();
@@ -77,22 +99,57 @@ define(['jquery'], function($) {
             setupCameraHelper();
         },
 
+        /**
+         * Returns the aeroplane.
+         * @name Cameras#setupStandardCamera
+         * @function
+         *
+         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         */
         getCameraEye: function() {
             return cameraEye;
         },
 
+        /**
+         * Returns the standard camera.
+         * @name Cameras#getStandardCamera
+         * @function
+         *
+         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         */
         getStandardCamera: function() {
             return standardCamera;
         },
 
+        /**
+         * Returns the camera to run along the spline.
+         * @name Cameras#getSplineCamera
+         * @function
+         *
+         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         */
         getSplineCamera: function() {
             return splineCamera;
         },
 
+        /**
+         * Returns guides to be shown along the camer path.
+         * @name Cameras#getCameraHelper
+         * @function
+         *
+         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         */
         getCameraHelper: function() {
             return cameraHelper;
         },
 
+        /**
+         * Returns the boolean saying if on board camera is enabled.
+         * @name Cameras#getIsOnboard
+         * @function
+         *
+         * @param {Parent} parent  Three.js 3D scene to have aeroplane added to.
+         */
         getIsOnboard: function() {
             return onboard;
         },

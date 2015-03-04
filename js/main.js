@@ -9,8 +9,6 @@
 define(['canvasControls', 'html', 'tubeEvents', 'parseJson', 'animationControls', 'cameras', 'terrain'], 
     function(CanvasControls, Html, TubeEvents, ParseJson, AnimationControls, Cameras, Terrain) {
 
-
-    /** @global */
     var stats;
     var scene, renderer;
     var parent;

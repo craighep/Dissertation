@@ -7,7 +7,7 @@
  * @constructor
  */
 define(['jquery'], function($) {
-    /** @global     */
+
     var manoeuvreArray = [{}];
 
     /**
@@ -46,7 +46,6 @@ define(['jquery'], function($) {
             }
         });
     }
-
     return {
 
         /**
@@ -100,6 +99,5 @@ define(['jquery'], function($) {
             }
             return returnMoves;
         }
-
     }
 });
