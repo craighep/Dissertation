@@ -70,8 +70,10 @@ define(['jquery'], function($) {
          *
          * @param {Stats} stats  Statistical appearence object of Frames per second using Stats,js library.
          */
-        addStatsBar: function(stats) {
+        addStatsBar: function() {
+            var stats = new Stats();
             $('#container').append(stats.domElement);
+            return stats;
         },
 
         /**

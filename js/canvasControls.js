@@ -2,8 +2,8 @@
  * Class creates listeners for a range of user events on the canvas.
  * This class is responsible for setting up and implimenting listeners for different sets of actions performed
  * on the canvas area. Including zooming, rotating and moving around the scene.
- * @name Events
- * @class Events
+ * @name CanvasControls
+ * @class CanvasControls
  * @constructor
  */
 define(function() {
@@ -28,7 +28,7 @@ define(function() {
      * Event that calculates the rotation and movement performed by the user starting from the mouse down to 
      * mouse up events. Sets global variables holding these values for use in the get methods used by the 
      * {@link Main} class.
-     * @name Events#onDocumentMouseDown
+     * @name CanvasControls#onDocumentMouseDown
      * @function
      *
      * @param {Event} event  Event triggured
@@ -47,7 +47,7 @@ define(function() {
 
     /**
      * Multiplies the rotating by 0.02 each time the mouse is moved whilst held down on the canvas.
-     * @name Events#onDocumentMouseMove
+     * @name CanvasControls#onDocumentMouseMove
      * @function
      *
      * @param {Event} event  Event triggured
@@ -61,7 +61,7 @@ define(function() {
 
     /**
      * Removes the listeners for mouse events once a user releases the mouse click button on the canvas.
-     * @name Events#onDocumentMouseUp
+     * @name CanvasControls#onDocumentMouseUp
      * @function
      *
      * @param {Event} event  Event triggured
@@ -74,7 +74,7 @@ define(function() {
 
     /**
      * Removes the listeners for mouse events once a user moves the mouse out of the canvas.
-     * @name Events#onDocumentMouseOut
+     * @name CanvasControls#onDocumentMouseOut
      * @function
      *
      * @param {Event} event  Event triggured
@@ -87,7 +87,7 @@ define(function() {
 
     /**
      * Adds the listener for different mouse actions once a user clicks onto the canvas, holding the mouse down/
-     * @name Events#onDocumentTouchStart
+     * @name CanvasControls#onDocumentTouchStart
      * @function
      *
      * @param {Event} event  Event triggured
@@ -106,7 +106,7 @@ define(function() {
     /**
      * Alternative event for calculating rotation, for touch devices. Will work on phones and rotate scene 
      * when user drags across the screen.
-     * @name Events#onDocumentTouchMove
+     * @name CanvasControls#onDocumentTouchMove
      * @function
      *
      * @param {Event} event  Event triggured
@@ -125,7 +125,7 @@ define(function() {
     /**
      * Resizes the canvas in relation to the window size. Resizes all the objects too, and changes the 
      * camera perspective to view from the correct range.
-     * @name Events#onWindowResize
+     * @name CanvasControls#onWindowResize
      * @function
      *
      */
@@ -139,7 +139,7 @@ define(function() {
 
     /**
      * Updates the camera zoom parameter based on the amount scrolled. Has a maximum and minimum value of scroll.
-     * @name Events#onMouseScroll
+     * @name CanvasControls#onMouseScroll
      * @function
      *
      * @param {Event} event  Event triggured
@@ -165,7 +165,7 @@ define(function() {
     /**
      * A listener to run each time the up, down, left and right arrows are pressed. Sets the global variables
      * which are acesses in get methods to navigate the camera about the canvas.
-     * @name Events#onKeyDown
+     * @name CanvasControls#onKeyDown
      * @function
      *
      * @param {Event} event  Event triggured
@@ -197,7 +197,7 @@ define(function() {
         /**
          * Initial function which is called on startup for creating event listeners in the canvas area. 
          * Including scroll, mouse drag, touch drag and keyboard events. 
-         * @name Events#init
+         * @name CanvasControls#init
          * @function
          *
          * @param {Renderer} r  Renderer object to have listeners added to
@@ -217,7 +217,7 @@ define(function() {
 
         /**
          * Returns the last accumulated rotatoion on X axis
-         * @name Events#getLatestTargetRotationX
+         * @name CanvasControls#getLatestTargetRotationX
          * @function
          *
          * @returns {Integer} targetRotationX  Amount of rotation along x axis in degrees.
@@ -228,7 +228,7 @@ define(function() {
 
         /**
          * Returns the last accumulated rotation on Y axis
-         * @name Events#getLatestTargetRotationY
+         * @name CanvasControls#getLatestTargetRotationY
          * @function
          *
          * @returns {Integer} targetRotationY  Amount of rotation along y axis in degrees.
@@ -239,7 +239,7 @@ define(function() {
 
         /**
          * Returns the last accumulated movement along X axis
-         * @name Events#getLatestMoveX
+         * @name CanvasControls#getLatestMoveX
          * @function
          *
          * @returns {Integer} getLatestMoveX  Amount of movement along x axis in pixels.
@@ -250,7 +250,7 @@ define(function() {
 
         /**
          * Returns the last accumulated movement along Z axis
-         * @name Events#getLatestMoveZ
+         * @name CanvasControls#getLatestMoveZ
          * @function
          *
          * @returns {Integer} getLatestMoveZ  Amount of movement along z axis in pixels.

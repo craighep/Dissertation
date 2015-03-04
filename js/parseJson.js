@@ -21,7 +21,7 @@ define(['jquery'], function($) {
     function parseManoeuvresFromJSON() {
 
         $.ajax({
-            url: 'js/json/manoeuvres.json',
+            url: 'json/manoeuvres.json',
             dataType: 'json',
             async: false,
             success: function(json) {
@@ -89,7 +89,6 @@ define(['jquery'], function($) {
             for (move in moves) {
                 for (var a = 0; a < manoeuvreArray.length; a++) {
                     if (manoeuvreArray[a]["olan"] === moves[move]) {
-                        console.log(manoeuvreArray[a])
                         returnMoves[i] = manoeuvreArray[a];
                         i++;
                         break;

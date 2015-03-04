@@ -183,11 +183,34 @@
                     <div id="aboutModal" class="reveal-modal xlarge text" data-reveal>
                         <div class="padText">
                             <h1>About this application <a id="close"></a></h1>
+                            <hr>
                             <p class="lead">This free open application is easy to use.</p>
                             <p>This application represents my major project for university, exploring the possibility of allowing a user (primarily radio control, and real-life pilots of areobatic planes) to input a range
                             </p>
                             <em>Author: Craig Heptinstall<br>
                             Version: 0.1 Alpha</em>
+                            </br></br>
+                            <h4>Credit to these libraries and information sources(to be updated):</h4>
+                            <ul>
+                            	<li>
+                            		Three.js library
+                            	</li>
+                            	<li>
+                            		JQuery library
+                            	</li>
+                            	<li>
+                            		Google JS Coding standards
+                            	</li>
+                            	<li>
+                            		Foundation CSS framework
+                            	</li>
+                            	<li>
+                            		RequireJS library
+                            	</li>
+                            	<li>
+                            		Stats.js library
+                            	</li>
+                            </ul>
                         </div>
                         <a class="close-reveal-modal">&#215;</a>
                     </div>
@@ -196,7 +219,8 @@
                             <h1>Getting started</h1>
                             <hr>
                             <p class="lead">A WebGL based OLAN flight path simulator.</p>
-                            <p>Type into the bar at the top of the page to create a movement onto the canvas. As more are added, the movie reel at the bottom of the page shoudl update showing each individual moneuavre. Afterwoods, hit play to show the animation!
+                            <p>Type into the bar at the top of the page to create a movement onto the canvas. As more are added, the movie reel at the bottom of the page should update showing each individual manoeuvre. Afterwoods, hit play to show the animation! <br>
+                            In addition, press the '<a class="left-off-canvas-toggle" href="#">Options</a>' button to open up a range of menus affecting animation speed, physics and aeroplane attributes.
                                 <br> The comprehensive list of possible movements are as follows:
                             </p>
                             <ul id="manoeuvres">
@@ -216,12 +240,12 @@
             </div>
         </div>
 </body>
-<script src="js/require/require.js"></script>
-<script src="js/three/three.min.js"></script>
-<script src="js/CurveExtras.js"></script>
-<script src="js/jquery/jquery.js"></script>
+<script src="js/libs/require/require.js"></script>
+<script src="js/libs/three/three.min.js"></script>
+<script src="js/libs/CurveExtras.js"></script>
+<script src="js/libs/jquery/jquery.js"></script>
 <script src="js/site/foundation.js"></script>
-<script src="js/stats/stats.min.js"></script>
+<script src="js/libs/stats/stats.min.js"></script>
 <script>
 	$(document).foundation();
 	var doc = document.documentElement;
