@@ -6,8 +6,8 @@
  * @class Main
  * @constructor
  */
-define(['canvasController', 'htmlHander', 'tubeEvents', 'parseJson', 'animationController', 'cameraController', 'terrain'], 
-    function(CanvasController, HtmlHander, TubeEvents, ParseJson, AnimationController, CameraController, Terrain) {
+define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animationController', 'cameraController', 'terrain'], 
+    function(CanvasController, HtmlHandler, TubeEvents, ParseJson, AnimationController, CameraController, Terrain) {
 
     var stats;
     var scene, renderer;
@@ -29,9 +29,9 @@ define(['canvasController', 'htmlHander', 'tubeEvents', 'parseJson', 'animationC
         setupRenderer();
         CameraController.initCameras(parent);
         ParseJson.init();
-        HtmlHander.addContent(renderer); // add options for dropdown 
-        stats = HtmlHander.addStatsBar();
-        HtmlHander.addHelpManoeuvreList(ParseJson.getManoeuvreArray());
+        HtmlHandler.addContent(renderer); // add options for dropdown 
+        stats = HtmlHandler.addStatsBar();
+        HtmlHandler.addHelpManoeuvreList(ParseJson.getManoeuvreArray());
         CanvasController.init(renderer, CameraController.getStandardCamera()); // setup event listeners for canvas movements
         AnimationController.initContolEvents(renderer, CameraController, parent); // setup listeners for changes to controls
         animate();

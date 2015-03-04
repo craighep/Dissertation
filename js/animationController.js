@@ -6,7 +6,7 @@
  * @class AnimationController
  * @constructor
  */
-define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHander'], function($, ParseJson, ManoeuvreController, HtmlHander) {
+define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler'], function($, ParseJson, ManoeuvreController, HtmlHandler) {
     
     var cameraController;
     var renderer;
@@ -38,7 +38,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHander'], function($,
                 ManoeuvreController.addTube(manoeuvres[m], parent);
             }
         }
-        HtmlHander.addMoveReel(manoeuvres);
+        HtmlHandler.addMoveReel(manoeuvres);
         cameraController.setOnboardCamera(false);
     }
 
