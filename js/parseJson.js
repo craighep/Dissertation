@@ -6,7 +6,7 @@
  * @class ParseJson
  * @constructor
  */
-define(['jquery'], function($) {
+define(['jquery', 'component'], function($, Component) {
 
     var manoeuvreArray = [{}];
 
@@ -39,7 +39,16 @@ define(['jquery'], function($) {
                         var variant = varients[b];
                         manoeuvreArray[x] = {};
                         manoeuvreArray[x]["olan"] = variant["_olanPrefix"] + postfix;
-                        manoeuvreArray[x]["components"] = variant["component"];
+
+                        for (c = 0; c < variant["component"].length; c++) {
+                            var comp = variant["component"][c];
+                            var pitch = comp["_pitch"];
+                            var yaw = comp["_yaw"];
+                            var roll = comp["_roll"];
+                            var length = parseInt(comp["_length"]);
+                            var component = new Component(yaw, pitch, roll, length);
+                            manoeuvreArray[x]["components"][c] = component;
+                        }
                         manoeuvreArray[x++]["name"] = variant["_name"];
                     }
                 }

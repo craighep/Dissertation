@@ -73,7 +73,11 @@ define(['tubeEvents'],function(TubeEvents) {
             var segments = parseInt($('#segments').val());
             var closed2 = $('#closed').is(':checked');
             var radiusSegments = parseInt($('#radiusSegments').val());
-           // console.log(value["olan"])
+            var components = value["component"];
+
+            for (c in components){
+
+            }
             var extrudePath = splines[TubeEvents.getTubes(value["olan"])];
             tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
 
