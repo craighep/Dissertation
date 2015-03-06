@@ -54,7 +54,6 @@ define(['jquery', 'component'], function($, Component) {
                         manoeuvreArray[x++]["name"] = variant["_name"];
                     }
                 }
-                console.log(manoeuvreArray);
             }
         });
     }

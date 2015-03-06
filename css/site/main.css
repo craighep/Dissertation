@@ -34,13 +34,19 @@ canvas {
     transform: translate3d(0, 0, 0);
 }
 @media screen and (max-width: 642px) {
-    .top-bar {
-        padding-right: 10%;
+    #pause {
+    	float: left;
+		margin: -7px;
+		margin-left: 5px;
     }
 }
 @media screen and (min-width: 643px) {
     #input {
         width: 300px;
+    }
+    #pause {
+    	float: right;
+    	margin-left: 10px;
     }
 }
 @media screen and (min-width: 850px) {
@@ -68,7 +74,6 @@ canvas {
     background-position: center;
     height: 43px;
     width: 20px;
-    float: right;
 }
 #footer {
     position: fixed;

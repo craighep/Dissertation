@@ -4416,7 +4416,7 @@ meta.foundation-mq-topbar {
       .top-bar .toggle-topbar.menu-icon a {
         height: 34px;
         line-height: 33px;
-        padding: 0 40px 0 15px;
+        padding: 0 0px 0 15px;
         color: #FFFFFF;
         position: relative; }
         .top-bar .toggle-topbar.menu-icon a span::after {

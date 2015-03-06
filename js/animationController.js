@@ -123,7 +123,16 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler'], function($
             $('#help').click(function() {
                 pause(true);
             });
-            $("#input").keyup(refreshScene);
+            $("#input").keyup(function(event) {
+                var keycode = event.keyCode.toString();
+                if(keycode == '13'){
+                    pause(!paused);
+                }
+                else {
+                    refreshScene(); 
+                }
+                event.stopPropagation();
+            });
             $("#speed").change(setSpeed);
         },
 
