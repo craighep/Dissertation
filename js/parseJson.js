@@ -30,28 +30,31 @@ define(['jquery', 'component'], function($, Component) {
                 var postfix = "";
                 var x = 0;
 
-                for (var a = 0; a < manoeuvres.length; a++) {
+                for (var a = 0; a < manoeuvres.length; a++) { // loop through manoeuvre array and get name
                     var manoeuvre = manoeuvres[a];
                     postfix = manoeuvre["_olan"];
                     var varients = manoeuvre["variant"];
 
-                    for (var b = 0; b < varients.length; b++) {
+                    for (var b = 0; b < varients.length; b++) { // for each varient add this before the name
                         var variant = varients[b];
                         manoeuvreArray[x] = {};
                         manoeuvreArray[x]["olan"] = variant["_olanPrefix"] + postfix;
+                        var components = [];
 
-                        for (c = 0; c < variant["component"].length; c++) {
+                        for (var c = 0; c < variant["component"].length; c++) { // then go through each component of varient
                             var comp = variant["component"][c];
                             var pitch = comp["_pitch"];
                             var yaw = comp["_yaw"];
                             var roll = comp["_roll"];
                             var length = parseInt(comp["_length"]);
-                            var component = new Component(yaw, pitch, roll, length);
-                            manoeuvreArray[x]["components"][c] = component;
+                            var component = new Component.component(yaw, pitch, roll, length);
+                            components[c] = component;
                         }
+                        manoeuvreArray[x]["components"] = components;
                         manoeuvreArray[x++]["name"] = variant["_name"];
                     }
                 }
+                console.log(manoeuvreArray);
             }
         });
     }

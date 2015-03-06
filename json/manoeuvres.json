@@ -3,98 +3,98 @@
         "manoeuvre": [{
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "diagonal up line"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -104,158 +104,158 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "vertical up line"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -265,218 +265,218 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "z-figure"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -486,516 +486,516 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "tooth"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
                 "_name": "inverted tooth"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "z",
                 "_name": "z-tooth"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "iz",
@@ -1005,228 +1005,228 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "shark tooth"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -1236,288 +1236,288 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "shark-z"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -1527,268 +1527,268 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "immelman, half loop split-a"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -1798,268 +1798,268 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "rounded loop"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -2069,348 +2069,348 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "double square loop"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -2420,308 +2420,308 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "square loop"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -2731,308 +2731,308 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "diamond square loop"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "0.2"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "i",
@@ -3042,338 +3042,338 @@
         }, {
             "variant": [{
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "12"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "POS",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }],
                 "_olanPrefix": "",
                 "_name": "half cuban"
             }, {
                 "component": [{
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
+                    "_pitch": "NIL",
                     "_roll": "POS",
-                    "_yaw": "NONE",
+                    "_yaw": "NIL",
                     "_length": "0.4"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "5"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
                     "_pitch": "NEG",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "1"
                 }, {
-                    "_pitch": "NONE",
-                    "_roll": "NONE",
-                    "_yaw": "NONE",
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
                     "_length": "12"
                 }],
                 "_olanPrefix": "i",
