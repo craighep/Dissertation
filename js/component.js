@@ -17,8 +17,8 @@ define(function() {
      * @param {String} dir  Direction string coming from raw JSON file
      * @returns {Integer} int  Translation to matrix value
      */
-	function parseDirectionContext(dir) {
-      switch (dir) {
+   	function parseDirectionContext(dir) {
+   		switch (dir) {
          case "POS":
             return 1;
          case "NIL":
@@ -27,10 +27,9 @@ define(function() {
             return -1;
       }
       return 0;
-   }
+   	}
 
-	return {
-		/**
+	/**
 	     * Creates a new component to be added to array of components within each manoeuvre.
 	     * @name Component#component
 	     * @function
@@ -41,13 +40,19 @@ define(function() {
 	     * @param {String} length  Raw length value of component from JSON- distance to travel
 	     * @returns {Component} component  This object, which is used to translate manoevres
 	     */
-		component: function(yaw, pitch, roll, length) {
-			this.YAW = parseDirectionContext(yaw);
-			this.PITCH = parseDirectionContext(pitch);
-			this.ROLL = parseDirectionContext(roll);
-			this.LENGTH = length;
+   function component(yaw, pitch, roll, length) {
+		this.YAW = parseDirectionContext(yaw);
+		this.PITCH = parseDirectionContext(pitch);
+		this.ROLL = parseDirectionContext(roll);
+		this.LENGTH = length;
+   }
 
-			return this;
-		}
-	}    
+   component.prototype = {
+   
+   	function2: function () {
+
+   	}
+   };
+
+   return component; 
 });

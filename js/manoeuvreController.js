@@ -73,14 +73,45 @@ define(['tubeEvents'],function(TubeEvents) {
             var segments = parseInt($('#segments').val());
             var closed2 = $('#closed').is(':checked');
             var radiusSegments = parseInt($('#radiusSegments').val());
-            var components = value["component"];
+            var components = value["components"];
+            var vector = new THREE.Vector3(0,0,0);
+            var linePoints = [];
+            var angleDiv = 12;
 
-            for (c in components){
+            for (var i = 0; i < components.length; i++){
+                var component = components[i];
+                var prevVector = new THREE.Vector3(0,0,0);
+                if (linePoints.length > 0)
+                    prevVector.copy(linePoints[ linePoints.length -1 ]);
+                var axis = new THREE.Vector3( 1, 0, 0 );
+                var angle = Math.PI / 180 * angleDiv * component.PITCH;
+                console.log(angle);
+                prevVector.applyAxisAngle( axis, angle );
 
+                var axis = new THREE.Vector3( 0, 1, 0 );
+                var angle = Math.PI / 180 * angleDiv * component.YAW;
+                prevVector.applyAxisAngle( axis, angle );
+                linePoints.push(prevVector);
+
+                var lengthVector = new THREE.Vector3(0,0,0);
+                lengthVector.copy(prevVector);
+                lengthVector.setZ(lengthVector.z + (component.LENGTH*10));
+                linePoints.push(lengthVector);
             }
-            var extrudePath = splines[TubeEvents.getTubes(value["olan"])];
+
+            var spline = new THREE.SplineCurve3(linePoints);
+            var extrudePath = spline;//splines[TubeEvents.getTubes(value["olan"])];
             tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
 
+            var geometry = new THREE.Geometry();
+            var splinePoints = spline.getPoints(1000);
+
+            for(var i = 0; i < splinePoints.length; i++){
+                geometry.vertices.push(splinePoints[i]);  
+            }
+
+            var line = new THREE.Line(geometry);
+            parent.add(line)
 
             if (tubeMesh !== undefined)
                 parent.remove(tubeMesh);

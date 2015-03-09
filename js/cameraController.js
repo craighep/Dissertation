@@ -11,9 +11,9 @@ define(['jquery'], function($) {
     var standardCamera;
     var splineCamera;
     var cameraEye;
-    var cameraHelper;
     var showCameraHelper = false;
     var onboard = false;
+    var lookAhead = false;
 
     /**
      * Camera Helper created, and sets the spline camera to stick to the edge of the manoeuvre line.
@@ -127,7 +127,7 @@ define(['jquery'], function($) {
          * @returns {CameraHelper} cameraHelper  Draws lines and shows current tradgectory of spline camera
          */
         getCameraHelper: function() {
-            return cameraHelper;
+            return showCameraHelper;
         },
 
         /**
@@ -163,7 +163,7 @@ define(['jquery'], function($) {
          * @param {Boolean} toggle  Turns camera view on or off
          */
         showCamera: function(toggle) {
-            var lookAhead = $('#lookAhead').is(':checked');
+            lookAhead = $('#lookAhead').is(':checked');
             showCameraHelper = $('#cameraHelper').is(':checked');
             cameraHelper.visible = toggle;
             cameraEye.visible = toggle;

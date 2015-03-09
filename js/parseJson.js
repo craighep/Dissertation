@@ -46,12 +46,14 @@ define(['jquery', 'component'], function($, Component) {
                             var pitch = comp["_pitch"];
                             var yaw = comp["_yaw"];
                             var roll = comp["_roll"];
-                            var length = parseInt(comp["_length"]);
-                            var component = new Component.component(yaw, pitch, roll, length);
+                            var length = parseFloat(comp["_length"]);
+                            var component = new Component(yaw, pitch, roll, length);
                             components[c] = component;
                         }
                         manoeuvreArray[x]["components"] = components;
+                        console.log(manoeuvreArray[x]);
                         manoeuvreArray[x++]["name"] = variant["_name"];
+
                     }
                 }
             }
