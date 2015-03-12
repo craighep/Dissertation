@@ -34,7 +34,6 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         HtmlHandler.addHelpManoeuvreList(ParseJson.getManoeuvreArray());
         CanvasController.init(renderer, CameraController.getStandardCamera()); // setup event listeners for canvas movements
         AnimationController.initContolEvents(renderer, CameraController, parent); // setup listeners for changes to controls
-        HtmlHandler.enableOLANInput(true);
         animate();
     })();
 

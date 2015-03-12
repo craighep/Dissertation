@@ -6,7 +6,7 @@
  * @class CameraController
  * @constructor 
  */
-define(['jquery'], function($) {
+define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
 
     var standardCamera;
     var splineCamera;
@@ -43,6 +43,7 @@ define(['jquery'], function($) {
             cameraEye.rotation.y = 0;
             cameraEye.rotation.z = 0;
             parent.add(cameraEye);
+            HtmlHandler.enableOLANInput(true);
         });
     }
 
