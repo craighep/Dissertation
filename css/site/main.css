@@ -153,3 +153,9 @@ canvas {
 #stats span {
     padding: 0;
 }
+.references {
+    padding-top: 75px;
+    list-style-type: none;
+    margin: 0;
+    font-size: 0.9em;
+}

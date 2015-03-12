@@ -1,0 +1,16 @@
+body {
+    font-family: Monospace;
+    background-color: #f0f0f0;
+}
+#footer {
+    z-index: 1;
+    text-align: left;
+    bottom: 0%;
+    height: 30px;
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 10px;
+}
+#footer a {
+    color: #2603FD;
+}

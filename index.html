@@ -17,8 +17,8 @@
             <ul class="title-area">
                 <li class="name">
                     <h1>
-                            <a class="left-off-canvas-toggle menu-icon" href="#"><span>&#9776; Options</span></a>
-                        </h1>
+                        <a class="left-off-canvas-toggle menu-icon" href="#"><span>&#9776; Options</span></a>
+                    </h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
                 </li>
@@ -29,7 +29,7 @@
                     <li class="has-form">
                         <div class="row collapse">
                             <div class="large-8 small-9 columns">
-                                <input type="text" id="input" placeholder="Input OLAN">
+                                <input type="text" disabled="disabled" id="input" placeholder="Input OLAN">
                             </div>
                             <div class="large-4 small-3 columns">
                                 <a id="pause" href="#" type="button" value="Pause"></a>
@@ -161,6 +161,15 @@
                                     <li>
                                         <input id="speed" type="range" value="20" min="1" max="40" step="1" />
                                     </li>
+                                    <li>
+                                        <label>Test Scenario</label>
+                                    </li>
+                                    <li>
+                                        <div class="switch">
+                                            <input id="backup" type="checkbox">
+                                            <label for="backup"></label>
+                                        </div>
+                                    </li>
                                     <li class="divider">
                                     </li>
                                     <li class="divider">
@@ -183,35 +192,62 @@
                     </div>
                     <div id="aboutModal" class="reveal-modal xlarge text" data-reveal>
                         <div class="padText">
-                            <h1>About this application <a id="close"></a></h1>
+                            <h1>About this application <a id="close"></a></h1><em>Author: Craig Heptinstall<br>
+                            Version: 0.1 Alpha</em>
                             <hr>
                             <p class="lead">This free open application is easy to use.</p>
-                            <p>This application represents my major project for university, exploring the possibility of allowing a user (primarily radio control, and real-life pilots of areobatic planes) to input a range
-                            </p>
-                            <em>Author: Craig Heptinstall<br>
-                            Version: 0.1 Alpha</em>
-                            </br></br>
+                            <p>This application represents my major project for university, exploring the possibility of allowing a user (primarily radio control, and real-life pilots of areobatic planes) to input a range of OLAN strings, and produce realistic flight simulations of areobatic sequences.</p>
+                            <p>This application will combine with various planning and design documents whcih can be found <b><a href="docs">here</a></b>. Alongside this, the final report for this application will be made availible here in the coming months.</p>
+
+                            <p class="lead">Work structure and methodologies</p>
+                            <p>My plan for this project consists of the use of the the FDD methodolodgy. For this, I initially created a feature list, which can be found <a href="docs/1.Dissertation requirements\Dissertation Requirements.pdf">here</a>.</p>
+
+
+                            </br>
+                            </br>
                             <h4>Credit to these libraries and information sources(to be updated):</h4>
                             <ul>
-                            	<li>
-                            		Three.js library
-                            	</li>
-                            	<li>
-                            		JQuery library
-                            	</li>
-                            	<li>
-                            		Google JS Coding standards
-                            	</li>
-                            	<li>
-                            		Foundation CSS framework
-                            	</li>
-                            	<li>
-                            		RequireJS library
-                            	</li>
-                            	<li>
-                            		Stats.js library
-                            	</li>
+                                <li>
+                                    Three.js library <a href="#cite1">[1]</a>
+                                </li>
+                                <li>
+                                    JQuery library <a href="#cite2">[2]</a>
+                                </li>
+                                <li>
+                                    Google JS Coding standards <a href="#cite3">[3]</a>
+                                </li>
+                                <li>
+                                    Foundation CSS framework <a href="#cite4">[4]</a>
+                                </li>
+                                <li>
+                                    RequireJS library <a href="#cite5">[5]</a>
+                                </li>
+                                <li>
+                                    Stats.js library <a href="#cite6">[6]</a>
+                                </li>
                             </ul>
+                            <p>
+                                <ul class="references">
+                                    <li>
+                                        <cite id="cite1">1 Threejs</cite>, (2015). three.js - Javascript 3D library. [online] Available at: <a href="http://threejs.org">http://threejs.org</a> [Accessed 12 Jan. 2015].
+                                    </li>
+                                    <li>
+                                        <cite id="cite2">2 jQuery</cite>, j. (2015). jQuery. [online] Jquery.com. Available at: <a href="http://jquery.com">http://jquery.com</a> [Accessed 12 Jan. 2015].
+                                    </li>
+                                    <li>
+                                        <cite id="cite3">3 Google styleguide</cite>, (2015). Google Javascript coding standards. [online] Available at: <a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml</a> [Accessed 1 Mar. 2015].
+                                    </li>
+                                    <li>
+                                        <cite id="cite4">4 Foundation css framework</cite>ZURB, i. (2015). Foundation | The Most Advanced Responsive Front-end Framework from ZURB. [online] Foundation.zurb.com. Available at: <a href="http://foundation.zurb.com">http://foundation.zurb.com</a> [Accessed 15 Feb. 2015].
+                                    </li>
+                                    <li>
+                                        <cite id="cite5">5 RequireJS</cite>, (2015). RequireJS. [online] Available at: <a href="http://requirejs.org">http://requirejs.org</a> [Accessed 9 Feb. 2015].
+                                    </li>
+                                    <li>
+                                        <cite id="cite6">6 Stats JS</cite>, (2015). Github stats js library. [online] Available at: <a href="http://www.javascriptoo.com/stats-js">http://www.javascriptoo.com/stats-js</a> [Accessed 10 Feb. 2015].
+                                    </li>
+                                </ul>
+                            </p>
                         </div>
                         <a class="close-reveal-modal">&#215;</a>
                     </div>
@@ -220,8 +256,9 @@
                             <h1>Getting started</h1>
                             <hr>
                             <p class="lead">A WebGL based OLAN flight path simulator.</p>
-                            <p>Type into the bar at the top of the page to create a movement onto the canvas. As more are added, the movie reel at the bottom of the page should update showing each individual manoeuvre. Afterwoods, hit play to show the animation! <br>
-                            In addition, press the '<a class="left-off-canvas-toggle" href="#">Options</a>' button to open up a range of menus affecting animation speed, physics and aeroplane attributes.
+                            <p>Type into the bar at the top of the page to create a movement onto the canvas. As more are added, the movie reel at the bottom of the page should update showing each individual manoeuvre. Afterwoods, hit play to show the animation!
+                                <br> In addition, press the '<a class="left-off-canvas-toggle" href="#">Options</a>' button to open up a range of menus affecting animation speed, physics and aeroplane attributes.
+                                <br>Note: Manoeuvre input can also allow for parameters, for increasing loop sizes, entry length or exit length of certain moves. E.g. "(1,28) t" would represent a tooth, but the start location would be the current location plus the X and Y values in the parameters.
                                 <br> The comprehensive list of possible movements are as follows:
                             </p>
                             <ul id="manoeuvres">
@@ -244,13 +281,14 @@
 <script src="js/libs/require/require.js"></script>
 <script src="js/libs/three/three.min.js"></script>
 <script src="js/libs/curveExtras.js"></script>
+<script src="js/SplineCurveCraig.js"></script>
 <script src="js/libs/jquery/jquery.js"></script>
 <script src="js/site/foundation.js"></script>
 <script src="js/libs/stats/stats.min.js"></script>
 <script>
-	$(document).foundation();
-	var doc = document.documentElement;
-	doc.setAttribute('data-useragent', navigator.userAgent);
+$(document).foundation();
+var doc = document.documentElement;
+doc.setAttribute('data-useragent', navigator.userAgent);
 </script>
 <script>
 require.config({

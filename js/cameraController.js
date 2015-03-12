@@ -135,10 +135,19 @@ define(['jquery'], function($) {
          * @name CameraController#getIsOnboard
          * @function
          *
-         * @param {Boolean} onBoard  Onboard toggle
          */
         getIsOnboard: function() {
             return onboard;
+        },
+
+        /**
+         * Returns the boolean saying if on board camera is looking forward.
+         * @name CameraController#getIsLookAhead
+         * @function
+         *
+         */
+        getIsLookAhead: function() {
+            return lookAhead;
         },
 
         /**
@@ -191,8 +200,9 @@ define(['jquery'], function($) {
          */
         setRenderCamerasRotation: function() {
             splineCamera.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
-            cameraEye.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
+      //      cameraEye.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
             cameraEye.rotation.z += 90;
+       cameraHelper.update();
         },
 
         /**

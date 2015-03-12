@@ -34,8 +34,6 @@ function(t) {
 
 );
 
-
-
 // Viviani's Curve
 THREE.Curves.VivianiCurve = THREE.Curve.create(
 

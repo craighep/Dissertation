@@ -30,13 +30,10 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler'], function($
         cameraController.cameraReset();
         if (manoeuvres.length < 1) {
             cameraController.showCamera(true);
-            parent.remove(ManoeuvreController.getTubeMesh());
+            ManoeuvreController.removeTube(parent);
         } else {
             cameraController.showCamera(true);
-
-            for (m in manoeuvres) {
-                ManoeuvreController.addTube(manoeuvres[m], parent);
-            }
+            ManoeuvreController.addTube(manoeuvres, parent, false);
         }
         HtmlHandler.addMoveReel(manoeuvres);
         cameraController.setOnboardCamera(false);

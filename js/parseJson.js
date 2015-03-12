@@ -51,7 +51,6 @@ define(['jquery', 'component'], function($, Component) {
                             components[c] = component;
                         }
                         manoeuvreArray[x]["components"] = components;
-                        console.log(manoeuvreArray[x]);
                         manoeuvreArray[x++]["name"] = variant["_name"];
 
                     }
