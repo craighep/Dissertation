@@ -29,9 +29,10 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         setupRenderer();
         CameraController.initCameras(parent);
         ParseJson.init();
-        HtmlHandler.addContent(renderer); // add options for dropdown 
         stats = HtmlHandler.addStatsBar();
-        HtmlHandler.addHelpManoeuvreList(ParseJson.getManoeuvreArray());
+        var manoeuvres = ParseJson.getManoeuvreArray();
+        HtmlHandler.addContent(renderer, manoeuvres); // add options for dropdown 
+        HtmlHandler.addHelpManoeuvreList(manoeuvres);
         CanvasController.init(renderer, CameraController.getStandardCamera()); // setup event listeners for canvas movements
         AnimationController.initContolEvents(renderer, CameraController, parent); // setup listeners for changes to controls
         animate();
@@ -150,8 +151,10 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         // Camera Orientation 1 - default look at
         var lookAt = tube.parameters.path.getPointAt((t + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
         // Camera Orientation 2 - up orientation via normal
-         if (CameraController.getIsLookAhead())
+         if (!CameraController.getIsLookAhead())
+         {
              lookAt.copy(pos).add(dir);
+         }
         CameraController.setSplineCameraLookAt(lookAt, normal);
         CameraController.setRenderCamerasRotation();
     }

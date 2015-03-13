@@ -30,6 +30,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             pause(true);
             cameraController.cameraReset();
             if (manoeuvres.length < 1) {
+                pause(true);
                 cameraController.showCamera(true);
                 ManoeuvreController.removeTube(parent);
             } else {
@@ -69,8 +70,6 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
          * @param {Boolean} p  Pause toggle
          */
         function pause(p) {
-            if (ParseJson.parseManoeuvreInput().length < 1)
-                return;
             paused = p;
             var imgUrl = "img/"
             $('#pause').css({
@@ -107,8 +106,13 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                 parent = p;
 
                 // setup event listeners for range of controls
-                $('#rdropdown').change(function() {
-                    addTube(this.value);
+                $('#addOLAN').click(function() {
+                    var newVal = $('#dropdown').val();
+                    var oldVal = $('#input').val();
+                    if (oldVal.length > 0)
+                        newVal = " " + newVal;
+                    $('#input').val(oldVal + newVal);
+                    refreshScene();
                 });
                 $('#radiusSegments').change(refreshScene);
                 $('#closed').change(refreshScene);
@@ -118,7 +122,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                     cameraController.showCamera();
                 });
                 $('#cameraHelper').change(function() {
-                    cameraController.showCamera();
+                    cameraController.showCameraHelper();
                 });
                 $('#onboard').change(function() {
                     var onboard = cameraController.getIsOnboard();

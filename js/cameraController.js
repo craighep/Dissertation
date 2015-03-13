@@ -21,9 +21,10 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
      * @function
      *
      */
-    function setupCameraHelper() {
+    function setupCameraHelper(parent) {
         cameraHelper = new THREE.CameraHelper(splineCamera);
         cameraHelper.visible = showCameraHelper;
+        parent.add(cameraHelper);
     }
 
     /**
@@ -84,7 +85,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
             setupSplineCamera(parent);
             setupStandardCamera();
             setupCameraEye(parent);
-            setupCameraHelper();
+            setupCameraHelper(parent);
         },
 
         /**
@@ -128,7 +129,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          * @returns {CameraHelper} cameraHelper  Draws lines and shows current tradgectory of spline camera
          */
         getCameraHelper: function() {
-            return showCameraHelper;
+            return cameraHelper;
         },
 
         /**
@@ -176,10 +177,13 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          */
         showCamera: function(toggle) {
             lookAhead = $('#lookAhead').is(':checked');
-            showCameraHelper = $('#cameraHelper').is(':checked');
-            cameraHelper.visible = toggle;
             if (cameraEye != null)
                 cameraEye.visible = toggle;
+        },
+
+        showCameraHelper: function(){
+            showCameraHelper = $('#cameraHelper').is(':checked');
+            cameraHelper.visible = showCameraHelper;
         },
 
         /**

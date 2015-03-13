@@ -17,13 +17,14 @@ define(['jquery'], function($) {
          * @param {Renderer} renderer  Renderer object where objects and effects will be added. Represents the
          * canvas on the HTML side
          */
-        addContent: function(renderer) {
+        addContent: function(renderer, manoeuvres) {
             var dropdown = $('#dropdown');
-            var s;
+            var m;
 
-            for (s in splines) {
+            for (m in manoeuvres) {
+                var manoeuvre = manoeuvres[m];
                 dropdown.append(
-                    $('<option></option>').val(s).html(s)
+                    $('<option></option>').val(manoeuvre["olan"]).html(manoeuvre["name"])
                 );
             }
             $('#container').append(renderer.domElement);
