@@ -6,7 +6,7 @@
  * @class ParseJson
  * @constructor
  */
-define(['jquery', 'component'], function($, Component) {
+define(['jquery', 'component', 'exportImportProjects'], function($, Component, ExportImportProjects) {
 
     var manoeuvreArray = [{}];
 
@@ -93,6 +93,7 @@ define(['jquery', 'component'], function($, Component) {
          */
         parseManoeuvreInput: function() {
             var input = $('#input').val();
+            ExportImportProjects.exportToLocalStorage(input);
 
             var moves = input.split(" ");
             var returnMoves = [{}];

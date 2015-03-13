@@ -108,6 +108,29 @@ define(['jquery'], function($) {
          */
         enableOLANInput: function(enable) {
             $("input").prop('disabled', !enable);
+        },
+
+        /**
+         * Enables and disables the input box in the header of the page to ensure user can only type when 
+         * permitted. Useful for blocking input when models and other JSON is being loaded.
+         * @name HtmlHandler#enableOLANInput
+         * @function
+         *
+         * @param {Boolean} enable  Boolean flag for enabling/ disabling OLAN input field
+         */
+        setAutoLoadSwitch: function(autoSave) {    
+            $('#autoSave').prop('checked', autoSave);
+        },
+
+        showImportSuccess: function(success) {
+            if (success){
+                $('#error').hide();
+                $('#success').show();
+            }
+            else {
+                $('#error').show();
+                $('#success').hide();
+            }
         }
     }
 });

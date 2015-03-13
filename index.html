@@ -181,6 +181,35 @@
                                 <ul class="left-submenu">
                                     <li class="back"><a href="#">Back</a>
                                     </li>
+                                    <li>
+                                        <label>Auto-save on edit</label>
+                                    </li>
+                                    <li>
+                                        <div class="switch">
+                                            <input id="autoSave" type="checkbox">
+                                            <label for="autoSave"></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>Export</label>
+                                    </li>
+                                    <li>
+                                        <a id="export" class="button radius">Export to JSON</a>
+                                    </li>
+                                    <li>
+                                        <label>Import</label>
+                                    </li>
+                                    <li>
+                                        <input id="import" name="file" type="file" file-upload multiple/>
+                                        <div data-alert id="success" class="alert-box success radius">
+                                            Successfully imported file into scenario!
+                                            <a href="#" class="close">&times;</a>
+                                        </div>
+                                        <div data-alert id="error" class="alert-box alert radius">
+                                            Error importing file! Try again.
+                                            <a href="#" class="close">&times;</a>
+                                        </div>
+                                    </li>
                                 </ul>
                             </li>
                     </ul>
@@ -281,7 +310,7 @@
 <script src="js/libs/require/require.js"></script>
 <script src="js/libs/three/three.min.js"></script>
 <script src="js/libs/curveExtras.js"></script>
-<script src="js/SplineCurveCraig.js"></script>
+<script src="js/splineCurveCraig.js"></script>
 <script src="js/libs/jquery/jquery.js"></script>
 <script src="js/site/foundation.js"></script>
 <script src="js/libs/stats/stats.min.js"></script>

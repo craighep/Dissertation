@@ -4,7 +4,7 @@
  * initialisers for each camera, edit methdods, and get methods.
  * @name CameraController
  * @class CameraController
- * @constructor 
+ * @constructor
  */
 define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
 
@@ -61,7 +61,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
     }
 
     /**
-     * Creates the birds eye view camera, looking over the entire scene. Sets the initial camera location and 
+     * Creates the birds eye view camera, looking over the entire scene. Sets the initial camera location and
      * how far it can see.
      * @name CameraController#setupStandardCamera
      * @function
@@ -158,10 +158,12 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          *
          */
         cameraReset: function() {
-            cameraEye.position.set(0, 0, 0);
-            cameraEye.rotation.x = 0;
-            cameraEye.rotation.y = 0;
-            cameraEye.rotation.z = 0;
+            if (cameraEye != null) {
+                cameraEye.position.set(0, 0, 0);
+                cameraEye.rotation.x = 0;
+                cameraEye.rotation.y = 0;
+                cameraEye.rotation.z = 0;
+            }
         },
 
         /**
@@ -176,7 +178,8 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
             lookAhead = $('#lookAhead').is(':checked');
             showCameraHelper = $('#cameraHelper').is(':checked');
             cameraHelper.visible = toggle;
-            cameraEye.visible = toggle;
+            if (cameraEye != null)
+                cameraEye.visible = toggle;
         },
 
         /**
@@ -201,9 +204,9 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          */
         setRenderCamerasRotation: function() {
             splineCamera.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
-      //      cameraEye.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
+            cameraEye.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
             cameraEye.rotation.z += 90;
-       cameraHelper.update();
+            cameraHelper.update();
         },
 
         /**
@@ -212,7 +215,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          * @function
          *
          * @param {Vector} lookAt  A vector ahead of the current position for the camera to be looking towards.
-         * @param {Vector} normal  
+         * @param {Vector} normal
          */
         setSplineCameraLookAt: function(lookAt, normal) {
             splineCamera.matrix.lookAt(splineCamera.position, lookAt, normal);
@@ -237,7 +240,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          * @param {Vector} pos  Vector position
          */
         setCameraEyePosition: function(pos) {
-        	cameraEye.position.copy(pos);
+            cameraEye.position.copy(pos);
         }
     }
 

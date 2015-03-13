@@ -159,3 +159,6 @@ canvas {
     margin: 0;
     font-size: 0.9em;
 }
+#error, #success{
+    display: none;
+}

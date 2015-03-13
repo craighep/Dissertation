@@ -150,7 +150,7 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         // Camera Orientation 1 - default look at
         var lookAt = tube.parameters.path.getPointAt((t + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
         // Camera Orientation 2 - up orientation via normal
-         if (!cameraController.getIsLookAhead())
+         if (CameraController.getIsLookAhead())
              lookAt.copy(pos).add(dir);
         CameraController.setSplineCameraLookAt(lookAt, normal);
         CameraController.setRenderCamerasRotation();
