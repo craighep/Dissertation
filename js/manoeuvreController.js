@@ -46,7 +46,7 @@ define(['tubeEvents'], function(TubeEvents) {
     }
 
     function createTube(extrudePath, segments, radiusSegments, parent) {
-        var newTube = new THREE.TubeGeometry(extrudePath, segments, 2, 2, false);
+        var newTube = new THREE.TubeGeometry(extrudePath, segments, 2, 2, true);
         addGeometry(newTube, 0xff00ff, parent);
         tube[tube.length] = newTube;
         if (radiusSegments == 0)

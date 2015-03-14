@@ -13,8 +13,9 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
         var renderer;
         var paused = true;
         var scale = 4;
-        var speed = 20;
+        var speed = 0.005;
         var parent;
+        var time = 0;
 
         /**
          * Resets the aeroplane loaction and rotation, the movie reel, manoeuvres shown and camera each time
@@ -28,6 +29,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             var manoeuvres = [];
             manoeuvres = ParseJson.parseManoeuvreInput();
             pause(true);
+            time = 0;
             cameraController.cameraReset();
             if (manoeuvres.length < 1) {
                 pause(true);
@@ -58,7 +60,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
          *
          */
         function setSpeed() {
-            speed = 41 - $('#speed').val(); // opposite becasue bigger means slower in terms of time
+            speed = parseFloat($('#speed').val()); // opposite becasue bigger means slower in terms of time
         }
 
         /**
@@ -77,6 +79,12 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             });
         }
 
+        /**
+         * Triggers the local storage to be loaded 
+         * @name AnimationController#initialiseLocalStorage
+         * @function
+         *
+         */
         function initialiseLocalStorage() {
             var autoSave = ExportImportProjects.getAutoLoadLocal(); // sets the switch in the GUI to last session
             HtmlHandler.setAutoLoadSwitch(autoSave);
@@ -129,7 +137,9 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                     cameraController.setOnboardCamera(!onboard);
                 });
                 $('#pause').click(function() {
-                    pause(!paused); // Reverse current setting(pause / un-pause)
+                    manoeuvres = ParseJson.parseManoeuvreInput();
+                    if (manoeuvres.length > 0)
+                        pause(!paused); // Reverse current setting(pause / un-pause)
                 });
                 $('#about').click(function() {
                     pause(true);
@@ -234,6 +244,13 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
              */
             getTube: function() {
                 return ManoeuvreController.getTube();
+            },
+
+            getAnimateTime: function() {
+                time += speed;
+                if (time > (1 - speed))
+                    time = 0;
+                return time;
             }
         }
     });

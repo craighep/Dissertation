@@ -43,6 +43,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
             cameraEye.rotation.x = 0;
             cameraEye.rotation.y = 0;
             cameraEye.rotation.z = 0;
+            cameraEye.rotateOnAxis(new THREE.Vector3(0, 1, 0),  Math.PI );
             parent.add(cameraEye);
             HtmlHandler.enableOLANInput(true);
         });
@@ -164,6 +165,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
                 cameraEye.rotation.x = 0;
                 cameraEye.rotation.y = 0;
                 cameraEye.rotation.z = 0;
+                cameraEye.rotateOnAxis(new THREE.Vector3(0, 1, 0),  Math.PI );
             }
         },
 
@@ -181,7 +183,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
                 cameraEye.visible = toggle;
         },
 
-        showCameraHelper: function(){
+        showCameraHelper: function() {
             showCameraHelper = $('#cameraHelper').is(':checked');
             cameraHelper.visible = showCameraHelper;
         },

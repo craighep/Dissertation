@@ -47,6 +47,7 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
     function setupParent() {
         parent = new THREE.Object3D();
         parent.position.y = 0;
+        parent.rotateOnAxis(new THREE.Vector3(0, 1, 0),  Math.PI / 2 );
     }
 
     /**
@@ -123,22 +124,19 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
     function renderPlane() {
         // Try Animate Camera Along Spline
         var scale = AnimationController.getScale();
-        var speed = AnimationController.getAnimationSpeed();
-        var time = Date.now();
-        var looptime = speed * 1000;
-        var t = (time % looptime) / looptime;
+        var time = AnimationController.getAnimateTime();
         var tube = AnimationController.getTube()[0];
-        var pos = tube.parameters.path.getPointAt(t);
+        var pos = tube.parameters.path.getPointAt(time);
         pos.multiplyScalar(scale);
         //----------------------------------------------------------
         // interpolation
         var segments = tube.tangents.length;
-        var pickt = t * segments;
+        var pickt = time * segments;
         var pick = Math.floor(pickt);
         var pickNext = (pick + 1) % segments;
         binormal.subVectors(tube.binormals[pickNext], tube.binormals[pick]);
         binormal.multiplyScalar(pickt - pick).add(tube.binormals[pick]);
-        var dir = tube.parameters.path.getTangentAt(t);
+        var dir = tube.parameters.path.getTangentAt(time);
         var offset = 15;
         normal.copy(binormal).cross(dir);
         // Move on a offset on its binormal
@@ -149,7 +147,7 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         var cameraEye = CameraController.getCameraEye();
         cameraEye.position.copy(pos);
         // Camera Orientation 1 - default look at
-        var lookAt = tube.parameters.path.getPointAt((t + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
+        var lookAt = tube.parameters.path.getPointAt((time + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
         // Camera Orientation 2 - up orientation via normal
          if (!CameraController.getIsLookAhead())
          {
