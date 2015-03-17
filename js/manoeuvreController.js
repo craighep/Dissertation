@@ -46,7 +46,7 @@ define(['tubeEvents'], function(TubeEvents) {
     }
 
     function createTube(extrudePath, segments, radiusSegments, parent) {
-        var newTube = new THREE.TubeGeometry(extrudePath, segments, 2, 2, true);
+        var newTube = new THREE.TubeGeometry(extrudePath, segments, 2, 2, false);
         addGeometry(newTube, 0xff00ff, parent);
         tube[tube.length] = newTube;
         if (radiusSegments == 0)
@@ -127,10 +127,14 @@ define(['tubeEvents'], function(TubeEvents) {
                                 linePoints.push(prevVector);
                             }
                         }
+                        var startVector = new THREE.Vector3(0, 0, 0);
                         startVector.copy(prevVector);
+                        linePoints.push(startVector);
+                        console.log(linePoints);
+                    }
                         var extrudePath = new CustomSplineCurve(linePoints);
                         createTube(extrudePath, segments, radiusSegments, parent);
-                }
+                
             }
              else { // for project demo if all is broken
                         var extrudePath = splines[TubeEvents.getTubes(values[0]["olan"])];
