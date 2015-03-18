@@ -75,6 +75,28 @@ define(['tubeEvents'], function(TubeEvents) {
             tubeMesh[tubeMesh.length].visible = false;
     }
 
+    /**
+     * The method for recalcuating the vector based on the next set of
+     * instructions from the JSON file. Does this by creating an euler,
+     * which means pitch, roll and yaw can all be done in one.
+     * @name ManoeuvreController#calculateVector
+     * @function
+     *
+     * @param {Vector} vector  The current vector to be changed
+     * @param {Integer} pitch  Negative or positive pitch to be added
+     * @param {Integer} roll  Negative or positive roll to be added
+     * @param {Integer} yaw  Negative or positive yaw to be added
+     * @param {Integer} length  Length of the 
+
+    function calculateVector(vector, pitch, roll, yaw, length) {
+        var pitchAngle = Math.PI / 180 * 12 * pitch;
+        var yawAngle = Math.PI / 180 * 12 * yaw;
+        var rollAngle = Math.PI / 180 * 12 * roll;
+        var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
+        vector.applyEuler(a);
+        vector.setZ(vector.z + length);
+    }
+
     return {
         /**
          * The getter for the array of tubes created based on the manoeuvres.
@@ -111,15 +133,11 @@ define(['tubeEvents'], function(TubeEvents) {
         addTube: function(values, parent) {
             var segments = parseInt($('#segments').val());
             var closed2 = $('#closed').is(':checked');
-            var backup = $('#backup').is(':checked');
             var radiusSegments = parseInt($('#radiusSegments').val());
             var startVector = new THREE.Vector3(0, 0, 0);
             var linePoints = [];
             linePoints.push(startVector);
-            var angleDiv = 12;
-
             removeTubes(parent);
-            if (!backup) {
 
                 for (m in values) {
 
@@ -127,43 +145,24 @@ define(['tubeEvents'], function(TubeEvents) {
 
                     for (var i = 0; i < components.length; i++) {
                         var component = components[i];
+                        var yaw = -component.YAW;
+                        var pitch = -component.PITCH;
+                        var roll = -component.ROLL;
+                        var length = component.LENGTH * 10;
                         var prevVector = new THREE.Vector3(0, 0, 0);
-                        if (linePoints.length > 0)
-                            prevVector.copy(linePoints[linePoints.length - 1]);
-                        if (component.PITCH == 0 && component.YAW == 0 && component.ROLL == 0) {
-                            // var extrudePath = new THREE.SplineCurve3(linePoints);
-                            // createTube(extrudePath, segments, radiusSegments, parent);
-                            // startVector.copy(prevVector);
-                            // var linePoints = [startVector];
 
-                            prevVector.setZ(prevVector.z + (component.LENGTH * 10));
+                        if (linePoints.length > 0)
+                            prevVector = linePoints[linePoints.length - 1].clone();
+                        if (pitch == 0 && yaw == 0 && roll == 0) {
+                            prevVector.setZ(prevVector.z + length);
                             linePoints.push(prevVector);
                         } else {
-
-
-                            var axis = new THREE.Vector3(1, 0, 0);
-                            var angle = Math.PI / 180 * angleDiv * -component.PITCH;
-
-                            var quaternion = new THREE.Quaternion();
-                            quaternion.setFromAxisAngle( axis, angle );
-                            console.log(quaternion);
-                            prevVector.applyQuaternion(quaternion);
-
-                            var axis = new THREE.Vector3(0, 1, 0);
-                            var angle = Math.PI / 180 * angleDiv * -component.YAW;
-                      //      prevVector.applyQuaternion(axis, angle);
-
-                            var axis = new THREE.Vector3(0, 0, 1);
-                            var angle = Math.PI / 180 * angleDiv * -component.ROLL;
-                        //    prevVector.applyQuaternion(axis, angle);
-
-                            prevVector.setZ(prevVector.z + (component.LENGTH * 10));
-
+                            calculateVector(prevVector, pitch, roll, yaw, length);
                             linePoints.push(prevVector);
                         }
                     }
                     var startVector = new THREE.Vector3(0, 0, 0);
-                    startVector.copy(prevVector);
+                    startVector = prevVector.clone();
                     linePoints.push(startVector);
                 }
                 var material = new THREE.LineBasicMaterial({
@@ -178,11 +177,6 @@ define(['tubeEvents'], function(TubeEvents) {
                parent.add(line);
                 var extrudePath = new CustomSplineCurve(linePoints);
            //     createTube(extrudePath, segments, radiusSegments, parent);
-
-            } else { // for project demo if all is broken
-                var extrudePath = splines[TubeEvents.getTubes(values[0]["olan"])];
-                createTube(extrudePath, segments, radiusSegments, parent);
-            }
         },
 
         /**
