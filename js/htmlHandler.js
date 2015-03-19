@@ -7,6 +7,21 @@
  * @constructor
  */
 define(['jquery'], function($) {
+
+        function scrollReel(time){
+            var hide = time - 5;
+            var count = 0;
+            var track = 4;
+            while (hide >= 0){
+                console.log("long")
+                hide -= 5;
+                while(count < track){
+                    $( "#move_"+count ).addClass( "hidden" );
+                    count++;
+                }
+                track += 5;
+            }
+        }
     return {
         /**
          * Adds options to manoeuvre drop down list, each from the manoeuvre array gained from the JSON file.
@@ -43,13 +58,7 @@ define(['jquery'], function($) {
         addMoveReel: function(moves) {
             var list = $('.moves');
             var movesHtml = "";
-            var bottom = "0%";
-            if (moves.length > 0)
-                bottom = "15%";
-            $('#footer').css({
-                "bottom": bottom
-            });
-            bottom = "10px";
+            var bottom = "10px";
             if (moves.length > 4)
                 bottom = "16%";
             $('#stats').css({
@@ -58,7 +67,7 @@ define(['jquery'], function($) {
 
             for (m in moves) {
                 manouvreImg = "".concat(moves[m]["olan"],".png");
-                movesHtml += '<li class="move">' +
+                movesHtml += '<li class="move" id="move_'+m+'">' +
                                 '<img src="img/manoeuvres/'+manouvreImg+'" align="middle">' +
                                 '<div class="progressbar">'+
                                     '<div id="progressbar_'+m+'"></div>'+
@@ -156,7 +165,14 @@ define(['jquery'], function($) {
                 $( "#progressbar_"+(i) ).css( "width", t+"%" );
                 $( "#progressback_"+(i) ).css( "width", t+"%" );
             }
-        }
+        scrollReel(time);
+        },
 
+        resetReel: function(moves){
+            var i = 0;
+            while(i < moves){
+                $( "#move_"+i ).removeClass( "hidden" );
+            }
+        }
     }
 });

@@ -247,9 +247,13 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             },
 
             getAnimateTime: function() {
+                var moves = ParseJson.parseManoeuvreInput().length;
                 time += speed;
-                if(ParseJson.parseManoeuvreInput().length < time)
+                if(moves < time){
                     time = 0;
+                    pause(true);
+                    HtmlHandler.resetReel(moves);
+                }
                 return time;
             }
         }
