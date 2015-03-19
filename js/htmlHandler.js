@@ -13,7 +13,6 @@ define(['jquery'], function($) {
             var count = 0;
             var track = 4;
             while (hide >= 0){
-                console.log("long")
                 hide -= 5;
                 while(count < track){
                     $( "#move_"+count ).addClass( "hidden" );
@@ -21,6 +20,13 @@ define(['jquery'], function($) {
                 }
                 track += 5;
             }
+        }
+
+        function showReelToggle(reelLength){
+            if (reelLength > 0)
+                $("#hideShow").show();
+            else
+                $("#hideShow").hide();
         }
     return {
         /**
@@ -61,6 +67,7 @@ define(['jquery'], function($) {
             var bottom = "10px";
             if (moves.length > 4)
                 bottom = "16%";
+
             $('#stats').css({
                 "bottom": bottom
             });
@@ -78,6 +85,7 @@ define(['jquery'], function($) {
             list.html(
                 $(movesHtml)
             );
+            showReelToggle(moves.length);
             $( ".progressbar > div" ).css( "width", "0%" );
         },
 
@@ -172,7 +180,20 @@ define(['jquery'], function($) {
             var i = 0;
             while(i < moves){
                 $( "#move_"+i ).removeClass( "hidden" );
+                i++;
             }
+        },
+
+        hideShowReel: function() {
+            $(".moveStrip").toggle();
+            var bottom = 0;
+            var html = "+";
+            if ($(".moveStrip").is(":visible") ){
+                bottom = 15;
+                html = "-";
+            }
+            $("#hideShow").css("bottom",bottom+"%");
+            $("#hideShow").html(html);
         }
     }
 });

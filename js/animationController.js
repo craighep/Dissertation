@@ -157,6 +157,9 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                     event.stopPropagation();
                 });
                 $("#speed").change(setSpeed);
+                $("#hideShow").click(function() {
+                    HtmlHandler.hideShowReel();
+                });
                 // -------------------------------------
                 // SAVE/ LOAD EVENTS
                 //--------------------------------------
