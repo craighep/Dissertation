@@ -56,12 +56,17 @@ define(['jquery'], function($) {
                 "bottom": bottom
             });
 
-            for (move in moves) {
-                movesHtml += '<li class="move"></li>';
+            for (m in moves) {
+                manouvreImg = "".concat(moves[m]["olan"],".png");
+                movesHtml += '<li class="move">' +
+                                '<img src="img/manoeuvres/'+manouvreImg+'" align="middle">' +
+                                '<div class="progressbar"><div id="progressbar_'+m+'"></div></div>' +
+                              '</li>';
             }
             list.html(
                 $(movesHtml)
             );
+            $( ".progressbar > div" ).css( "width", "0%" );
         },
 
         /**
@@ -132,6 +137,21 @@ define(['jquery'], function($) {
                 $('#error').show();
                 $('#success').hide();
             }
+        },
+
+        updateMoveReel: function(time, moves) {
+            var movePerc = 1 / moves;
+            for(var i = 0; i <= moves; i++){
+                if ( time < (movePerc * (i+1))
+                    break;
+
+                var perc = i+1 - time - (movePerc*(i+1));
+                var percFinal = 100-(perc*100*i);
+                if (percFinal > 100)
+                    percFinal = 100;
+                $( "#progressbar_"+(i) ).css( "width", percFinal+"%" );
+            }
         }
+
     }
 });

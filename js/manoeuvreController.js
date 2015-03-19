@@ -86,8 +86,8 @@ define(['tubeEvents'], function(TubeEvents) {
      * @param {Integer} pitch  Negative or positive pitch to be added
      * @param {Integer} roll  Negative or positive roll to be added
      * @param {Integer} yaw  Negative or positive yaw to be added
-     * @param {Integer} length  Length of the 
-
+     * @param {Integer} length  Length of the manoeuvre after translation
+     */
     function calculateVector(vector, pitch, roll, yaw, length) {
         var pitchAngle = Math.PI / 180 * 12 * pitch;
         var yawAngle = Math.PI / 180 * 12 * yaw;
@@ -164,19 +164,20 @@ define(['tubeEvents'], function(TubeEvents) {
                     var startVector = new THREE.Vector3(0, 0, 0);
                     startVector = prevVector.clone();
                     linePoints.push(startVector);
-                }
-                var material = new THREE.LineBasicMaterial({
-                    color: 0xff00f0,
-                });
-                var geometry = new THREE.Geometry();
-                for(var i = 0; i < linePoints.length; i++){
-                    geometry.vertices.push(linePoints[i]);  
-                }
-
-               var line = new THREE.Line(geometry, material);
-               parent.add(line);
+                    
                 var extrudePath = new CustomSplineCurve(linePoints);
-           //     createTube(extrudePath, segments, radiusSegments, parent);
+               createTube(extrudePath, segments, radiusSegments, parent);
+                }
+               //  var material = new THREE.LineBasicMaterial({
+               //      color: 0xff00f0,
+               //  });
+               //  var geometry = new THREE.Geometry();
+               //  for(var i = 0; i < linePoints.length; i++){
+               //      geometry.vertices.push(linePoints[i]);  
+               //  }
+
+               // var line = new THREE.Line(geometry, material);
+               // parent.add(line);
         },
 
         /**

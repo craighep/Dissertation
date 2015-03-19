@@ -125,6 +125,7 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         // Try Animate Camera Along Spline
         var scale = AnimationController.getScale();
         var time = AnimationController.getAnimateTime();
+        HtmlHandler.updateMoveReel(time, ParseJson.parseManoeuvreInput().length);
         var tube = AnimationController.getTube()[0];
         var pos = tube.parameters.path.getPointAt(time);
         pos.multiplyScalar(scale);
