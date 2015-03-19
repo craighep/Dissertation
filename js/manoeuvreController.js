@@ -165,8 +165,10 @@ define(['tubeEvents'], function(TubeEvents) {
                     startVector = prevVector.clone();
                     linePoints.push(startVector);
                     
-                var extrudePath = new CustomSplineCurve(linePoints);
-               createTube(extrudePath, segments, radiusSegments, parent);
+                    var extrudePath = new CustomSplineCurve(linePoints);
+                    createTube(extrudePath, segments, radiusSegments, parent);
+                    linePoints = [];
+            linePoints.push(startVector);
                 }
                //  var material = new THREE.LineBasicMaterial({
                //      color: 0xff00f0,

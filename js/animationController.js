@@ -248,7 +248,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
 
             getAnimateTime: function() {
                 time += speed;
-                if (time > (1 - speed))
+                if(ParseJson.parseManoeuvreInput().length < time)
                     time = 0;
                 return time;
             }

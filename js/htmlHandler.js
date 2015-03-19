@@ -60,7 +60,10 @@ define(['jquery'], function($) {
                 manouvreImg = "".concat(moves[m]["olan"],".png");
                 movesHtml += '<li class="move">' +
                                 '<img src="img/manoeuvres/'+manouvreImg+'" align="middle">' +
-                                '<div class="progressbar"><div id="progressbar_'+m+'"></div></div>' +
+                                '<div class="progressbar">'+
+                                    '<div id="progressbar_'+m+'"></div>'+
+                                '</div>' +
+                                '<div id="progressback_'+m+'" class="progressback"></div>'+
                               '</li>';
             }
             list.html(
@@ -141,15 +144,17 @@ define(['jquery'], function($) {
 
         updateMoveReel: function(time, moves) {
             var movePerc = 1 / moves;
+            var t = 0;
             for(var i = 0; i <= moves; i++){
-                if ( time < (movePerc * (i+1))
-                    break;
-
-                var perc = i+1 - time - (movePerc*(i+1));
-                var percFinal = 100-(perc*100*i);
-                if (percFinal > 100)
-                    percFinal = 100;
-                $( "#progressbar_"+(i) ).css( "width", percFinal+"%" );
+                if ( time < i)
+                    t =0;
+                else{
+                    t = (time - i) * 100;
+                    if (t > 100)
+                        t = 100;
+                }
+                $( "#progressbar_"+(i) ).css( "width", t+"%" );
+                $( "#progressback_"+(i) ).css( "width", t+"%" );
             }
         }
 

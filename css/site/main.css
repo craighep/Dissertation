@@ -128,6 +128,13 @@ canvas {
     margin-left: 0.12%;
     display: inline;
     float: left;
+    position: relative;
+}
+.progressback {
+    height: 100%;
+    background: rgba(44, 38, 38, 0.35);
+    position: absolute;
+    top: 0;
 }
 .moveStrip ul li:first-child {
     margin-left: 0;
