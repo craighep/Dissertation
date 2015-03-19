@@ -249,6 +249,15 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                 return ManoeuvreController.getTube();
             },
 
+            /**
+             * The getter method for the time field which keeps track of where the animation has
+             * got to in terms of an overall percentage of the routine. Also checks when the 
+             * time field has reached the end of its animation path, and resets back to the start,
+             * alongside calling the reset of the move reel.
+             * @name HtmlHandler#getAnimateTime
+             * @function
+             *
+             */
             getAnimateTime: function() {
                 var moves = ParseJson.parseManoeuvreInput().length;
                 time += speed;

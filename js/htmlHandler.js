@@ -8,6 +8,15 @@
  */
 define(['jquery'], function($) {
 
+        /**
+         * Moves the reel along by 4 places each time the animation completes 5 manoeuvres.
+         * Does this by hiding the four or more previus elements with the 'hidden' class.
+         * @name HtmlHandler#scrollReel
+         * @function
+         *
+         * @param {Float} time  The current amount of distance travelled in realtion to the 
+         * amount of manoeuvres
+         */
         function scrollReel(time){
             var hide = time - 5;
             var count = 0;
@@ -22,6 +31,14 @@ define(['jquery'], function($) {
             }
         }
 
+        /**
+         * Checls the amount of manoeuvres displayed in the reel, if there are none, then do not
+         * show the toggle button, otherwise show it.
+         * @name HtmlHandler#showReelToggle
+         * @function
+         *
+         * @param {Integer} reelLength  The amount manoeuvres displayed in the reel
+         */
         function showReelToggle(reelLength){
             if (reelLength > 0)
                 $("#hideShow").show();
@@ -148,6 +165,14 @@ define(['jquery'], function($) {
             $('#autoSave').prop('checked', autoSave);
         },
 
+        /**
+         * Function for displaying the message provided back after attempting to upload and import a 
+         * manoeuvre set json file. Can either be a success or an error. 
+         * @name HtmlHandler#showImportSuccess
+         * @function
+         *
+         * @param {Boolean} success  Flag for error or success
+         */
         showImportSuccess: function(success) {
             if (success){
                 $('#error').hide();
@@ -159,6 +184,17 @@ define(['jquery'], function($) {
             }
         },
 
+        /**
+         * Updates the move reel progress bars. Gets the current percentage of each move in relation to 
+         * the overall time complete. Fills the bars already in the html with the width of each
+         * individual percentage.
+         * @name HtmlHandler#updateMoveReel
+         * @function
+         *
+         * @param {Float} time  The current amount of distance travelled in realtion to the 
+         * amount of manoeuvres
+         * @param {Integer} moves  The number of manoeuvres in the scenario
+         */
         updateMoveReel: function(time, moves) {
             var movePerc = 1 / moves;
             var t = 0;
@@ -176,6 +212,13 @@ define(['jquery'], function($) {
         scrollReel(time);
         },
 
+        /**
+         * Resets the move reel, by removing the hidden attributes from all the manoeuvres.
+         * @name HtmlHandler#resetReel
+         * @function
+         *
+         * @param {Integer} moves  The amount of manoeuvres to reset the hidden attribute.
+         */
         resetReel: function(moves){
             var i = 0;
             while(i < moves){
@@ -184,16 +227,25 @@ define(['jquery'], function($) {
             }
         },
 
+        /**
+         * Toggles the visibility of the move reel, which is called when the user presses the
+         * toggle button.
+         * @name HtmlHandler#hideShowReel
+         * @function
+         *
+         */
         hideShowReel: function() {
-            $(".moveStrip").toggle();
+            var moveReelElement = $(".moveStrip");
+            var hideShowButtonElement = $("#hideShow");
+            moveReelElement.toggle();
             var bottom = 0;
             var html = "+";
-            if ($(".moveStrip").is(":visible") ){
+            if (moveReelElement.is(":visible") ){
                 bottom = 15;
                 html = "-";
             }
-            $("#hideShow").css("bottom",bottom+"%");
-            $("#hideShow").html(html);
+            hideShowButtonElement.css("bottom",bottom+"%");
+            hideShowButtonElement.html(html);
         }
     }
 });
