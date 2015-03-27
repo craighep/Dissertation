@@ -58,6 +58,31 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
             }
         });
     }
+
+    function parseSpacer(spacerInput){
+            var regExp = /\(([^)]+)\)/;
+            var matches = regExp.exec(spacerInput);
+            var spaceParams = [];
+
+            if(matches == null || matches.length != 2)
+                return;
+            //----------------------------------------
+            if(matches[1].indexOf(',') === -1){
+                spaceParams[0] = matches[1];
+            }
+            else {
+                spaceParams = matches[1].split(",");
+            }
+            if(spaceParams.length === 0)
+                return;
+            //----------------------------------------
+            for(p in spaceParams){
+                if(isNaN(spaceParams[p]))
+                    return;
+            }
+            //----------------------------------------
+            // TODO
+    }
     return {
 
         /**
@@ -98,9 +123,17 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
             var moves = input.split(" ");
             var returnMoves = [{}];
             var i = 0;
-            for (move in moves) {
+
+            for (m in moves) {
+                var move = moves[m];
+                if (move.indexOf("(") > -1) {
+                    var spacer = parseSpacer(move);
+                    if(spacer != null) {
+                        //TODO
+                    }
+                }
                 for (var a = 0; a < manoeuvreArray.length; a++) {
-                    if (manoeuvreArray[a]["olan"] === moves[move]) {
+                    if (manoeuvreArray[a]["olan"] === move) {
                         returnMoves[i] = manoeuvreArray[a];
                         i++;
                         break;

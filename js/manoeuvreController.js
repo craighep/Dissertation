@@ -139,47 +139,37 @@ define(['tubeEvents'], function(TubeEvents) {
             linePoints.push(startVector);
             removeTubes(parent);
 
-                for (m in values) {
+            for (m in values) {
 
-                    var components = values[m]["components"];
+                var components = values[m]["components"];
 
-                    for (var i = 0; i < components.length; i++) {
-                        var component = components[i];
-                        var yaw = -component.YAW;
-                        var pitch = -component.PITCH;
-                        var roll = -component.ROLL;
-                        var length = component.LENGTH * 10;
-                        var prevVector = new THREE.Vector3(0, 0, 0);
+                for (var i = 0; i < components.length; i++) {
+                    var component = components[i];
+                    var yaw = -component.YAW;
+                    var pitch = -component.PITCH;
+                    var roll = -component.ROLL;
+                    var length = component.LENGTH * 10;
+                    var prevVector = new THREE.Vector3(0, 0, 0);
 
-                        if (linePoints.length > 0)
-                            prevVector = linePoints[linePoints.length - 1].clone();
-                        if (pitch == 0 && yaw == 0 && roll == 0) {
-                            prevVector.setZ(prevVector.z + length);
-                            linePoints.push(prevVector);
-                        } else {
-                            calculateVector(prevVector, pitch, roll, yaw, length);
-                            linePoints.push(prevVector);
-                        }
+                    if (linePoints.length > 0)
+                        prevVector = linePoints[linePoints.length - 1].clone();
+                    if (pitch == 0 && yaw == 0 && roll == 0) {
+                        prevVector.setZ(prevVector.z + length);
+                        linePoints.push(prevVector);
+                    } else {
+                        calculateVector(prevVector, pitch, roll, yaw, length);
+                        linePoints.push(prevVector);
                     }
-                    var startVector = new THREE.Vector3(0, 0, 0);
-                    startVector = prevVector.clone();
-                    linePoints.push(startVector);
-                    
-                    var extrudePath = new CustomSplineCurve(linePoints);
-                    createTube(extrudePath, segments, radiusSegments, parent);
-                    linePoints = [];
-            linePoints.push(startVector);
                 }
-               //  var material = new THREE.LineBasicMaterial({
-               //      color: 0xff00f0,
-               //  });
-               //  var geometry = new THREE.Geometry();
-               //  for(var i = 0; i < linePoints.length; i++){
-               //      geometry.vertices.push(linePoints[i]);  
-               //  }
-
-               // var line = new THREE.Line(geometry, material);
-               // parent.add(line);
+                var startVector = new THREE.Vector3(0, 0, 0);
+                startVector = prevVector.clone();
+                linePoints.push(startVector);
+                
+                var extrudePath = new CustomSplineCurve(linePoints);
+                createTube(extrudePath, segments, radiusSegments, parent);
+                linePoints = [];
+                linePoints.push(startVector);
+            }
         },
 
         /**

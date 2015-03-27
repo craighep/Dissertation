@@ -95,6 +95,11 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             refreshScene();
         }
 
+        function getAutoRepeat() {
+            var flag = $('#repeat').is(':checked');
+            return flag;
+        }
+
         return {
 
             /**
@@ -263,9 +268,10 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                 time += speed;
                 if(moves < time){
                     time = 0;
-                    pause(true);
+                    if(!getAutoRepeat())
+                        pause(true);
                     HtmlHandler.resetReel(moves);
-                }
+                } 
                 return time;
             }
         }
