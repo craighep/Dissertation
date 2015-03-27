@@ -90,7 +90,7 @@ define(['jquery'], function($) {
             });
 
             for (m in moves) {
-                manouvreImg = "".concat(moves[m]["olan"],".png");
+                manouvreImg = "".concat(moves[m]["olan"],".PNG");
                 movesHtml += '<li class="move" id="move_'+m+'">' +
                                 '<img src="img/manoeuvres/'+manouvreImg+'" align="middle">' +
                                 '<div class="progressbar">'+
