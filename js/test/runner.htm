@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>My First Unit Test With Jasmine And RequireJS</title>
+    <title>Jasmine Tests | Olan Prototype</title>
  
     <!-- Include the Jasmine assets for running in an HTML page. -->
     <link rel="stylesheet" type="text/css" href="../libs/jasmine-1.2.0/jasmine.css"></link>
@@ -24,7 +24,7 @@
         var require = {
             paths: {
                 "domReady": "../libs/require/domReady",
-                "model": "../../"
+                "grass.png": "../../img/grass.png"
             }
         };
 
@@ -44,7 +44,10 @@
         require(
             [
                 "domReady!",
-                "spec/animation"
+                "spec/terrain",
+                //"spec/parseJson",
+          //      "spec/animation",
+          //       "spec/importExport"
             ],
             function( document ){
 

@@ -1,25 +1,24 @@
 // Load the terrain module and describe tests.
 define(
     [
-        "../../animationController"
+        "../../parseJson"
     ],
-    function( animation ){
+    function( parseJson ){
  
  
         // Describe the test suite for this module.
         describe(
-            "Getting the pause and speed controls, setting options and checking animation works when user begins it",
+            "Tests the capabilities of converting from JSON to manoeuvre instructions",
             function(){
  
                 // Check that terrain module creates a ground object, and returns it
                 it(
-                    "Should be paused by default",
+                    "Manouvres from JSON should not be null",
                     function(){
-                        expect( animation.getIsPaused() ).toBe(true);
+                        parseJson.init();
+                        expect( parseJson.getManoeuvreArray() ).not.toBe(null);
                     }
-                )
- 
- 
+                );
             }
         );
  
