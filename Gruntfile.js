@@ -1,26 +1,32 @@
-module.exports = function(grunt) {
-  grunt.loadNpmTasks('grunt-contrib-qunit');
+/* jshint node: true */
+
+module.exports = function (grunt) {
+  "use strict";
+
   grunt.initConfig({
-    jsdoc : {
-        dist : {
-            src: ['js/*.js', 'tests/*.js'], 
-            options: {
-                destination: 'doc'
-            }
-        }
-    },
-    pkg: grunt.file.readJSON('package.json'),
-    qunit: {
-        all: {
-            options: {
-                urls: [
-                    'http://craighep.github.io/Dissertation/js/tests/tests.html'
-                ]
-            }
-        }
-    },
-  });
-  grunt.loadNpmTasks('grunt-jsdoc');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
-  grunt.registerTask('test', ['qunit']);
+      pkg: grunt.file.readJSON('package.json')
+    , jshint: {
+        all: [
+            "Gruntfile.js"
+          , "lib/**/*.js"
+          , "spec/**/*.js"
+        ]
+      , options: {
+          jshintrc: '.jshintrc'
+        },
+      }
+    , jasmine: {
+        src: "lib/**/*.js"
+      , options: {
+          specs: "spec/**/*.js"
+        , vendor: "vendor/**/*.js"
+      }
+    }
+  })
+
+  grunt.loadNpmTasks('grunt-contrib-jshint')
+  grunt.loadNpmTasks('grunt-contrib-jasmine')
+
+  grunt.registerTask('test', ['jshint', 'jasmine'])
+  grunt.registerTask('default', ['test'])
 };
