@@ -23,7 +23,7 @@
 
         var require = {
             paths: {
-                "domReady": "libs/require/domReady",
+                "domReady": "../libs/require/domReady",
                 "grass.png": "../../img/grass.png"
             }
         };
@@ -34,7 +34,7 @@
  
     <script type="text/javascript">
     require.config({
-      baseUrl: '../',
+      //baseUrl: '../',
     });
   </script>
     <!--
@@ -50,8 +50,8 @@
         require(
             [
                 "domReady!",
-                "spec/terrain",
-                "spec/importExport"
+                "spec/terrain"
+               //"spec/importExport"
                 //"spec/parseJson",
           //      "spec/animation",
           //       "spec/importExport"

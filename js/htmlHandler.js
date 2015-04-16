@@ -246,6 +246,20 @@ define(['jquery'], function($) {
             }
             hideShowButtonElement.css("bottom",bottom+"%");
             hideShowButtonElement.html(html);
-        }
+        },
+
+        /**
+         *
+         *
+         *
+         *
+         */
+         showLoadingImport: function(visible) {
+            var loading = $('#loading');
+            if (visible)
+                loading.removeClass( "hidden" );
+            else
+                loading.addClass( "hidden" );
+         }
     }
 });

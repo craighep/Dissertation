@@ -179,6 +179,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                 $('input[name=file]').change(function() {
                     var file = this.files[0];
                     ExportImportProjects.importFromJSON(file);
+                    HtmlHandler.showLoadingImport(true);
                     var ready = false;
                     var wait;
                     var counter = 0;
@@ -188,20 +189,22 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                         if (counter > 5000) {
                             clearTimeout(wait);
                             HtmlHandler.showImportSuccess(false);
+                            HtmlHandler.showLoadingImport(false);
                         }
                         var manoeuvreString = ExportImportProjects.getJSONImport();
                         if (manoeuvreString != null) {
-                                                            console.log(manoeuvreString);
 
                             if (manoeuvreString == "invalid format")
                             {
                                 clearTimeout(wait);
+                                HtmlHandler.showLoadingImport(false);
                                 HtmlHandler.showImportSuccess(false);
                             }
                             else if (manoeuvreString != "") {
                                 clearTimeout(wait);
                                 $('#input').val(manoeuvreString);
                                 refreshScene();
+                                HtmlHandler.showLoadingImport(false);
                                 HtmlHandler.showImportSuccess(true);
                             }
                         }
