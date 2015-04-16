@@ -16,11 +16,18 @@ module.exports = function (grunt) {
         },
       }
     , jasmine: {
-        src: "lib/**/*.js"
-      , options: {
-          specs: "spec/**/*.js"
-        , vendor: "vendor/**/*.js"
-      }
+    src: 'assets/scripts/**/*.js',
+    options: {
+        specs: 'tests/*spec.js',
+        template: require('grunt-template-jasmine-requirejs'),
+        templateOptions: {
+            requireConfig: {
+                baseUrl: '/assets',
+                paths: {
+                'jquery': 'libs/jquery/dist/jquery'
+                }
+            }
+        }
     }
   })
 
