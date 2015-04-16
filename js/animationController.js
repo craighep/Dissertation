@@ -177,7 +177,8 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                     ExportImportProjects.exportToJSON($('#input').val(), this);
                 });
                 $('input[name=file]').change(function() {
-                    ExportImportProjects.importFromJSON(this);
+                    var file = this.files[0];
+                    ExportImportProjects.importFromJSON(file);
                     var ready = false;
                     var wait;
                     var counter = 0;

@@ -23,14 +23,20 @@
 
         var require = {
             paths: {
-                "domReady": "../libs/require/domReady",
+                "domReady": "libs/require/domReady",
                 "grass.png": "../../img/grass.png"
             }
         };
 
     </script>
+
     <script type="text/javascript" src="../libs/require/require.js"></script>
  
+    <script type="text/javascript">
+    require.config({
+      baseUrl: '../',
+    });
+  </script>
     <!--
         Use RequireJS to load and execute the actual Jasmine test
         specifications (ie. specs).
@@ -45,6 +51,7 @@
             [
                 "domReady!",
                 "spec/terrain",
+                "spec/importExport"
                 //"spec/parseJson",
           //      "spec/animation",
           //       "spec/importExport"

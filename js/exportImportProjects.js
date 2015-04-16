@@ -48,18 +48,17 @@ define(['htmlHandler'], function(HtmlHandler) {
             }
         },
 
-        importFromJSON: function(evt) {
-            var f = evt.files[0];
-            if (f == null)
+        importFromJSON: function(file) {
+            if (file == null)
                 return "";
-            if (f) {
+            if (file) {
                 var r = new FileReader();
                 r.onloadend = function(e) {
                     var contents = e.target.result;
                     obj = JSON.parse(contents);
                     movesString = obj['manoeuvres'];
                 };
-                r.readAsText(f);
+                r.readAsText(file);
             }
         },
 

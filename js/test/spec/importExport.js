@@ -22,17 +22,38 @@ define(
  
                 // Should export manoeuvres to JSON from the scenario
                 it(
-                    "Lighting should not be null",
+                    "Should be able to export and import from JSON",
                     function(){
- 
-                        expect( ExportImportProjects.setupLight() ).not.toBe(null);
+                        var event = setUpEvent();
+                        exportImportProjects.exportToJson("o a b o", event);
+                        expect( ExportImportProjects.importFromJson("data.json") ).not.toBe(null);
                     }
                 );
  
  
             }
         );
- 
+    function setUpEvent() {
+        var event; // The custom event that will be created
+
+  if (document.createEvent) {
+    event = document.createEvent("HTMLEvents");
+    event.initEvent("name-of-custom-event", true, true);
+  } else {
+    event = document.createEventObject();
+    event.eventType = "name-of-custom-event";
+  }
+
+  event.eventName = "name-of-custom-event";
+
+  if (document.createEvent) {
+    element.dispatchEvent(event);
+  } else {
+    element.fireEvent("on" + event.eventType, event);
+  }
+
+  return event;
+    }
  
     }
 );
