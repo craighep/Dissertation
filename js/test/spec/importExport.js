@@ -2,9 +2,11 @@
 define(
     [
         "../../exportImportProjects",
-        "../../utilities"
+        "../../utilities",
+        "../../animationController",
+        "test/spec/testUtils"
     ],
-    function( ExportImportProjects, Utilities ){
+    function( ExportImportProjects, Utilities, AnimationController, TestUtils ){
  
  
         // Describe the test suite for this module.
@@ -39,6 +41,21 @@ define(
                         var json = Utilities.convertManoeuvresToJSON(manoeuvres);
                         var result = Utilities.convertJSONToManoeuvres(json);
                         expect( result ).toBe(manoeuvres);
+                    }
+                );
+
+                // Checks if local storage auto save switch correctly sets.
+                it(
+                    "Should be able to save change option of local storage on",
+                    function(){
+                        TestUtils.setUpAppend("<input id='autoSave' type='checkbox'>");
+                        AnimationController.initControlEvents();
+                        $('#autoSave').prop('checked', true);
+                        $('#autoSave').change();
+                        expect( ExportImportProjects.getAutoLoadLocal() ).toBe(true);
+                        $('#autoSave').prop('checked', false);
+                        $('#autoSave').change();
+                        TestUtils.removeAppended();
                     }
                 );
             }

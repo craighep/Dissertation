@@ -8,7 +8,7 @@ define(
  
         // Describe the test suite for this module.
         describe(
-            "The RomanNumeralEncoder encodes and decodes decimal values.",
+            "The terrain module creates and returns both ground and ligting for the scene.",
             function(){
  
                 // Check that terrain module creates a ground object, and returns it

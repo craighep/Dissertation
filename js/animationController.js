@@ -30,6 +30,8 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             manoeuvres = ParseJson.parseManoeuvreInput();
             pause(true);
             time = 0;
+            if(typeof cameraController == 'undefined')
+                return;
             cameraController.cameraReset();
             if (manoeuvres.length < 1) {
                 pause(true);
@@ -154,7 +156,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                     pause(true);
                 });
                 $("#input").keyup(function(event) {
-                    var keycode = event.keyCode.toString();
+                    var keycode = event.keyCode;
                     if (keycode == '13') {
                         pause(!paused);
                     } else {
