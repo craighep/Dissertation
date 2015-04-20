@@ -16,8 +16,16 @@ define(
                     "Manouvres from JSON instructions should not be null",
                     function(){
                         parseJson.init();
-                        console.log(parseJson.getManoeuvreArray());
                         expect( parseJson.getManoeuvreArray() ).not.toBe(null);
+                    }
+                );
+
+                // There should be 27 OLAN manoeuvres
+                it(
+                    "Should be 27 OLAN manoeuvre objects in the JSON file",
+                    function(){
+                        parseJson.init();
+                        expect( parseJson.getManoeuvreArray().length ).toBe(27);
                     }
                 );
             }

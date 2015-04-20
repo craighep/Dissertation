@@ -112,12 +112,11 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
              * @param {Cameras} cams  Cameras object to be affected when triggured by change of input
              * @param {Parent} p  Parent to be added to by tube
              */
-            initContolEvents: function(rend, cams, p) {
+            initControlEvents: function(rend, cams, p) {
                 // set variables first
                 cameraController = cams;
                 renderer = rend;
                 parent = p;
-
                 // setup event listeners for range of controls
                 $('#addOLAN').click(function() {
                     var newVal = $('#dropdown').val();
@@ -127,9 +126,11 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                     $('#input').val(oldVal + newVal);
                     refreshScene();
                 });
-                $('#radiusSegments').change(refreshScene);
-                $('#closed').change(refreshScene);
-                $('#segments').change(refreshScene);
+                var refreshEvents = ['#radiusSegments', '#closed', '#segments'];
+                for(var rf in refreshEvents){
+                    $(refreshEvents[rf]).change(refreshScene);
+                }
+
                 $('#scale').change(setScale);
                 $('#lookAhead').change(function() {
                     cameraController.showCamera();
@@ -174,7 +175,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                     ExportImportProjects.setAutoLoadLocal(autoSave);
                 });
 
-                
+
                 $('#export').click(function() {
                     ExportImportProjects.exportToJSON($('#input').val(), this);
                 });

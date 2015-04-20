@@ -119,7 +119,6 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
         parseManoeuvreInput: function() {
             var input = $('#input').val();
             ExportImportProjects.exportToLocalStorage(input);
-
             var moves = input.split(" ");
             var returnMoves = [{}];
             var i = 0;
