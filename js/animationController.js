@@ -173,9 +173,13 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                     var autoSave = $('#autoSave').is(':checked');
                     ExportImportProjects.setAutoLoadLocal(autoSave);
                 });
+
+                
                 $('#export').click(function() {
                     ExportImportProjects.exportToJSON($('#input').val(), this);
                 });
+
+
                 $('input[name=file]').change(function() {
                     var file = this.files[0];
                     ExportImportProjects.importFromJSON(file);

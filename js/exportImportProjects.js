@@ -5,7 +5,7 @@
  * @class exportImportProjects
  * @constructor
  */
-define(['htmlHandler'], function(HtmlHandler) {
+define(['htmlHandler', 'utilities'], function(HtmlHandler, Utilites) {
 	var movesString = "";
     function checkLocalStoragePermitted() {
         if (typeof(Storage) != "undefined")
@@ -23,20 +23,13 @@ define(['htmlHandler'], function(HtmlHandler) {
          *
          * @param {Boolean} enable  Boolean flag for enabling/ disabling OLAN input field
          */
-        exportToJSON: function(manoeuvres, el) {
-            var m = {
-                "manoeuvres": manoeuvres
-            };
-            var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(m));
-            el.setAttribute("href", "data:" + data);
-            el.setAttribute("download", "data.json");
+        exportToJSON: function(manoeuvres, element) {
+            var json = Utilites.convertManoeuvresToJSON(manoeuvres); 
+            Utilites.startDownload(json, element);
         },
 
         exportToLocalStorage: function(manoeuvres) {
             if (checkLocalStoragePermitted()) {
-                if (!localStorage.getItem("autoLoad"))
-                    return;
-                // Store
                 localStorage.setItem("manoeuvres", manoeuvres);
             }
         },
@@ -56,7 +49,7 @@ define(['htmlHandler'], function(HtmlHandler) {
                 r.onloadend = function(e) {
                     var contents = e.target.result;
                     obj = JSON.parse(contents);
-                    movesString = obj['manoeuvres'];
+                    movesString = Utilites.convertJSONToManoeuvres(obj);
                 };
                 r.readAsText(file);
             }

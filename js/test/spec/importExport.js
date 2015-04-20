@@ -1,59 +1,47 @@
-// Load the terrain module and describe tests.
+// Load the import/export and utilities modules and describe tests.
 define(
     [
-        "../../exportImportProjects"
+        "../../exportImportProjects",
+        "../../utilities"
     ],
-    function( ExportImportProjects ){
+    function( ExportImportProjects, Utilities ){
  
  
         // Describe the test suite for this module.
         describe(
-            "Importing and exporting scenarios to JSON and to localstorage. Tests for importing too.",
+            "Importing and exporting scenarios to JSON and to localstorage.",
             function(){
  
-                // Check that terrain module creates a ground object, and returns it
+                // Shoule be able to export and import from local storage
                 it(
                     "Exporting to and then importing from localStorage should work",
                     function(){
-                        ExportImportProjects.ExportImportProjects("o a b o");
+                        ExportImportProjects.exportToLocalStorage("o a b o");
                         expect( ExportImportProjects.importFromLocalStorage() ).toBe("o a b o");
                     }
                 );
  
                 // Should export manoeuvres to JSON from the scenario
                 it(
-                    "Should be able to export and import from JSON",
+                    "Should be able to export to JSON",
                     function(){
-                        var event = setUpEvent();
-                        exportImportProjects.exportToJson("o a b o", event);
-                        expect( ExportImportProjects.importFromJson("data.json") ).not.toBe(null);
+                        var manoeuvres = "o a b o";
+                        var json = Utilities.convertManoeuvresToJSON(manoeuvres);
+                        expect( manoeuvres ).toBe(json["manoeuvres"]);
                     }
                 );
- 
- 
+                
+                // Should import manoeuvres from JSON to the scenario
+                it(
+                    "Should be able to import from JSON",
+                    function(){
+                        var manoeuvres = "o a b o";
+                        var json = Utilities.convertManoeuvresToJSON(manoeuvres);
+                        var result = Utilities.convertJSONToManoeuvres(json);
+                        expect( result ).toBe(manoeuvres);
+                    }
+                );
             }
         );
-    function setUpEvent() {
-        var event; // The custom event that will be created
-
-  if (document.createEvent) {
-    event = document.createEvent("HTMLEvents");
-    event.initEvent("name-of-custom-event", true, true);
-  } else {
-    event = document.createEventObject();
-    event.eventType = "name-of-custom-event";
-  }
-
-  event.eventName = "name-of-custom-event";
-
-  if (document.createEvent) {
-    element.dispatchEvent(event);
-  } else {
-    element.fireEvent("on" + event.eventType, event);
-  }
-
-  return event;
-    }
- 
     }
 );

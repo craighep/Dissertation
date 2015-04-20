@@ -1,4 +1,4 @@
-// Load the terrain module and describe tests.
+// Load the json parser module and describe tests.
 define(
     [
         "../../parseJson"
@@ -11,11 +11,12 @@ define(
             "Tests the capabilities of converting from JSON to manoeuvre instructions",
             function(){
  
-                // Check that terrain module creates a ground object, and returns it
+                // Check that manoeuvre instrcutions are not null
                 it(
-                    "Manouvres from JSON should not be null",
+                    "Manouvres from JSON instructions should not be null",
                     function(){
                         parseJson.init();
+                        console.log(parseJson.getManoeuvreArray());
                         expect( parseJson.getManoeuvreArray() ).not.toBe(null);
                     }
                 );
