@@ -142,14 +142,14 @@
 
     
 
-    <h4 class="name" id="createGround"><span class="type-signature"></span>createGround<span class="signature">()</span><span class="type-signature"> &rarr; {Mesh}</span></h4>
+    <h4 class="name" id="createGrass"><span class="type-signature"></span>createGrass<span class="signature">()</span><span class="type-signature"> &rarr; {Texture}</span></h4>
 
     
 
 
 
 <div class="description">
-    Creates the ground grass-effect that covers a large area enough for a reasonable amount ofmanoeuvres. Places the ground at a slightly lower level than 0 on Y axis for plane to look grounded.
+    Loads up the grass texture and sets this a texture for the ground.
 </div>
 
 
@@ -193,7 +193,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="terrain.js.html">terrain.js</a>, <a href="terrain.js.html#line10">line 10</a>
+        <a href="terrain.js.html">terrain.js</a>, <a href="terrain.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -220,7 +220,264 @@
 
         
 <div class="param-desc">
-    ground  Ground object covering large area using grass image
+    grass  Grass texture for the ground.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Texture</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="createGround"><span class="type-signature"></span>createGround<span class="signature">()</span><span class="type-signature"> &rarr; {Mesh}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Creates the ground grass-effect that covers a large area enough for a reasonable amount ofmanoeuvres.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="terrain.js.html">terrain.js</a>, <a href="terrain.js.html#line47">line 47</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    ground  Ground object covering large area using grass image.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Mesh</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="createGroundMat"><span class="type-signature"></span>createGroundMat<span class="signature">(grass)</span><span class="type-signature"> &rarr; {Mesh}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Creates ground mesh plane to place in the scene. Applies the grass texture to it.Places the ground at a slightly lower level than 0 on Y axis for plane to look grounded.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>grass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Texture</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Texture of the ground.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="terrain.js.html">terrain.js</a>, <a href="terrain.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    ground  Ground object covering large area using grass image.
 </div>
 
 
@@ -297,7 +554,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="terrain.js.html">terrain.js</a>, <a href="terrain.js.html#line35">line 35</a>
+        <a href="terrain.js.html">terrain.js</a>, <a href="terrain.js.html#line61">line 61</a>
     </li></ul></dd>
     
 
@@ -324,7 +581,7 @@
 
         
 <div class="param-desc">
-    light  Light directed from a specified position
+    light  Light directed from a specified position.
 </div>
 
 
@@ -361,13 +618,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="TubeEvents.html">TubeEvents</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="exportImportProjects.html">exportImportProjects</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="Utilities.html">Utilities</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Thu Mar 12 2015 20:42:14 GMT+0000 (GMT Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Thu Apr 23 2015 18:55:59 GMT+0100 (GMT Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

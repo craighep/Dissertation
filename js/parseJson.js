@@ -59,6 +59,14 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
         });
     }
 
+    /**
+     * Performs regex on the input of the user's input and looks for parameters to
+     * indicates the starting place of the next manoeuvre in the array.
+     * @name ParseJson#parseSpacer
+     * @function
+     *
+     * @param {String} spacerInput  Entry data from the OLAN box.
+     */
     function parseSpacer(spacerInput){
             var regExp = /\(([^)]+)\)/;
             var matches = regExp.exec(spacerInput);

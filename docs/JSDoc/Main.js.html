@@ -34,8 +34,8 @@
  * @class Main
  * @constructor
  */
-define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animationController', 'cameraController', 'terrain'], 
-    function(CanvasController, HtmlHandler, TubeEvents, ParseJson, AnimationController, CameraController, Terrain) {
+define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', 'cameraController', 'terrain'], 
+    function(CanvasController, HtmlHandler, ParseJson, AnimationController, CameraController, Terrain) {
 
     var stats;
     var scene, renderer;
@@ -57,12 +57,12 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         setupRenderer();
         CameraController.initCameras(parent);
         ParseJson.init();
-        HtmlHandler.addContent(renderer); // add options for dropdown 
         stats = HtmlHandler.addStatsBar();
-        HtmlHandler.addHelpManoeuvreList(ParseJson.getManoeuvreArray());
+        var manoeuvres = ParseJson.getManoeuvreArray();
+        HtmlHandler.addContent(renderer, manoeuvres); // add options for dropdown 
+        HtmlHandler.addHelpManoeuvreList(manoeuvres);
         CanvasController.init(renderer, CameraController.getStandardCamera()); // setup event listeners for canvas movements
-        AnimationController.initContolEvents(renderer, CameraController, parent); // setup listeners for changes to controls
-        HtmlHandler.enableOLANInput(true);
+        AnimationController.initControlEvents(renderer, CameraController, parent); // setup listeners for changes to controls
         animate();
     })();
 
@@ -75,6 +75,7 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
     function setupParent() {
         parent = new THREE.Object3D();
         parent.position.y = 0;
+        parent.rotateOnAxis(new THREE.Vector3(0, 1, 0),  Math.PI / 2 );
     }
 
     /**
@@ -151,22 +152,26 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
     function renderPlane() {
         // Try Animate Camera Along Spline
         var scale = AnimationController.getScale();
-        var speed = AnimationController.getAnimationSpeed();
-        var time = Date.now();
-        var looptime = speed * 1000;
-        var t = (time % looptime) / looptime;
-        var tube = AnimationController.getTube()[0];
-        var pos = tube.parameters.path.getPointAt(t);
+        var time = AnimationController.getAnimateTime();
+        HtmlHandler.updateMoveReel(time, ParseJson.parseManoeuvreInput().length);
+        var count = 0;
+        while(time > 1){
+            time -= 1;
+            count++;
+        }
+        var tube = AnimationController.getTube()[count];
+        var pos = tube.parameters.path.getPointAt(time);
+        var dir = tube.parameters.path.getTangentAt(time);
         pos.multiplyScalar(scale);
         //----------------------------------------------------------
         // interpolation
         var segments = tube.tangents.length;
-        var pickt = t * segments;
+        var pickt = time * segments;
         var pick = Math.floor(pickt);
         var pickNext = (pick + 1) % segments;
         binormal.subVectors(tube.binormals[pickNext], tube.binormals[pick]);
         binormal.multiplyScalar(pickt - pick).add(tube.binormals[pick]);
-        var dir = tube.parameters.path.getTangentAt(t);
+        
         var offset = 15;
         normal.copy(binormal).cross(dir);
         // Move on a offset on its binormal
@@ -177,10 +182,12 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         var cameraEye = CameraController.getCameraEye();
         cameraEye.position.copy(pos);
         // Camera Orientation 1 - default look at
-        var lookAt = tube.parameters.path.getPointAt((t + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
+        var lookAt = tube.parameters.path.getPointAt((time + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
         // Camera Orientation 2 - up orientation via normal
-         if (!cameraController.getIsLookAhead())
+         if (!CameraController.getIsLookAhead())
+         {
              lookAt.copy(pos).add(dir);
+         }
         CameraController.setSplineCameraLookAt(lookAt, normal);
         CameraController.setRenderCamerasRotation();
     }
@@ -195,13 +202,13 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="TubeEvents.html">TubeEvents</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="exportImportProjects.html">exportImportProjects</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="Utilities.html">Utilities</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Thu Mar 12 2015 20:42:14 GMT+0000 (GMT Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Thu Apr 23 2015 18:55:59 GMT+0100 (GMT Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -6,8 +6,8 @@
  * @class Main
  * @constructor
  */
-define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animationController', 'cameraController', 'terrain'], 
-    function(CanvasController, HtmlHandler, TubeEvents, ParseJson, AnimationController, CameraController, Terrain) {
+define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', 'cameraController', 'terrain'], 
+    function(CanvasController, HtmlHandler, ParseJson, AnimationController, CameraController, Terrain) {
 
     var stats;
     var scene, renderer;

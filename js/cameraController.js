@@ -40,13 +40,20 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
         loader.load("json/models/plane.json", function(obj) {
             cameraEye = obj;
             cameraEye.visible = true;
+            resetCameraEye();
+            parent.add(cameraEye);
+            HtmlHandler.enableOLANInput(true);
+        });
+    }
+
+    function resetCameraEye() {
+        if (cameraEye != null) {
+            cameraEye.position.set(0, 0, 0);
             cameraEye.rotation.x = 0;
             cameraEye.rotation.y = 0;
             cameraEye.rotation.z = 0;
             cameraEye.rotateOnAxis(new THREE.Vector3(0, 1, 0),  Math.PI );
-            parent.add(cameraEye);
-            HtmlHandler.enableOLANInput(true);
-        });
+        }
     }
 
     /**
@@ -138,6 +145,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          * @name CameraController#getIsOnboard
          * @function
          *
+         * @returns {Boolean} onboard  Whether camera view is on-board.
          */
         getIsOnboard: function() {
             return onboard;
@@ -148,6 +156,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          * @name CameraController#getIsLookAhead
          * @function
          *
+         * @returns {Boolean} lookahead  Whether camera is looking ahead or not.
          */
         getIsLookAhead: function() {
             return lookAhead;
@@ -160,13 +169,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          *
          */
         cameraReset: function() {
-            if (cameraEye != null) {
-                cameraEye.position.set(0, 0, 0);
-                cameraEye.rotation.x = 0;
-                cameraEye.rotation.y = 0;
-                cameraEye.rotation.z = 0;
-                cameraEye.rotateOnAxis(new THREE.Vector3(0, 1, 0),  Math.PI );
-            }
+            resetCameraEye();    
         },
 
         /**

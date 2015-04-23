@@ -6,7 +6,7 @@
  * @class ManoeuvreController
  * @constructor
  */
-define(['tubeEvents'], function(TubeEvents) {
+define(function() {
     var tube = [];
     var tubeMesh = [];
     /**
@@ -172,7 +172,7 @@ define(['tubeEvents'], function(TubeEvents) {
                 startVector = prevVector.clone();
                 linePoints.push(startVector);
                 
-                var extrudePath = new CustomSplineCurve(linePoints);
+                var extrudePath = new THREE.SplineCurve3(linePoints);
                 createTube(extrudePath, segments, radiusSegments, parent);
                 linePoints = [];
                 linePoints.push(startVector);
@@ -180,11 +180,11 @@ define(['tubeEvents'], function(TubeEvents) {
         },
 
         /**
-         *
+         * Public method for emptying the tubes object, for refreshing the scene.
          * @name ManoeuvreController#removeTube
          * @function
          *
-         * @param {Manoeuvre} manoeuvre  Object represting a move, containing name, description and instructions
+         * @param {Parent} Parent  Holds all the objects on the scene.
          */
         removeTube: function(parent) {
             removeTubes(parent);

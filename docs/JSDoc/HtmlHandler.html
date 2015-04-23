@@ -49,7 +49,7 @@
 
 
 <div class="description">
-    Class responsible for adding and editing html related elements.This class adds to and creates Html elements such as dropdown options for manoeuvres, the movie reelfor represnting a break down of moves, and the stats bar displayed on top of the canvas.
+    Class responsible for adding and editing html related elements.  This class adds to and creates Html elements such as dropdown options for manoeuvres, the movie reel  for represnting a break down of moves, and the stats bar displayed on top of the canvas.
 </div>
 
 
@@ -242,7 +242,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line11">line 11</a>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line50">line 50</a>
     </li></ul></dd>
     
 
@@ -373,7 +373,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line79">line 79</a>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line122">line 122</a>
     </li></ul></dd>
     
 
@@ -504,7 +504,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line32">line 32</a>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -635,7 +635,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line66">line 66</a>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line109">line 109</a>
     </li></ul></dd>
     
 
@@ -766,7 +766,1133 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line101">line 101</a>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line144">line 144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="enableOLANInput"><span class="type-signature"></span>enableOLANInput<span class="signature">(enable)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Enables and disables the input box in the header of the page to ensure user can only type when permitted. Useful for blocking input when models and other JSON is being loaded.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>enable</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Boolean flag for enabling/ disabling OLAN input field</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line156">line 156</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getAnimateTime"><span class="type-signature"></span>getAnimateTime<span class="signature">()</span><span class="type-signature"> &rarr; {Long}</span></h4>
+
+    
+
+
+
+<div class="description">
+    The getter method for the time field which keeps track of where the animation hasgot to in terms of an overall percentage of the routine. Also checks when the time field has reached the end of its animation path, and resets back to the start,alongside calling the reset of the move reel.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="animationController.js.html">animationController.js</a>, <a href="animationController.js.html#line333">line 333</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    time  Current animate time.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Long</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="hideShowReel"><span class="type-signature"></span>hideShowReel<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Toggles the visibility of the move reel, which is called when the user presses thetoggle button.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line230">line 230</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="resetReel"><span class="type-signature"></span>resetReel<span class="signature">(moves)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Resets the move reel, by removing the hidden attributes from all the manoeuvres.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>moves</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount of manoeuvres to reset the hidden attribute.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line215">line 215</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="scrollReel"><span class="type-signature"></span>scrollReel<span class="signature">(time)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Moves the reel along by 4 places each time the animation completes 5 manoeuvres.Does this by hiding the four or more previus elements with the 'hidden' class.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The current amount of distance travelled in realtion to the amount of manoeuvres</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="showImportSuccess"><span class="type-signature"></span>showImportSuccess<span class="signature">(success)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Function for displaying the message provided back after attempting to upload and import a manoeuvre set json file. Can either be a success or an error.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Flag for error or success</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line168">line 168</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="showLoadingImport"><span class="type-signature"></span>showLoadingImport<span class="signature">(visible)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Shows or hides the loading bar when uploading a JSON file.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>visible</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Show or hide the loading bar.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line251">line 251</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="showReelToggle"><span class="type-signature"></span>showReelToggle<span class="signature">(reelLength)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Checks the amount of manoeuvres displayed in the reel, if there are none, then do notshow the toggle button, otherwise show it.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>reelLength</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount manoeuvres displayed in the reel</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="updateMoveReel"><span class="type-signature"></span>updateMoveReel<span class="signature">(time, moves)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Updates the move reel progress bars. Gets the current percentage of each move in relation to the overall time complete. Fills the bars already in the html with the width of eachindividual percentage.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The current amount of distance travelled in realtion to the amount of manoeuvres</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>moves</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The number of manoeuvres in the scenario</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="htmlHandler.js.html">htmlHandler.js</a>, <a href="htmlHandler.js.html#line187">line 187</a>
     </li></ul></dd>
     
 
@@ -808,13 +1934,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="TubeEvents.html">TubeEvents</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="exportImportProjects.html">exportImportProjects</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="Utilities.html">Utilities</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Thu Mar 12 2015 20:42:14 GMT+0000 (GMT Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Thu Apr 23 2015 18:55:59 GMT+0100 (GMT Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -1,50 +1,51 @@
-/** 
- * Class responsible for adding and editing html related elements.
- * This class adds to and creates Html elements such as dropdown options for manoeuvres, the movie reel
- * for represnting a break down of moves, and the stats bar displayed on top of the canvas.
- * @name HtmlHandler
- * @class HtmlHandler
- * @constructor
- */
+/**   
+ * Class responsible for adding and editing html related elements.  
+ * This class adds to and creates Html elements such as dropdown options for manoeuvres, the movie reel  
+ * for represnting a break down of moves, and the stats bar displayed on top of the canvas.  
+ * @name HtmlHandler  
+ * @classHtmlHandler  
+ * @constructor  
+ */ 
 define(['jquery'], function($) {
 
-        /**
-         * Moves the reel along by 4 places each time the animation completes 5 manoeuvres.
-         * Does this by hiding the four or more previus elements with the 'hidden' class.
-         * @name HtmlHandler#scrollReel
-         * @function
-         *
-         * @param {Float} time  The current amount of distance travelled in realtion to the 
-         * amount of manoeuvres
-         */
-        function scrollReel(time){
-            var hide = time - 5;
-            var count = 0;
-            var track = 4;
-            while (hide >= 0){
-                hide -= 5;
-                while(count < track){
-                    $( "#move_"+count ).addClass( "hidden" );
-                    count++;
-                }
-                track += 5;
+    /**
+     * Moves the reel along by 4 places each time the animation completes 5 manoeuvres.
+     * Does this by hiding the four or more previus elements with the 'hidden' class.
+     * @name HtmlHandler#scrollReel
+     * @function
+     *
+     * @param {Float} time  The current amount of distance travelled in realtion to the 
+     * amount of manoeuvres
+     */
+    function scrollReel(time){
+        var hide = time - 5;
+        var count = 0;
+        var track = 4;
+        while (hide >= 0){
+            hide -= 5;
+            while(count < track){
+                $( "#move_"+count ).addClass( "hidden" );
+                count++;
             }
+            track += 5;
         }
+    }
 
-        /**
-         * Checls the amount of manoeuvres displayed in the reel, if there are none, then do not
-         * show the toggle button, otherwise show it.
-         * @name HtmlHandler#showReelToggle
-         * @function
-         *
-         * @param {Integer} reelLength  The amount manoeuvres displayed in the reel
-         */
-        function showReelToggle(reelLength){
-            if (reelLength > 0)
-                $("#hideShow").show();
-            else
-                $("#hideShow").hide();
-        }
+    /**
+     * Checks the amount of manoeuvres displayed in the reel, if there are none, then do not
+     * show the toggle button, otherwise show it.
+     * @name HtmlHandler#showReelToggle
+     * @function
+     *
+     * @param {Integer} reelLength  The amount manoeuvres displayed in the reel
+     */
+    function showReelToggle(reelLength){
+        if (reelLength > 0)
+            $("#hideShow").show();
+        else
+            $("#hideShow").hide();
+    }
+
     return {
         /**
          * Adds options to manoeuvre drop down list, each from the manoeuvre array gained from the JSON file.
@@ -82,13 +83,12 @@ define(['jquery'], function($) {
             var list = $('.moves');
             var movesHtml = "";
             var bottom = "10px";
+
             if (moves.length > 4)
                 bottom = "16%";
-
             $('#stats').css({
                 "bottom": bottom
             });
-
             for (m in moves) {
                 manouvreImg = "".concat(moves[m]["olan"],".PNG");
                 movesHtml += '<li class="move" id="move_'+m+'">' +
@@ -209,7 +209,7 @@ define(['jquery'], function($) {
                 $( "#progressbar_"+(i) ).css( "width", t+"%" );
                 $( "#progressback_"+(i) ).css( "width", t+"%" );
             }
-        scrollReel(time);
+            scrollReel(time);
         },
 
         /**
@@ -249,10 +249,11 @@ define(['jquery'], function($) {
         },
 
         /**
+         * Shows or hides the loading bar when uploading a JSON file.
+         * @name HtmlHandler#showLoadingImport
+         * @function
          *
-         *
-         *
-         *
+         * @param {Boolean} visible  Show or hide the loading bar.
          */
          showLoadingImport: function(visible) {
             var loading = $('#loading');

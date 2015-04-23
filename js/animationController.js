@@ -30,19 +30,39 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             manoeuvres = ParseJson.parseManoeuvreInput();
             pause(true);
             time = 0;
+            refreshCameras();
+            refreshManoeuvres(manoeuvres);
+        }
+
+        /**
+         * Resets the cameras back to default positons, and turns off the on-board camera.
+         * @name AnimationController#refreshCameras
+         * @function
+         *
+         */
+        function refreshCameras() {
             if(typeof cameraController == 'undefined')
                 return;
             cameraController.cameraReset();
+            cameraController.setOnboardCamera(false);
+            cameraController.showCamera(true);
+        }
+
+        /**
+         * Updates the scene with the newly entered maneouvres.
+         * @name AnimationController#refreshManoeuvres
+         * @function
+         *
+         * @param {Array[Manoeuvres]} manoeuvres  Array holding the manoeuvres entered from OLAN
+         */
+        function refreshManoeuvres(manoeuvres) {
             if (manoeuvres.length < 1) {
                 pause(true);
-                cameraController.showCamera(true);
                 ManoeuvreController.removeTube(parent);
             } else {
-                cameraController.showCamera(true);
                 ManoeuvreController.addTube(manoeuvres, parent, false);
             }
             HtmlHandler.addMoveReel(manoeuvres);
-            cameraController.setOnboardCamera(false);
         }
 
         /**
@@ -97,11 +117,24 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             refreshScene();
         }
 
+        /**
+         * Turns off or on the auto-repeat trait of animating the flight paths.
+         * @name AnimationController#getAutoRepeat
+         * @function
+         *
+         * @returns {Boolean} flag  Value of check box for setting aut-repeat on.
+         **/
         function getAutoRepeat() {
             var flag = $('#repeat').is(':checked');
             return flag;
         }
 
+        /**
+         * Adds listeners for the OLAN dropdown, input box and play/ pause button.
+         * @name AnimationController#setUpInputListeners
+         * @function
+         *
+         **/
         function setUpInputListeners() {
             $('#addOLAN').click(function() {
                     var newVal = $('#dropdown').val();
@@ -127,6 +160,13 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             });
         }
 
+        /**
+         * Sets up listeners for actions with the animation options. For example, on chnage of options
+         * concerning the constrcution of flights causes the scene to be refreshed.
+         * @name AnimationController#setUpAnimationListeners
+         * @function
+         *
+         **/
         function setUpAnimationListeners() {
             var refreshEvents = ['#radiusSegments', '#closed', '#segments'];
             for(var rf in refreshEvents){
@@ -146,6 +186,13 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             $("#speed").change(setSpeed);
         }
 
+        /**
+         * Creates GUI listeners for page elements such as help and about sections. 
+         * Listener also for hiding or showing the move reel.
+         * @name AnimationController#setUpPageListeners
+         * @function
+         *
+         **/
         function setUpPageListeners() {
             $('#about').click(function() {
                 pause(true);
@@ -158,6 +205,14 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             });
         }
 
+        /**
+         * Sets up listeners for importing and exporting OLAN entered by the user. 
+         * Performs a call to initialise local storage, so previous entry from the user is 
+         * automatically added to the scene. 
+         * @name AnimationController#setUpSaveLoadListeners
+         * @function
+         *
+         **/
         function setUpSaveLoadListeners() {
 
             initialiseLocalStorage();
@@ -283,6 +338,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
              * @name HtmlHandler#getAnimateTime
              * @function
              *
+             * @returns {Long} time  Current animate time.
              */
             getAnimateTime: function() {
                 var moves = ParseJson.parseManoeuvreInput().length;
