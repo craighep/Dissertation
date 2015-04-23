@@ -102,6 +102,110 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             return flag;
         }
 
+        function setUpInputListeners() {
+            $('#addOLAN').click(function() {
+                    var newVal = $('#dropdown').val();
+                    var oldVal = $('#input').val();
+                    if (oldVal.length > 0)
+                        newVal = " " + newVal;
+                    $('#input').val(oldVal + newVal);
+                    refreshScene();
+            });
+            $('#pause').click(function() {
+                    manoeuvres = ParseJson.parseManoeuvreInput();
+                    if (manoeuvres.length > 0)
+                        pause(!paused); // Reverse current setting(pause / un-pause)
+            });
+            $("#input").keyup(function(event) {
+                    var keycode = event.keyCode;
+                    if (keycode == '13') {
+                        pause(!paused);
+                    } else {
+                        refreshScene();
+                    }
+                    event.stopPropagation();
+            });
+        }
+
+        function setUpAnimationListeners() {
+            var refreshEvents = ['#radiusSegments', '#closed', '#segments'];
+            for(var rf in refreshEvents){
+                $(refreshEvents[rf]).change(refreshScene);
+            }
+            $('#scale').change(setScale);
+            $('#lookAhead').change(function() {
+                cameraController.showCamera();
+            });
+            $('#cameraHelper').change(function() {
+                cameraController.showCameraHelper();
+            });
+            $('#onboard').change(function() {
+                var onboard = cameraController.getIsOnboard();
+                cameraController.setOnboardCamera(!onboard);
+            });
+            $("#speed").change(setSpeed);
+        }
+
+        function setUpPageListeners() {
+            $('#about').click(function() {
+                pause(true);
+            });
+            $('#help').click(function() {
+                pause(true);
+            });           
+            $("#hideShow").click(function() {
+                HtmlHandler.hideShowReel();
+            });
+        }
+
+        function setUpSaveLoadListeners() {
+
+            initialiseLocalStorage();
+
+            $('#autoSave').change(function() {
+                var autoSave = $('#autoSave').is(':checked');
+                ExportImportProjects.setAutoLoadLocal(autoSave);
+            });
+            $('#export').click(function() {
+                ExportImportProjects.exportToJSON($('#input').val(), this);
+            });
+            $('input[name=file]').change(function() {
+                var file = this.files[0];
+                ExportImportProjects.importFromJSON(file);
+                HtmlHandler.showLoadingImport(true);
+                var ready = false;
+                var wait;
+                var counter = 0;
+                var check = function() {
+                    wait = setTimeout(check, 500);
+                    counter += 500;
+                    if (counter > 5000) {
+                        clearTimeout(wait);
+                        HtmlHandler.showImportSuccess(false);
+                        HtmlHandler.showLoadingImport(false);
+                    }
+                    var manoeuvreString = ExportImportProjects.getJSONImport();
+                    if (manoeuvreString != null) {
+
+                        if (manoeuvreString == "invalid format")
+                        {
+                            clearTimeout(wait);
+                            HtmlHandler.showLoadingImport(false);
+                            HtmlHandler.showImportSuccess(false);
+                        }
+                        else if (manoeuvreString != "") {
+                            clearTimeout(wait);
+                            $('#input').val(manoeuvreString);
+                            refreshScene();
+                            HtmlHandler.showLoadingImport(false);
+                            HtmlHandler.showImportSuccess(true);
+                        }
+                    }
+                }
+                check();
+            });
+        }
+
         return {
 
             /**
@@ -120,104 +224,10 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                 renderer = rend;
                 parent = p;
                 // setup event listeners for range of controls
-                $('#addOLAN').click(function() {
-                    var newVal = $('#dropdown').val();
-                    var oldVal = $('#input').val();
-                    if (oldVal.length > 0)
-                        newVal = " " + newVal;
-                    $('#input').val(oldVal + newVal);
-                    refreshScene();
-                });
-                var refreshEvents = ['#radiusSegments', '#closed', '#segments'];
-                for(var rf in refreshEvents){
-                    $(refreshEvents[rf]).change(refreshScene);
-                }
-
-                $('#scale').change(setScale);
-                $('#lookAhead').change(function() {
-                    cameraController.showCamera();
-                });
-                $('#cameraHelper').change(function() {
-                    cameraController.showCameraHelper();
-                });
-                $('#onboard').change(function() {
-                    var onboard = cameraController.getIsOnboard();
-                    cameraController.setOnboardCamera(!onboard);
-                });
-                $('#pause').click(function() {
-                    manoeuvres = ParseJson.parseManoeuvreInput();
-                    if (manoeuvres.length > 0)
-                        pause(!paused); // Reverse current setting(pause / un-pause)
-                });
-                $('#about').click(function() {
-                    pause(true);
-                });
-                $('#help').click(function() {
-                    pause(true);
-                });
-                $("#input").keyup(function(event) {
-                    var keycode = event.keyCode;
-                    if (keycode == '13') {
-                        pause(!paused);
-                    } else {
-                        refreshScene();
-                    }
-                    event.stopPropagation();
-                });
-                $("#speed").change(setSpeed);
-                $("#hideShow").click(function() {
-                    HtmlHandler.hideShowReel();
-                });
-                // -------------------------------------
-                // SAVE/ LOAD EVENTS
-                //--------------------------------------
-                initialiseLocalStorage();
-                $('#autoSave').change(function() {
-                    var autoSave = $('#autoSave').is(':checked');
-                    ExportImportProjects.setAutoLoadLocal(autoSave);
-                });
-
-
-                $('#export').click(function() {
-                    ExportImportProjects.exportToJSON($('#input').val(), this);
-                });
-
-
-                $('input[name=file]').change(function() {
-                    var file = this.files[0];
-                    ExportImportProjects.importFromJSON(file);
-                    HtmlHandler.showLoadingImport(true);
-                    var ready = false;
-                    var wait;
-                    var counter = 0;
-                    var check = function() {
-                        wait = setTimeout(check, 500);
-                        counter += 500;
-                        if (counter > 5000) {
-                            clearTimeout(wait);
-                            HtmlHandler.showImportSuccess(false);
-                            HtmlHandler.showLoadingImport(false);
-                        }
-                        var manoeuvreString = ExportImportProjects.getJSONImport();
-                        if (manoeuvreString != null) {
-
-                            if (manoeuvreString == "invalid format")
-                            {
-                                clearTimeout(wait);
-                                HtmlHandler.showLoadingImport(false);
-                                HtmlHandler.showImportSuccess(false);
-                            }
-                            else if (manoeuvreString != "") {
-                                clearTimeout(wait);
-                                $('#input').val(manoeuvreString);
-                                refreshScene();
-                                HtmlHandler.showLoadingImport(false);
-                                HtmlHandler.showImportSuccess(true);
-                            }
-                        }
-                    }
-                    check();
-                });
+                setUpInputListeners();
+                setUpAnimationListeners();
+                setUpPageListeners();
+                setUpSaveLoadListeners();
             },
 
             /**

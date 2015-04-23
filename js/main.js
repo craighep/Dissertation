@@ -133,6 +133,7 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         }
         var tube = AnimationController.getTube()[count];
         var pos = tube.parameters.path.getPointAt(time);
+        var dir = tube.parameters.path.getTangentAt(time);
         pos.multiplyScalar(scale);
         //----------------------------------------------------------
         // interpolation
@@ -142,7 +143,7 @@ define(['canvasController', 'htmlHandler', 'tubeEvents', 'parseJson', 'animation
         var pickNext = (pick + 1) % segments;
         binormal.subVectors(tube.binormals[pickNext], tube.binormals[pick]);
         binormal.multiplyScalar(pickt - pick).add(tube.binormals[pick]);
-        var dir = tube.parameters.path.getTangentAt(time);
+        
         var offset = 15;
         normal.copy(binormal).cross(dir);
         // Move on a offset on its binormal

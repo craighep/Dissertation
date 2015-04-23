@@ -149,9 +149,8 @@ define(function() {
         var d = ((typeof event.wheelDelta != "undefined") ? (-event.wheelDelta) : event.detail);
         d = 100 * ((d > 0) ? 1 : -1);
         var cPos = camera.position;
-        if (isNaN(cPos.x) || isNaN(cPos.y) || isNaN(cPos.y)) return;
-        // Your zomm limitation
-        // For X axe you can add anothers limits for Y / Z axes
+        if (isNaN(cPos.x) || isNaN(cPos.y) || isNaN(cPos.y)) 
+            return;
         if (cPos.x > 1 || cPos.x < 0) {
             return;
         }

@@ -89,11 +89,13 @@ define(['tubeEvents'], function(TubeEvents) {
      * @param {Integer} length  Length of the manoeuvre after translation
      */
     function calculateVector(vector, pitch, roll, yaw, length) {
-        var pitchAngle = Math.PI / 180 * 12 * pitch;
-        var yawAngle = Math.PI / 180 * 12 * yaw;
-        var rollAngle = Math.PI / 180 * 12 * roll;
+        var pitchAngle = Math.PI / 180 * 15 * pitch;
+        var yawAngle = Math.PI / 180 * 15 * yaw;
+        var rollAngle = Math.PI / 180 * 15 * roll;
+        console.log(pitchAngle);
         var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
         vector.applyEuler(a);
+        console.log(vector)
         vector.setZ(vector.z + length);
     }
 
@@ -142,6 +144,7 @@ define(['tubeEvents'], function(TubeEvents) {
             for (m in values) {
 
                 var components = values[m]["components"];
+                                    console.log(startVector)
 
                 for (var i = 0; i < components.length; i++) {
                     var component = components[i];
@@ -155,11 +158,15 @@ define(['tubeEvents'], function(TubeEvents) {
                         prevVector = linePoints[linePoints.length - 1].clone();
                     if (pitch == 0 && yaw == 0 && roll == 0) {
                         prevVector.setZ(prevVector.z + length);
+                        console.log("forward")
                         linePoints.push(prevVector);
                     } else {
                         calculateVector(prevVector, pitch, roll, yaw, length);
+                        console.log(pitch + " " + roll + " " + yaw)
                         linePoints.push(prevVector);
                     }
+                                        console.log(prevVector)
+
                 }
                 var startVector = new THREE.Vector3(0, 0, 0);
                 startVector = prevVector.clone();

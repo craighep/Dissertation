@@ -47,12 +47,5 @@ define(function() {
 		this.LENGTH = length;
    }
 
-   component.prototype = {
-   
-   	function2: function () {
-
-   	}
-   };
-
    return component; 
 });

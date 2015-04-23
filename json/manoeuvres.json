@@ -1979,7 +1979,7 @@
                     "_pitch": "NIL",
                     "_roll": "NIL",
                     "_yaw": "NIL",
-                    "_length": "1"
+                    "_length": "2"
                 }],
                 "_olanPrefix": "",
                 "_name": "Rounded loop"
@@ -3434,6 +3434,44 @@
                 "_name": "Inverse half cuban"
             }],
             "_olan": "c"
+        },
+        {
+            "variant": [{
+                "component": [{
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
+                    "_length": "2"
+                }, {
+                    "_pitch": "POS",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
+                    "_length": "1"
+                }, {
+                    "_pitch": "POS",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
+                    "_length": "1"
+                }, {
+                    "_pitch": "POS",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
+                    "_length": "1"
+                }, {
+                    "_pitch": "POS",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
+                    "_length": "1"
+                }, {
+                    "_pitch": "NIL",
+                    "_roll": "NIL",
+                    "_yaw": "NIL",
+                    "_length": "2"
+                }],
+                "_olanPrefix": "",
+                "_name": "Test"
+            }],
+            "_olan": "w"
         }]
     }
 }
