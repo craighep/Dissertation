@@ -47,9 +47,48 @@ define(['jquery'], function($) {
             $("#hideShow").hide();
     }
 
-    function showReelBrowser(length){
-        if(length > 5){
+    /**
+     * Hides and dsplays the left arrow button for naviating the movie-reel.
+     * @name HtmlHandler#toggleReelButtonLeft
+     * @function
+     *
+     * @param {Boolean} left  Whether to show the left button or not.
+     */
+    function toggleReelButtonLeft(left){
+        if(left)
+            $('#moveReelLeft').removeClass('hidden');
+        else
+            $('#moveReelLeft').addClass('hidden');
+    }
+
+    /**
+     * Hides and dsplays the right arrow button for naviating the movie-reel.
+     * @name HtmlHandler#toggleReelButtonRight
+     * @function
+     *
+     * @param {Boolean} right  Whether to show the right button or not.
+     */
+    function toggleReelButtonRight(right){
+        if(right)
             $('#moveReelRight').removeClass('hidden');
+        else
+            $('#moveReelRight').addClass('hidden');
+    }
+
+    /**
+     * Shows both arrows depending on whether there are more than 5 manoeuvres
+     * thus filling up the spaces at the bottom of the canvas.
+     * @name HtmlHandler#showReelBrowser
+     * @function
+     *
+     * @param {Integer} length  The amount manoeuvres displayed in the reel
+     */
+    function showReelBrowser(length){
+        if(length > 5)
+            toggleReelButtonRight(true);
+        else {
+            toggleReelButtonRight(false);
+            toggleReelButtonLeft(false);
         }
     }
 
@@ -196,6 +235,18 @@ define(['jquery'], function($) {
         },
 
         /**
+         * Disables both left and right arrows for navigating the movie-reel.
+         * @name HtmlHandler#disableReelNavigation
+         * @function
+         *
+         * @param {Boolean} disabled  Whether or not to disable the arrows.
+         */
+        disableReelNavigation: function(disabled){
+            toggleReelButtonRight(disabled && $("#move_5").length);
+            toggleReelButtonLeft(false);
+        },
+
+        /**
          * Updates the move reel progress bars. Gets the current percentage of each move in relation to 
          * the overall time complete. Fills the bars already in the html with the width of each
          * individual percentage.
@@ -274,7 +325,16 @@ define(['jquery'], function($) {
                 loading.addClass( "hidden" );
          },
 
+         /**
+         * Moves the reel left, but also checks if the limit to the left has
+         * already been reached. If so, hids the left arrow button.
+         * @name HtmlHandler#moveReelLeft
+         * @function
+         *
+         */
          moveReelLeft: function(){
+            toggleReelButtonRight(true);
+
             var first = $(".move:not(.hidden)").attr('id');
             first = first.replace("move_", "");
             first = parseInt(first);
@@ -291,6 +351,13 @@ define(['jquery'], function($) {
             }
          },
 
+         /**
+         * Moves the reel right, but also checks if the limit to the right has
+         * already been reached. If so, hids the right arrow button.
+         * @name HtmlHandler#moveReelRight
+         * @function
+         *
+         */
          moveReelRight: function(){
             var first = $(".move:not(.hidden)").attr('id');
             first = first.replace("move_", "");
@@ -304,7 +371,10 @@ define(['jquery'], function($) {
                 if (i == 5)
                     $( res ).addClass("first");
             }
-            $('#moveReelLeft').removeClass('hidden');
+
+            toggleReelButtonLeft(true);
+             if(!$("#move_"+first).length)
+                toggleReelButtonRight(false);
          }
     }
 });

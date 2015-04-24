@@ -172,6 +172,18 @@ canvas {
 		background-color: $color_mine_shaft_49_approx;
 		height: 15%;
 		width: 4%;
+		img {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  margin: auto;
+		  opacity: 0.4;
+		}
+	}
+	.carosel:hover {
+		img {
+		  opacity: 0.9;
+		}
 	}
 	#moveReelRight {
 		right: 0;

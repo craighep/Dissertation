@@ -99,6 +99,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             $('#pause').css({
                 "background-image": "url(" + imgUrl + (paused ? "play" : "pause") + ".png)"
             });
+            HtmlHandler.disableReelNavigation(paused);
         }
 
         /**

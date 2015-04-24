@@ -134,6 +134,14 @@ canvas {
     background-color: rgba(51, 51, 51, 0.49);
     height: 15%;
     width: 4%; }
+    .moveStrip .carosel img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      opacity: 0.4; }
+  .moveStrip .carosel:hover img {
+    opacity: 0.9; }
   .moveStrip #moveReelRight {
     right: 0;
     bottom: 0;
