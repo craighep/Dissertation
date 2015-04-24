@@ -47,6 +47,12 @@ define(['jquery'], function($) {
             $("#hideShow").hide();
     }
 
+    function showReelBrowser(length){
+        if(length > 5){
+            $('#moveReelRight').removeClass('hidden');
+        }
+    }
+
     return {
         /**
          * Adds options to manoeuvre drop down list, each from the manoeuvre array gained from the JSON file.
@@ -92,7 +98,10 @@ define(['jquery'], function($) {
             });
             for (m in moves) {
                 manouvreImg = "".concat(moves[m]["olan"],".PNG");
-                movesHtml += '<li class="move" id="move_'+m+'">' +
+                var hidden = "";
+                if (m > 4)
+                    hidden = " hidden"
+                movesHtml += '<li class="move'+hidden+'" id="move_'+m+'">' +
                                 '<img src="img/manoeuvres/'+manouvreImg+'" align="middle">' +
                                 '<div class="progressbar">'+
                                     '<div id="progressbar_'+m+'"></div>'+
@@ -105,6 +114,7 @@ define(['jquery'], function($) {
             );
             showReelToggle(moves.length);
             $( ".progressbar > div" ).css( "width", "0%" );
+            showReelBrowser(moves.length);
         },
 
         /**
@@ -262,6 +272,39 @@ define(['jquery'], function($) {
                 loading.removeClass( "hidden" );
             else
                 loading.addClass( "hidden" );
+         },
+
+         moveReelLeft: function(){
+            var first = $(".move:not(.hidden)").attr('id');
+            first = first.replace("move_", "");
+            first = parseInt(first);
+            if (first == 5)
+                $('#moveReelLeft').addClass('hidden');
+            for (var i = 0; i < 10; i++){
+                var res = "#move_" + String(first--);
+                if (i > 5)
+                    $( res ).addClass( "hidden" );
+                else 
+                    $( res ).removeClass( "hidden" );
+                if (i == 0)
+                    $( res ).addClass("first");
+            }
+         },
+
+         moveReelRight: function(){
+            var first = $(".move:not(.hidden)").attr('id');
+            first = first.replace("move_", "");
+            first = parseInt(first);
+            for (var i = 0; i < 10; i++){
+                var res = "#move_" + String(first++);
+                if (i < 5)
+                    $( res ).addClass( "hidden" );
+                else 
+                    $( res ).removeClass( "hidden" );
+                if (i == 5)
+                    $( res ).addClass("first");
+            }
+            $('#moveReelLeft').removeClass('hidden');
          }
     }
 });

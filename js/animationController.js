@@ -206,6 +206,21 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
         }
 
         /**
+         * Creates GUI listeners for the movie reel for moving left and right along manoeuvres.
+         * @name AnimationController#setUpPageLsetUpReelListenersisteners
+         * @function
+         *
+         **/
+        function setUpReelListeners() {
+            $('#moveReelRight').click(function() {
+                HtmlHandler.moveReelRight();
+            });
+            $('#moveReelLeft').click(function() {
+                HtmlHandler.moveReelLeft();
+            });    
+        }
+
+        /**
          * Sets up listeners for importing and exporting OLAN entered by the user. 
          * Performs a call to initialise local storage, so previous entry from the user is 
          * automatically added to the scene. 
@@ -283,6 +298,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                 setUpAnimationListeners();
                 setUpPageListeners();
                 setUpSaveLoadListeners();
+                setUpReelListeners();
             },
 
             /**

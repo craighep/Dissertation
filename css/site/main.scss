@@ -168,6 +168,23 @@ canvas {
 			margin-left: 0;
 		}
 	}
+	.carosel {
+		background-color: $color_mine_shaft_49_approx;
+		height: 15%;
+		width: 4%;
+	}
+	#moveReelRight {
+		right: 0;
+		bottom:0;
+		position: fixed;
+		z-index: 5;
+	}
+	#moveReelLeft {
+		left: 0;
+		bottom:0;
+		position: fixed;
+		z-index: 5;
+	}
 }
 .progressback {
 	height: 100%;
