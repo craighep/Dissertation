@@ -128,6 +128,8 @@ canvas {
         z-index: 5; }
       .moveStrip ul li:not(.hidden):first-child {
         margin-left: 0; }
+    .moveStrip ul .first {
+      margin-left: 0; }
 
 .progressback {
   height: 100%;

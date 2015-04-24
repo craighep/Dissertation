@@ -9,7 +9,7 @@
 define(['jquery'], function($) {
 
     /**
-     * Moves the reel along by 4 places each time the animation completes 5 manoeuvres.
+     * Moves the reel along by 5 places each time the animation completes 5 manoeuvres.
      * Does this by hiding the four or more previus elements with the 'hidden' class.
      * @name HtmlHandler#scrollReel
      * @function
@@ -17,17 +17,18 @@ define(['jquery'], function($) {
      * @param {Float} time  The current amount of distance travelled in realtion to the 
      * amount of manoeuvres
      */
-    function scrollReel(time){
-        var hide = time - 5;
-        var count = 0;
-        var track = 4;
-        while (hide >= 0){
-            hide -= 5;
-            while(count < track){
-                $( "#move_"+count ).addClass( "hidden" );
-                count++;
-            }
-            track += 5;
+    function scrollReel(time, moves){
+        var set = time / 5;
+        var track = parseInt(set) * 5;
+        for(var b =0; b< moves; b++){
+            var res = "#move_" + String(b);
+            $( res ).addClass( "hidden" );
+        }
+        for(var i =0; i < 5; i++){
+            var res = "#move_" + String(track+i);
+            if (i == 0)
+                $( res ).addClass("first");
+            $( res ).removeClass( "hidden" );
         }
     }
 
@@ -209,7 +210,7 @@ define(['jquery'], function($) {
                 $( "#progressbar_"+(i) ).css( "width", t+"%" );
                 $( "#progressback_"+(i) ).css( "width", t+"%" );
             }
-            scrollReel(time);
+            scrollReel(time, moves);
         },
 
         /**
