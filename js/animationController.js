@@ -43,7 +43,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
         function refreshCameras() {
             if(typeof cameraController == 'undefined')
                 return;
-            cameraController.cameraReset();
+            cameraController.cameraReset(parent);
             cameraController.setOnboardCamera(false);
             cameraController.showCamera(true);
         }
@@ -362,8 +362,9 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                 time += speed;
                 if(moves < time){
                     time = 0;
-                    if(!getAutoRepeat())
+                    if(!getAutoRepeat()){
                         pause(true);
+                    }
                     HtmlHandler.resetReel(moves);
                 } 
                 return time;

@@ -148,11 +148,8 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
         normal.copy(binormal).cross(dir);
         // Move on a offset on its binormal
         pos.add(normal.clone().multiplyScalar(offset));
-        var splineCamera = CameraController.getSplineCamera();
         CameraController.setSplineCameraPosition(pos);
         CameraController.setCameraEyePosition(pos);
-        var cameraEye = CameraController.getCameraEye();
-        cameraEye.position.copy(pos);
         // Camera Orientation 1 - default look at
         var lookAt = tube.parameters.path.getPointAt((time + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
         // Camera Orientation 2 - up orientation via normal
@@ -162,5 +159,6 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
          }
         CameraController.setSplineCameraLookAt(lookAt, normal);
         CameraController.setRenderCamerasRotation();
+        CameraController.addSmoke(parent);
     }
 });

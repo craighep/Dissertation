@@ -14,6 +14,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
     var showCameraHelper = false;
     var onboard = false;
     var lookAhead = false;
+    var smoke = [];
 
     /**
      * Camera Helper created, and sets the spline camera to stick to the edge of the manoeuvre line.
@@ -81,6 +82,21 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
         standardCamera.position.set(0, 50, 500);
     }
 
+    function updateTrail(parent) {
+        for(i in smoke) {
+            smoke[i].material.opacity -=0.01;
+        }
+        if(smoke.length > 250){
+            parent.remove(smoke.shift(), smoke.shift());
+        }
+    }
+
+    function clearSmoke(parent){
+        for(i in smoke) {
+            parent.remove(smoke[i]);
+        }
+        smoke = [];
+    }
     return {
         /**
          * Initiates the creation of all the different camera elements.
@@ -168,8 +184,9 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          * @function
          *
          */
-        cameraReset: function() {
+        cameraReset: function(parent) {
             resetCameraEye();    
+            clearSmoke(parent);
         },
 
         /**
@@ -214,7 +231,7 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
         setRenderCamerasRotation: function() {
             splineCamera.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
             cameraEye.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
-            cameraEye.rotation.z += 90;
+            cameraEye.rotation.z += 1.56; // Model is out of line on the Z axis, rotating this many radians fixes the planes flight angle.
             cameraHelper.update();
         },
 
@@ -250,7 +267,26 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          */
         setCameraEyePosition: function(pos) {
             cameraEye.position.copy(pos);
-        }
-    }
+        },
 
+        addSmoke: function(parent) {
+            var alternate = 0;
+            while(alternate < 2) {
+                var geo = new THREE.BoxGeometry( 1, 2, 10 );
+                var cube = new THREE.Mesh( geo, new THREE.MeshBasicMaterial({ color: 0x1D1D1D }) );
+                cube.material.transparent = true;
+                parent.add( cube );
+                smoke.push(cube);
+                cube.position.copy(cameraEye.position);
+                cube.rotateOnAxis(new THREE.Vector3(0, 1, 0),  Math.PI );
+                cube.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
+                if (alternate > 0)
+                    cube.position.x += 10;
+                else 
+                    cube.position.x -= 10;
+                alternate++;
+            }
+            updateTrail(parent);
+        },
+    }
 });
