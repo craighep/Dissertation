@@ -88,14 +88,47 @@ define(function() {
      * @param {Integer} length  Length of the manoeuvre after translation
      */
     function calculateVector(vector, pitch, roll, yaw, length) {
+        
+        
         var pitchAngle = Math.PI / 180 * 15 * pitch;
         var yawAngle = Math.PI / 180 * 15 * yaw;
         var rollAngle = Math.PI / 180 * 15 * roll;
-      //  console.log(pitchAngle);
-        var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
-        vector.applyEuler(a);
-     //   console.log(vector)
+        // var  matrix = mat4.create();
+        // mat4.identity(matrix); // Set to identity
+        // mat4.rotate(matrix, pitchAngle, [1, 0, 0]); // Rotate 90 degrees around the Y axis
+        // mat4.translate(matrix, [0, 0, length]); // Translate back 10 units
+        // console.log(matrix)
+
+        // Simple rig for rotating around 3 axes
+
+        var m = new THREE.Matrix4();
+
+        var m1 = new THREE.Matrix4();
+        var m2 = new THREE.Matrix4();
+        var m3 = new THREE.Matrix4();
+        m1.makeRotationX( pitchAngle );
+        m2.makeRotationY( rollAngle );
+        m3.makeRotationZ( yawAngle );
+        m.multiplyMatrices( m1, m2 );
+        m.multiply( m3 )
+        if(pitchAngle ==0 && yawAngle == 0 && rollAngle==0)
+            m.makeTranslation( 0,0,10 );
+        vector.applyMatrix4(m);
+     //   var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
+    //    vector.applyEuler(a);
         vector.setZ(vector.z + length);
+
+    }
+
+    function calculateSpacer(spacer, linePoints) {
+                if (spacer != null){    
+                    var prevVector = new THREE.Vector3(0, 0, 0);
+
+                    if (linePoints.length > 0)
+                        prevVector = linePoints[linePoints.length - 1].clone();                
+                    prevVector.add(new THREE.Vector3(0, parseInt(spacer[1]), parseInt(spacer[0])));
+                    linePoints.push(prevVector);
+                }
     }
 
     return {
@@ -135,12 +168,13 @@ define(function() {
             var segments = parseInt($('#segments').val());
             var closed2 = $('#closed').is(':checked');
             var radiusSegments = parseInt($('#radiusSegments').val());
-            var startVector = new THREE.Vector3(0, 0, 0);
+            
             var linePoints = [];
             removeTubes(parent);
 
             for (m in values) {
-                var components = values[m]["components"];
+                    var components = values[m]["components"];
+                    var prevVector = calculateSpacer(values[m]["spacer"], linePoints)
                 
                 for (var i = 0; i < components.length; i++) {
                     var component = components[i];
@@ -150,15 +184,17 @@ define(function() {
                     var length = component.LENGTH * 10;
                     var prevVector = new THREE.Vector3(0, 0, 0);
 
-                    if (linePoints.length > 0)
+                    if (linePoints.length > 0){
                         prevVector = linePoints[linePoints.length - 1].clone();
-                    if (pitch == 0 && yaw == 0 && roll == 0) {
-                        prevVector.setZ(prevVector.z + length);
-                        linePoints.push(prevVector);
-                    } else {
-                        calculateVector(prevVector, pitch, roll, yaw, length);
-                        linePoints.push(prevVector);
                     }
+                        calculateVector(prevVector, pitch, roll, yaw, length);
+                        linePoints.push(prevVector);    
+                        var geo = new THREE.BoxGeometry( 5, 5, 5 );
+                        var smokeParticle = new THREE.Mesh( geo, new THREE.MeshBasicMaterial({ color: "rgb(0,255,0)" }) );
+                        smokeParticle.material.transparent = true;
+                        smokeParticle.position.copy(prevVector)
+                        parent.add( smokeParticle );  
+
                 }
                 var extrudePath = new THREE.SplineCurve3(linePoints);
                 createTube(extrudePath, segments, radiusSegments, parent);

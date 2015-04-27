@@ -151,6 +151,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                         pause(!paused); // Reverse current setting(pause / un-pause)
             });
             $("#input").keyup(function(event) {
+                    $('#input').val($('#input').val().toLowerCase());
                     var keycode = event.keyCode;
                     if (keycode == '13') {
                         pause(!paused);

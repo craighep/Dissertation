@@ -20,7 +20,7 @@ define(function() {
     }
 
     function fadeSmoke(parent) {
-        for(i in smoke) {
+        for(var i in smoke) {
             smoke[i].material.opacity -=0.01;
         }
         if(smoke.length > 250){
@@ -39,16 +39,16 @@ define(function() {
             cube.position.x -= 19;
     }
 
-    function colourSmokeParticle(cube){
-        var degrees = cube.rotation.x * (180/Math.PI);
+    function colourSmokeParticle(smokeParticle){
+        var degrees = smokeParticle.rotation.x * (180/Math.PI);
         
         if (degrees < 120 && degrees > -120)
         {   
             degrees = Math.abs(degrees)
-            strength =  120 -degrees;
+            var strength =  120 -degrees;
             var red = Math.round(255 / 120 * Math.abs(strength));
             var green = Math.round(255 - red);
-            cube.material.color.set("rgb("+red+","+green+",0)");
+            smokeParticle.material.color.set("rgb("+red+","+green+",0)");
         }
     }
 

@@ -9,6 +9,7 @@
 define(['jquery', 'component', 'exportImportProjects'], function($, Component, ExportImportProjects) {
 
     var manoeuvreArray = [{}];
+    var spacerArray =[[]];
 
     /**
      * Parses an external JSON file containing all the intstructions for each manoeuvre, and places this into
@@ -84,12 +85,12 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
             if(spaceParams.length === 0)
                 return;
             //----------------------------------------
-            for(p in spaceParams){
+            for(var p in spaceParams){
                 if(isNaN(spaceParams[p]))
                     return;
             }
             //----------------------------------------
-            // TODO
+            spacerArray[spacerArray.length]= spaceParams;
     }
     return {
 
@@ -134,14 +135,12 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
             for (m in moves) {
                 var move = moves[m];
                 if (move.indexOf("(") > -1) {
-                    var spacer = parseSpacer(move);
-                    if(spacer != null) {
-                        //TODO
-                    }
+                    parseSpacer(move, returnMoves.length);
                 }
                 for (var a = 0; a < manoeuvreArray.length; a++) {
                     if (manoeuvreArray[a]["olan"] === move) {
                         returnMoves[i] = manoeuvreArray[a];
+                        returnMoves[i]["spacer"] = spacerArray.pop();
                         i++;
                         break;
                     }
