@@ -93,26 +93,18 @@ define(function() {
         var pitchAngle = Math.PI / 180 * 15 * pitch;
         var yawAngle = Math.PI / 180 * 15 * yaw;
         var rollAngle = Math.PI / 180 * 15 * roll;
-        // var  matrix = mat4.create();
-        // mat4.identity(matrix); // Set to identity
-        // mat4.rotate(matrix, pitchAngle, [1, 0, 0]); // Rotate 90 degrees around the Y axis
-        // mat4.translate(matrix, [0, 0, length]); // Translate back 10 units
-        // console.log(matrix)
-
-        // Simple rig for rotating around 3 axes
 
         var m = new THREE.Matrix4();
-
         var m1 = new THREE.Matrix4();
         var m2 = new THREE.Matrix4();
         var m3 = new THREE.Matrix4();
+
         m1.makeRotationX( pitchAngle );
         m2.makeRotationY( rollAngle );
         m3.makeRotationZ( yawAngle );
         m.multiplyMatrices( m1, m2 );
         m.multiply( m3 )
-        if(pitchAngle ==0 && yawAngle == 0 && rollAngle==0)
-            m.makeTranslation( 0,0,10 );
+
         vector.applyMatrix4(m);
      //   var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
     //    vector.applyEuler(a);
@@ -168,7 +160,6 @@ define(function() {
             var segments = parseInt($('#segments').val());
             var closed2 = $('#closed').is(':checked');
             var radiusSegments = parseInt($('#radiusSegments').val());
-            
             var linePoints = [];
             removeTubes(parent);
 
@@ -188,12 +179,14 @@ define(function() {
                         prevVector = linePoints[linePoints.length - 1].clone();
                     }
                         calculateVector(prevVector, pitch, roll, yaw, length);
-                        linePoints.push(prevVector);    
-                        var geo = new THREE.BoxGeometry( 5, 5, 5 );
-                        var smokeParticle = new THREE.Mesh( geo, new THREE.MeshBasicMaterial({ color: "rgb(0,255,0)" }) );
-                        smokeParticle.material.transparent = true;
-                        smokeParticle.position.copy(prevVector)
-                        parent.add( smokeParticle );  
+                        linePoints.push(prevVector);   
+
+                        //for debug
+                        // var geo = new THREE.BoxGeometry( 5, 5, 5 );
+                        // var smokeParticle = new THREE.Mesh( geo, new THREE.MeshBasicMaterial({ color: "rgb(0,255,0)" }) );
+                        // smokeParticle.material.transparent = true;
+                        // smokeParticle.position.copy(prevVector)
+                   //     parent.add( smokeParticle );  
 
                 }
                 var extrudePath = new THREE.SplineCurve3(linePoints);
