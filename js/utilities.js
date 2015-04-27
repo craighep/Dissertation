@@ -7,7 +7,7 @@
  */
 define(function() {
 	var jsonManoeuvreKey = 'manoeuvres';
-
+	
 	return {
 		/**
 		 * Takes the maneouvre input from the user and produces raw JSON using

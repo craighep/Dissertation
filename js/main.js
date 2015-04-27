@@ -6,8 +6,8 @@
  * @class Main
  * @constructor
  */
-define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', 'cameraController', 'terrain'], 
-    function(CanvasController, HtmlHandler, ParseJson, AnimationController, CameraController, Terrain) {
+define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', 'cameraController', 'terrain', 'smokeController'], 
+    function(CanvasController, HtmlHandler, ParseJson, AnimationController, CameraController, Terrain, SmokeController) {
 
     var stats;
     var scene, renderer;
@@ -159,6 +159,7 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
          }
         CameraController.setSplineCameraLookAt(lookAt, normal);
         CameraController.setRenderCamerasRotation();
-        CameraController.addSmoke(parent);
+        SmokeController.updateSmoke(parent, CameraController.getCameraEye(),
+            CameraController.getSplineCamera());
     }
 });
