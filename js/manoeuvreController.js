@@ -105,8 +105,6 @@ define(function() {
         m.multiplyMatrices( m1, m2 );
         m.multiply( m3 );
 
-//        var subVector = new THREE.Vector3().subVectors(vector,new Three.Vector3(0,0,0));
-
        vector.applyMatrix4(m);
      // var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
     //  vector.applyEuler(a);
@@ -181,9 +179,14 @@ define(function() {
                     if (linePoints.length > 0){
                         prevVector = linePoints[linePoints.length - 1].clone();
                     }
-                        calculateVector(prevVector, pitch, roll, yaw, length);
-                        linePoints.push(prevVector);   
+                                            var start = prevVector.clone();
 
+                        calculateVector(prevVector, pitch, roll, yaw, length);
+                                var subVector = new THREE.Vector3().subVectors(start,prevVector);
+                                console.log(subVector)
+
+                        linePoints.push(prevVector);   
+    
                         //for debug
                         // var geo = new THREE.BoxGeometry( 5, 5, 5 );
                         // var smokeParticle = new THREE.Mesh( geo, new THREE.MeshBasicMaterial({ color: "rgb(0,255,0)" }) );
