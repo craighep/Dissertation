@@ -181,9 +181,8 @@ define(function() {
                     }
                                             var start = prevVector.clone();
 
-                        calculateVector(prevVector, pitch, roll, yaw, length);
-                                var subVector = new THREE.Vector3().subVectors(start,prevVector);
-                                console.log(subVector)
+                        var quaternion = new THREE.Quaternion().setFromUnitVectors( start, prevVector );
+                                console.log(quaternion)
 
                         linePoints.push(prevVector);   
     
