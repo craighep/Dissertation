@@ -103,12 +103,10 @@ define(['htmlHandler'],function(HtmlHandler) {
         m2.makeRotationY( rollAngle );
         m3.makeRotationZ( yawAngle );
         m.multiplyMatrices( m1, m2 );
-        m.multiply( m3 )
-
-        vector.applyMatrix4(m);
-     //   var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
-    //    vector.applyEuler(a);
-
+        m.multiply( m3 );
+       vector.applyMatrix4(m);
+     // var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
+    //  vector.applyEuler(a);
         vector.setZ(vector.z + length);
          console.log(vector.z);
 
@@ -191,9 +189,9 @@ define(['htmlHandler'],function(HtmlHandler) {
                     if (linePoints.length > 0){
                         prevVector = linePoints[linePoints.length - 1].clone();
                     }
-                        calculateVector(prevVector, pitch, roll, yaw, length);
+                        calculateVector(prevVector, pitch, roll, yaw, length)
                         linePoints.push(prevVector);   
-
+    
                         //for debug
                         // var geo = new THREE.BoxGeometry( 5, 5, 5 );
                         // var smokeParticle = new THREE.Mesh( geo, new THREE.MeshBasicMaterial({ color: "rgb(0,255,0)" }) );
