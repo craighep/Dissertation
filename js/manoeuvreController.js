@@ -6,7 +6,7 @@
  * @class ManoeuvreController
  * @constructor
  */
-define(function() {
+define(['htmlHandler'],function(HtmlHandler) {
     var tube = [];
     var tubeMesh = [];
     /**
@@ -108,7 +108,9 @@ define(function() {
         vector.applyMatrix4(m);
      //   var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
     //    vector.applyEuler(a);
+
         vector.setZ(vector.z + length);
+         console.log(vector.z);
 
     }
 
@@ -121,6 +123,16 @@ define(function() {
                     prevVector.add(new THREE.Vector3(0, parseInt(spacer[1]), parseInt(spacer[0])));
                     linePoints.push(prevVector);
                 }
+    }
+
+    function checkWarning(extrudePath) {
+        for(var p in extrudePath.points){
+            var point = extrudePath.points[p];
+            if(point.x < 0 || point.y < 0 ){
+                return true
+            }
+        }
+        return false;
     }
 
     return {
@@ -157,6 +169,7 @@ define(function() {
          * @param {Parent} parent  The parent object containing all the manoeuvres and cameras
          */
         addTube: function(values, parent) {
+            var warn = false;
             var segments = parseInt($('#segments').val());
             var closed2 = $('#closed').is(':checked');
             var radiusSegments = parseInt($('#radiusSegments').val());
@@ -186,14 +199,15 @@ define(function() {
                         // var smokeParticle = new THREE.Mesh( geo, new THREE.MeshBasicMaterial({ color: "rgb(0,255,0)" }) );
                         // smokeParticle.material.transparent = true;
                         // smokeParticle.position.copy(prevVector)
-                   //     parent.add( smokeParticle );  
-
+                        // parent.add( smokeParticle );  
                 }
                 var extrudePath = new THREE.SplineCurve3(linePoints);
+                warn = checkWarning(extrudePath);
                 createTube(extrudePath, segments, radiusSegments, parent);
                 linePoints = [];
                 linePoints.push(prevVector);
             }
+            HtmlHandler.warnManoeuvres(warn);
         },
 
         /**

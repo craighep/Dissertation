@@ -375,6 +375,13 @@ define(['jquery'], function($) {
             toggleReelButtonLeft(true);
              if(!$("#move_"+first).length)
                 toggleReelButtonRight(false);
+         },
+
+         warnManoeuvres: function(toggle){
+            if (toggle)
+                $(warnManoeuvres).fadeIn();
+            else
+                $(warnManoeuvres).fadeOut();
          }
     }
 });

@@ -59,6 +59,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
             if (manoeuvres.length < 1) {
                 pause(true);
                 ManoeuvreController.removeTube(parent);
+                HtmlHandler.warnManoeuvres(false);
             } else {
                 ManoeuvreController.addTube(manoeuvres, parent, false);
             }

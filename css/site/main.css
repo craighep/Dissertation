@@ -211,4 +211,12 @@ canvas {
   border-bottom: 1px solid #262626;
   transition: background 300ms ease; }
 
+#warnManoeuvres {
+  position: fixed;
+  display: none;
+  top: 5%;
+  left: 20%; }
+  #warnManoeuvres .alert-box {
+    padding: 0.5rem 1.5rem 0.5rem 0.875rem; }
+
 /*# sourceMappingURL=main.css.map */
