@@ -213,7 +213,6 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          *
          */
         setRenderCamerasRotation: function() {
-            splineCamera.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
             cameraEye.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
             cameraEye.rotation.z += 1.56; // Model is out of line on the Z, rotating this many radians fixes the planes flight angle.
             cameraHelper.update();
@@ -229,6 +228,9 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
          */
         setSplineCameraLookAt: function(lookAt, normal) {
             splineCamera.matrix.lookAt(splineCamera.position, lookAt, normal);
+            splineCamera.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
+            splineCamera.rotation.z += 1.56;
+            splineCamera.updateProjectionMatrix();
         },
 
         /**

@@ -14,6 +14,8 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
     var parent;
     var binormal = new THREE.Vector3();
     var normal = new THREE.Vector3();
+    var binormalOnBoard = new THREE.Vector3();
+    var normalOnBoard = new THREE.Vector3();
 
     /**
      * Initial function, starts all critical modules, including scene, objects, event listeners and html events.
@@ -122,7 +124,6 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
      *
      */
     function renderPlane() {
-        // Try Animate Camera Along Spline
         var scale = AnimationController.getScale();
         var time = AnimationController.getAnimateTime();
         HtmlHandler.updateMoveReel(time, ParseJson.parseManoeuvreInput().length);
@@ -132,11 +133,21 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
             count++;
         }
         var tube = AnimationController.getTube()[count];
+
+        calculatePlanePosition(time, scale, tube)
+        CameraController.setRenderCamerasRotation();
+
+        SmokeController.updateSmoke(parent, CameraController.getCameraEye(),
+            CameraController.getSplineCamera());
+
+        if(CameraController.getIsOnboard())
+            calculateOnboardPosition(time, scale, tube);
+    }
+
+    function calculatePlanePosition(time, scale, tube){
         var pos = tube.parameters.path.getPointAt(time);
         var dir = tube.parameters.path.getTangentAt(time);
         pos.multiplyScalar(scale);
-        //----------------------------------------------------------
-        // interpolation
         var segments = tube.tangents.length;
         var pickt = time * segments;
         var pick = Math.floor(pickt);
@@ -144,22 +155,38 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
         binormal.subVectors(tube.binormals[pickNext], tube.binormals[pick]);
         binormal.multiplyScalar(pickt - pick).add(tube.binormals[pick]);
         
-        var offset = 15;
         normal.copy(binormal).cross(dir);
-        // Move on a offset on its binormal
-        pos.add(normal.clone().multiplyScalar(offset));
+        pos.add(normal.clone().multiplyScalar(-8));
         CameraController.setSplineCameraPosition(pos);
         CameraController.setCameraEyePosition(pos);
-        // Camera Orientation 1 - default look at
         var lookAt = tube.parameters.path.getPointAt((time + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
-        // Camera Orientation 2 - up orientation via normal
+
          if (!CameraController.getIsLookAhead())
-         {
-             lookAt.copy(pos).add(dir);
-         }
+            lookAt.copy(pos).add(dir);
         CameraController.setSplineCameraLookAt(lookAt, normal);
-        CameraController.setRenderCamerasRotation();
-        SmokeController.updateSmoke(parent, CameraController.getCameraEye(),
-            CameraController.getSplineCamera());
     }
+
+    function calculateOnboardPosition(time, scale, tube){
+        var onBoardPoint = time+0.02;
+        if (onBoardPoint > 1)
+            onBoardPoint = 1;
+        var pos = tube.parameters.path.getPointAt(onBoardPoint);
+        var dir = tube.parameters.path.getTangentAt(onBoardPoint);
+        pos.multiplyScalar(scale);
+        var segments = tube.tangents.length;
+        var pickt = time * segments;
+        var pick = Math.floor(pickt);
+        var pickNext = (pick + 1) % segments;
+        binormalOnBoard.subVectors(tube.binormals[pickNext], tube.binormals[pick]);
+        binormalOnBoard.multiplyScalar(pickt - pick).add(tube.binormals[pick]);
+        
+        normalOnBoard.copy(binormalOnBoard).cross(dir);
+        pos.add(normalOnBoard.clone().multiplyScalar(-8));
+        CameraController.setSplineCameraPosition(pos);
+        var lookAt = tube.parameters.path.getPointAt((time + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
+
+         if (!CameraController.getIsLookAhead())
+            lookAt.copy(pos).add(dir);
+        CameraController.setSplineCameraLookAt(lookAt, normalOnBoard);
+    } 
 });
