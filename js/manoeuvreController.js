@@ -169,7 +169,7 @@ define(['htmlHandler'],function(HtmlHandler) {
             var segments = parseInt($('#segments').val());
             var closed2 = $('#closed').is(':checked');
             var radiusSegments = parseInt($('#radiusSegments').val());
-            var linePoints = [];
+            var linePoints = [new THREE.Vector3(0,0,0)];
             removeTubes(parent);
 
             for (m in values) {
@@ -195,13 +195,6 @@ define(['htmlHandler'],function(HtmlHandler) {
                         var y = prevVector.y - before.y;
                         var total =  (x * x)+ (y*y);
                         console.log("loop"+m+ " "+Math.sqrt(total));
-    
-                        //for debug
-                        var geo = new THREE.BoxGeometry( 5, 5, 5 );
-                        var smokeParticle = new THREE.Mesh( geo, new THREE.MeshBasicMaterial({ color: "rgb(0,255,0)" }) );
-                        smokeParticle.material.transparent = true;
-                        smokeParticle.position.copy(prevVector)
-                        parent.add( smokeParticle );  
                 }
                 var extrudePath = new THREE.SplineCurve3(linePoints);
                 warn = checkWarning(extrudePath);

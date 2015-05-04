@@ -20,7 +20,6 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
      *
      */
     function parseManoeuvresFromJSON() {
-
         $.ajax({
             url: 'json/manoeuvres.json',
             dataType: 'json',
@@ -29,35 +28,42 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
                 var catalogue = json["catalogue"];
                 var manoeuvres = catalogue["manoeuvre"];
                 var postfix = "";
-                var x = 0;
-
+                var count = 0;
                 for (var a = 0; a < manoeuvres.length; a++) { // loop through manoeuvre array and get name
                     var manoeuvre = manoeuvres[a];
                     postfix = manoeuvre["_olan"];
                     var varients = manoeuvre["variant"];
-
-                    for (var b = 0; b < varients.length; b++) { // for each varient add this before the name
-                        var variant = varients[b];
-                        manoeuvreArray[x] = {};
-                        manoeuvreArray[x]["olan"] = variant["_olanPrefix"] + postfix;
-                        var components = [];
-
-                        for (var c = 0; c < variant["component"].length; c++) { // then go through each component of varient
-                            var comp = variant["component"][c];
-                            var pitch = comp["_pitch"];
-                            var yaw = comp["_yaw"];
-                            var roll = comp["_roll"];
-                            var length = parseFloat(comp["_length"]);
-                            var component = new Component(yaw, pitch, roll, length);
-                            components[c] = component;
-                        }
-                        manoeuvreArray[x]["components"] = components;
-                        manoeuvreArray[x++]["name"] = variant["_name"];
-
-                    }
+                    count = parseManoeuvreVarients(varients, postfix, count);
                 }
             }
         });
+    }
+
+    function parseManoeuvreVarients(varients, postfix, x) {
+        for (var b = 0; b < varients.length; b++) { // for each varient add this before the name
+            var variant = varients[b];
+            manoeuvreArray[x] = {};
+            manoeuvreArray[x]["olan"] = variant["_olanPrefix"] + postfix;
+            var components = parseVarientComponents(variant["component"]);
+            manoeuvreArray[x]["components"] = components;
+            manoeuvreArray[x++]["name"] = variant["_name"];
+        }
+        return x;
+    }
+
+    function parseVarientComponents(JsonComps) {
+        var components = [];
+
+        for (var c = 0; c < JsonComps.length; c++) { // then go through each component of varient
+            var comp = JsonComps[c];
+            var pitch = comp["_pitch"];
+            var yaw = comp["_yaw"];
+            var roll = comp["_roll"];
+            var length = parseFloat(comp["_length"]);
+            var component = new Component(yaw, pitch, roll, length);
+            components[c] = component;
+        }
+        return components;
     }
 
     /**

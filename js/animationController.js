@@ -234,6 +234,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
         function setUpSaveLoadListeners() {
 
             initialiseLocalStorage();
+            refreshScene();
 
             $('#autoSave').change(function() {
                 var autoSave = $('#autoSave').is(':checked');
