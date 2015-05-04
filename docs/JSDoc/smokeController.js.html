@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: smokeController.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: smokeController.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** 
+ * Moduel for controlling and creating the smoke trails when the aircraft flies around the canvas.
+ * Perorms creation of smoke particles, the fading out of them, and the calculates the colour of the 
+ * smoke based on the rottation of the aircraft. Deletes particles at the end of the trail after a certian
+ * time to not clog up the canvas.
+ * @name SmokeController
+ * @class SmokeController
+ * @constructor
+ */
+define(function() {
+
+	var smoke = [];
+
+    /**
+     * A getter function for retreiving the entire list of manoeuvres.
+     * @name SmokeController#createSmokeParticle
+     * @function
+     * 
+     * @param {Parent} parent  The parent which the smoke is added to.
+     * @returns {Mesh} smokeParticle  A mesh object represnting each particle of smoke.
+     */
+	function createSmokeParticle(parent) {
+        var geo = new THREE.BoxGeometry( 1, 2, 7 );
+        var smokeParticle = new THREE.Mesh( geo, new THREE.MeshBasicMaterial({ color: "rgb(0,255,0)" }) );
+        smokeParticle.material.transparent = true;
+        parent.add( smokeParticle );
+        smoke.push(smokeParticle);
+        return smokeParticle;
+    }
+
+    /**
+     * Loops through all of of the smoke particles, and decreases the opacity of each one.
+     * Then checks if the amount of particles has passed 250, if so, deletes the first one in the array.
+     * @name SmokeController#fadeSmoke
+     * @function
+     * 
+     * @param {Parent} parent  The parent which the smoke is removed from.
+     */
+    function fadeSmoke(parent) {
+        for(var i in smoke) {
+            smoke[i].material.opacity -=0.01;
+        }
+        if(smoke.length > 250){
+            parent.remove(smoke.shift(), smoke.shift());
+        }
+    }
+
+    /**
+     * Function for placing the smoke onto the canvas, and setting the rotation of each particle to the 
+     * same amount as the aircraft.
+     * @name SmokeController#positionSmokeParticle
+     * @function
+     * 
+     * @param {Mesh} cube  Individual smoke particle
+     * @param {Integer} alt  Makes two smoke trails, so alternates between them each time.
+     * @param {Object} cameraEye  The plane, to get the location.
+     * @param {PerspectiveCamera} splineCamera  Used to get the current rotation along the animation.
+     */
+    function positionSmokeParticle(cube, alt, cameraEye, splineCamera) {
+        cube.position.copy(cameraEye.position);
+        cube.rotateOnAxis(new THREE.Vector3(0, 1, 0),  Math.PI );
+        cube.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
+
+        if (alt > 0)
+            cube.position.x += 19;
+        else 
+            cube.position.x -= 19;
+    }
+
+    /**
+     * Sets the colour of the smoke particles on the canvas, based on the current rotation of the aircraft. 
+     * Red is intensified for upside down angles, green for normal rotation.
+     * same amount as the aircraft.
+     * @name SmokeController#colourSmokeParticle
+     * @function
+     * 
+     * @param {Mesh} smokeParticle  Individual smoke particle
+     */
+    function colourSmokeParticle(smokeParticle){
+        var degrees = smokeParticle.rotation.x * (180/Math.PI);
+        
+        if (degrees &lt; 120 &amp;&amp; degrees > -120)
+        {   
+            degrees = Math.abs(degrees)
+            var strength =  120 -degrees;
+            var red = Math.round(255 / 120 * Math.abs(strength));
+            var green = Math.round(255 - red);
+            smokeParticle.material.color.set("rgb("+red+","+green+",0)");
+        }
+    }
+
+	return {
+        /**
+         * Updates the position and colour of smoke particles on the canvas. Does this twice
+         * on each iteration, in order to malke 
+         * @name SmokeController#colourSmokeParticle
+         * @function
+         * 
+         * @param {Parent} parent  The canvas holding all the smoke particles.
+         * @param {Object} cameraEye  The plane object on the canvas, used for setting location of smoke.
+         * @param {PerspectiveCamera} splineCamera  The camera animating along the spline, for setting the rotation.
+         */		
+		updateSmoke: function(parent, cameraEye, splineCamera) {
+            for(var alt =0; alt &lt; 2; alt++) {
+                var smokeParticle = createSmokeParticle(parent)
+                positionSmokeParticle(smokeParticle, alt, cameraEye, splineCamera);
+                colourSmokeParticle(smokeParticle);
+            }
+            fadeSmoke(parent);
+        },
+
+        /**
+         * Deletes the smoe particles from the canvas when animation is complete, or changes to OLAn input are performed. 
+         * @name SmokeController#clearSmoke
+         * @function
+         * 
+         * @param {Parent} parent  The canvas holding all the smoke particles.
+         */     
+	    clearSmoke: function(parent){
+	    	if (smoke.length &lt; 1)
+	    		return;
+	        for(i in smoke) {
+	            parent.remove(smoke[i]);
+	        }
+	        smoke = [];
+	    }
+	}
+});</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="exportImportProjects.html">exportImportProjects</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="SmokeController.html">SmokeController</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="Utilities.html">Utilities</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Mon May 04 2015 16:59:00 GMT+0100 (GMT Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

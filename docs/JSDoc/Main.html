@@ -193,7 +193,361 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line83">line 83</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line85">line 85</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="calculateOnboardPosition"><span class="type-signature"></span>calculateOnboardPosition<span class="signature">(time, scale, tube)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Calculates the positon of the onboard camera when the user enables it. Gets a point slightly ahead of the animation time, in order to be a nose-cam for the plane. Performs similar actions as the spline camera positioningmethod, by
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Long</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The animation time of the flight.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scale</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount to scale the positon vector by.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tube</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Tube</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The spline cuvre created from the manoeuvre.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line182">line 182</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="calculatePlanePosition"><span class="type-signature"></span>calculatePlanePosition<span class="signature">(time, scale, tube)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Calculates the position of the camera eye, or plane model in this case. Does this by gettingthe vector at the point of the animation time, then interpolates the rotation of the plane, alongsideselecting the position to look at.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Long</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The animation time of the flight.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scale</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount to scale the positon vector by.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tube</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Tube</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The spline cuvre created from the manoeuvre.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line147">line 147</a>
     </li></ul></dd>
     
 
@@ -275,7 +629,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line18">line 18</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -357,7 +711,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line97">line 97</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line99">line 99</a>
     </li></ul></dd>
     
 
@@ -439,7 +793,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line116">line 116</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line118">line 118</a>
     </li></ul></dd>
     
 
@@ -521,7 +875,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line41">line 41</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -603,7 +957,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line68">line 68</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line70">line 70</a>
     </li></ul></dd>
     
 
@@ -685,7 +1039,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line53">line 53</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -727,13 +1081,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="exportImportProjects.html">exportImportProjects</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="Utilities.html">Utilities</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="exportImportProjects.html">exportImportProjects</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="SmokeController.html">SmokeController</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="Utilities.html">Utilities</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Thu Apr 23 2015 18:55:59 GMT+0100 (GMT Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Mon May 04 2015 16:59:00 GMT+0100 (GMT Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

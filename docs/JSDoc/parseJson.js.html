@@ -37,6 +37,7 @@
 define(['jquery', 'component', 'exportImportProjects'], function($, Component, ExportImportProjects) {
 
     var manoeuvreArray = [{}];
+    var spacerArray =[[]];
 
     /**
      * Parses an external JSON file containing all the intstructions for each manoeuvre, and places this into
@@ -47,7 +48,6 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
      *
      */
     function parseManoeuvresFromJSON() {
-
         $.ajax({
             url: 'json/manoeuvres.json',
             dataType: 'json',
@@ -56,35 +56,62 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
                 var catalogue = json["catalogue"];
                 var manoeuvres = catalogue["manoeuvre"];
                 var postfix = "";
-                var x = 0;
-
+                var count = 0;
                 for (var a = 0; a &lt; manoeuvres.length; a++) { // loop through manoeuvre array and get name
                     var manoeuvre = manoeuvres[a];
                     postfix = manoeuvre["_olan"];
                     var varients = manoeuvre["variant"];
-
-                    for (var b = 0; b &lt; varients.length; b++) { // for each varient add this before the name
-                        var variant = varients[b];
-                        manoeuvreArray[x] = {};
-                        manoeuvreArray[x]["olan"] = variant["_olanPrefix"] + postfix;
-                        var components = [];
-
-                        for (var c = 0; c &lt; variant["component"].length; c++) { // then go through each component of varient
-                            var comp = variant["component"][c];
-                            var pitch = comp["_pitch"];
-                            var yaw = comp["_yaw"];
-                            var roll = comp["_roll"];
-                            var length = parseFloat(comp["_length"]);
-                            var component = new Component(yaw, pitch, roll, length);
-                            components[c] = component;
-                        }
-                        manoeuvreArray[x]["components"] = components;
-                        manoeuvreArray[x++]["name"] = variant["_name"];
-
-                    }
+                    count = parseManoeuvreVarients(varients, postfix, count);
                 }
             }
         });
+    }
+
+    /**
+     * Takes an array of manoeuvre varients, and adds an entire manoeuvre to the application.
+     * For each varient, a name, OALn input and list of instructions to draw the maneouvre is added.
+     * @name ParseJson#parseManoeuvreVarients
+     * @function
+     *
+     * @param {Array[Varient]} varients  Varients of each manoeuvre.
+     * @param {String} postfix  The letter of the manoeuvre that follows from each varient.
+     * @param {Integer} x  The current number of maneouvres parsed from the JSON file.
+     * @returns {Integer} x  The new number of manoeuvres in the application.
+     */
+    function parseManoeuvreVarients(varients, postfix, x) {
+        for (var b = 0; b &lt; varients.length; b++) { // for each varient add this before the name
+            var variant = varients[b];
+            manoeuvreArray[x] = {};
+            manoeuvreArray[x]["olan"] = variant["_olanPrefix"] + postfix;
+            var components = parseVarientComponents(variant["component"]);
+            manoeuvreArray[x]["components"] = components;
+            manoeuvreArray[x++]["name"] = variant["_name"];
+        }
+        return x;
+    }
+
+    /**
+     * Creates the array of instructions to construct each maneouvre, and returns this to the application manoeuvre array.
+     * Gets each of the individual instructions from the JSON, and then creates a new component object for each.
+     * @name ParseJson#parseVarientComponents
+     * @function
+     *
+     * @param {JSON} JsonComps  JSON based component instructions.
+     * @returns {Array[Component]} components  Array of converted JSON instructions.
+     */
+    function parseVarientComponents(JsonComps) {
+        var components = [];
+
+        for (var c = 0; c &lt; JsonComps.length; c++) { // then go through each component of varient
+            var comp = JsonComps[c];
+            var pitch = comp["_pitch"];
+            var yaw = comp["_yaw"];
+            var roll = comp["_roll"];
+            var length = parseFloat(comp["_length"]);
+            var component = new Component(yaw, pitch, roll, length);
+            components[c] = component;
+        }
+        return components;
     }
 
     /**
@@ -112,12 +139,12 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
             if(spaceParams.length === 0)
                 return;
             //----------------------------------------
-            for(p in spaceParams){
+            for(var p in spaceParams){
                 if(isNaN(spaceParams[p]))
                     return;
             }
             //----------------------------------------
-            // TODO
+            spacerArray[spacerArray.length]= spaceParams;
     }
     return {
 
@@ -162,14 +189,12 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
             for (m in moves) {
                 var move = moves[m];
                 if (move.indexOf("(") > -1) {
-                    var spacer = parseSpacer(move);
-                    if(spacer != null) {
-                        //TODO
-                    }
+                    parseSpacer(move, returnMoves.length);
                 }
                 for (var a = 0; a &lt; manoeuvreArray.length; a++) {
                     if (manoeuvreArray[a]["olan"] === move) {
                         returnMoves[i] = manoeuvreArray[a];
+                        returnMoves[i]["spacer"] = spacerArray.pop();
                         i++;
                         break;
                     }
@@ -192,13 +217,13 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="exportImportProjects.html">exportImportProjects</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="Utilities.html">Utilities</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AnimationController.html">AnimationController</a></li><li><a href="CameraController.html">CameraController</a></li><li><a href="CanvasController.html">CanvasController</a></li><li><a href="Component.html">Component</a></li><li><a href="exportImportProjects.html">exportImportProjects</a></li><li><a href="HtmlHandler.html">HtmlHandler</a></li><li><a href="Main.html">Main</a></li><li><a href="ManoeuvreController.html">ManoeuvreController</a></li><li><a href="ParseJson.html">ParseJson</a></li><li><a href="SmokeController.html">SmokeController</a></li><li><a href="Terrain.html">Terrain</a></li><li><a href="Utilities.html">Utilities</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Thu Apr 23 2015 18:55:59 GMT+0100 (GMT Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Mon May 04 2015 16:59:00 GMT+0100 (GMT Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
