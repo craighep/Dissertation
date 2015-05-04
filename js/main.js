@@ -144,9 +144,21 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
             calculateOnboardPosition(time, scale, tube);
     }
 
+    /**
+     * Calculates the position of the camera eye, or plane model in this case. Does this by getting
+     * the vector at the point of the animation time, then interpolates the rotation of the plane, alongside
+     * selecting the position to look at.
+     * @name Main#calculatePlanePosition
+     * @function
+     *
+     * @param {Long} time  The animation time of the flight.
+     * @param {Integer} scale  The amount to scale the positon vector by. 
+     * @param {Tube} tube  The spline cuvre created from the manoeuvre.
+     */
     function calculatePlanePosition(time, scale, tube){
         var pos = tube.parameters.path.getPointAt(time);
         var dir = tube.parameters.path.getTangentAt(time);
+
         pos.multiplyScalar(scale);
         var segments = tube.tangents.length;
         var pickt = time * segments;
@@ -157,8 +169,9 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
         
         normal.copy(binormal).cross(dir);
         pos.add(normal.clone().multiplyScalar(-8));
-        CameraController.setSplineCameraPosition(pos);
         CameraController.setCameraEyePosition(pos);
+
+        CameraController.setSplineCameraPosition(pos);
         var lookAt = tube.parameters.path.getPointAt((time + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
 
          if (!CameraController.getIsLookAhead())
@@ -166,10 +179,22 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
         CameraController.setSplineCameraLookAt(lookAt, normal);
     }
 
+    /**
+     * Calculates the positon of the onboard camera when the user enables it. Gets a point slightly ahead of the 
+     * animation time, in order to be a nose-cam for the plane. Performs similar actions as the spline camera positioning
+     * method, by 
+     * @name Main#calculateOnboardPosition
+     * @function
+     *
+     * @param {Long} time  The animation time of the flight.
+     * @param {Integer} scale  The amount to scale the positon vector by. 
+     * @param {Tube} tube  The spline cuvre created from the manoeuvre.
+     */
     function calculateOnboardPosition(time, scale, tube){
         var onBoardPoint = time+0.02;
         if (onBoardPoint > 1)
             onBoardPoint = 1;
+
         var pos = tube.parameters.path.getPointAt(onBoardPoint);
         var dir = tube.parameters.path.getTangentAt(onBoardPoint);
         pos.multiplyScalar(scale);
@@ -182,6 +207,7 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
         
         normalOnBoard.copy(binormalOnBoard).cross(dir);
         pos.add(normalOnBoard.clone().multiplyScalar(-8));
+
         CameraController.setSplineCameraPosition(pos);
         var lookAt = tube.parameters.path.getPointAt((time + 30 / tube.parameters.path.getLength()) % 1).multiplyScalar(scale);
 

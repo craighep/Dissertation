@@ -39,6 +39,17 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
         });
     }
 
+    /**
+     * Takes an array of manoeuvre varients, and adds an entire manoeuvre to the application.
+     * For each varient, a name, OALn input and list of instructions to draw the maneouvre is added.
+     * @name ParseJson#parseManoeuvreVarients
+     * @function
+     *
+     * @param {Array[Varient]} varients  Varients of each manoeuvre.
+     * @param {String} postfix  The letter of the manoeuvre that follows from each varient.
+     * @param {Integer} x  The current number of maneouvres parsed from the JSON file.
+     * @returns {Integer} x  The new number of manoeuvres in the application.
+     */
     function parseManoeuvreVarients(varients, postfix, x) {
         for (var b = 0; b < varients.length; b++) { // for each varient add this before the name
             var variant = varients[b];
@@ -51,6 +62,15 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
         return x;
     }
 
+    /**
+     * Creates the array of instructions to construct each maneouvre, and returns this to the application manoeuvre array.
+     * Gets each of the individual instructions from the JSON, and then creates a new component object for each.
+     * @name ParseJson#parseVarientComponents
+     * @function
+     *
+     * @param {JSON} JsonComps  JSON based component instructions.
+     * @returns {Array[Component]} components  Array of converted JSON instructions.
+     */
     function parseVarientComponents(JsonComps) {
         var components = [];
 

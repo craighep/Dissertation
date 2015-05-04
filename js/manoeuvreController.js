@@ -104,7 +104,7 @@ define(['htmlHandler'],function(HtmlHandler) {
         m3.makeRotationZ( yawAngle );
         m.multiplyMatrices( m1, m2 );
         m.multiply( m3 );
-       vector.applyMatrix4(m);
+        vector.applyMatrix4(m);
      // var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
     //  vector.applyEuler(a);
         vector.setZ(vector.z + length);

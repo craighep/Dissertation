@@ -377,6 +377,14 @@ define(['jquery'], function($) {
                 toggleReelButtonRight(false);
          },
 
+         /**
+         * Shows or hides the waring message for manoeuvres that pass under the 0,0,0 location.
+         * Toggles the html to fade in or out each time it is called.
+         * @name HtmlHandler#warnManoeuvres
+         * @function
+         *
+         * @param {Boolean} toggle  Show or hide the warning message.
+         */
          warnManoeuvres: function(toggle){
             if (toggle)
                 $(warnManoeuvres).fadeIn();

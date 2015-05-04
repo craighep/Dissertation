@@ -47,6 +47,13 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
         });
     }
 
+    /**
+     * Resets the location and rotation of the aeroplane on the canvas, after each 
+     * change to OLAN input, or on completion of a flight.
+     * @name CameraController#resetCameraEye
+     * @function
+     *
+     */
     function resetCameraEye() {
         if (cameraEye != null) {
             cameraEye.position.set(0, 0, 0);
@@ -187,6 +194,13 @@ define(['jquery', 'htmlHandler'], function($, HtmlHandler) {
                 cameraEye.visible = toggle;
         },
 
+        /**
+         * Shows the guide lines in the front of the aeroplane, gives indications of rotationa and moving 
+         * direction.
+         * @name CameraController#showCameraHelper
+         * @function
+         *
+         */
         showCameraHelper: function() {
             showCameraHelper = $('#cameraHelper').is(':checked');
             cameraHelper.visible = showCameraHelper;
