@@ -45,7 +45,7 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
      * @name ParseJson#parseManoeuvreVarients
      * @function
      *
-     * @param {Array[Varient]} varients  Varients of each manoeuvre.
+     * @param {Array} varients  Varients of each manoeuvre.
      * @param {String} postfix  The letter of the manoeuvre that follows from each varient.
      * @param {Integer} x  The current number of maneouvres parsed from the JSON file.
      * @returns {Integer} x  The new number of manoeuvres in the application.
@@ -69,7 +69,7 @@ define(['jquery', 'component', 'exportImportProjects'], function($, Component, E
      * @function
      *
      * @param {JSON} JsonComps  JSON based component instructions.
-     * @returns {Array[Component]} components  Array of converted JSON instructions.
+     * @returns{Array} components  Array of converted JSON instructions.
      */
     function parseVarientComponents(JsonComps) {
         var components = [];

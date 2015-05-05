@@ -136,7 +136,7 @@ define(['canvasController', 'htmlHandler', 'parseJson', 'animationController', '
 
         calculatePlanePosition(time, scale, tube)
         CameraController.setRenderCamerasRotation();
-
+        
         SmokeController.updateSmoke(parent, CameraController.getCameraEye(),
             CameraController.getSplineCamera());
 

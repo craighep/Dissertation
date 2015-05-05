@@ -62,6 +62,18 @@ define(function() {
 		loadTexture: function(objPath) {
 			var texture = THREE.ImageUtils.loadTexture(objPath);
 			return texture;
+		},
+
+		/**
+		 * Checks if a given set of letters contains any uppper case, if so, return true.
+		 * @name Utilities#hasUpperCase
+		 * @function
+		 *
+		 * @param {String} str  A String to be checked if it contains upper case letters
+		 * @returns {Boolean} bool  Variable indicating whether there are any upper case letters present.
+		 */
+		hasUpperCase: function(str) {
+		    return (/[A-Z]/.test(str));
 		}
 	}
 });

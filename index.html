@@ -110,8 +110,8 @@
                                     </li>
                                     <li>
                                         <select id="radiusSegments">
-                                            <option>0</option>
-                                            <option selected>1</option>
+                                            <option cameraHelper>0</option>
+                                            <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
                                             <option>4</option>
@@ -161,15 +161,6 @@
                                         <div class="switch">
                                             <input id="repeat" type="checkbox">
                                             <label for="repeat"></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <label>Test Scenario</label>
-                                    </li>
-                                    <li>
-                                        <div class="switch">
-                                            <input id="backup" type="checkbox">
-                                            <label for="backup"></label>
                                         </div>
                                     </li>
                                     <li class="divider">
@@ -315,12 +306,18 @@
                         </div>
                         <a class="close-reveal-modal">&#215;</a>
                     </div>
+                    <div style="display:none" id="nogl">
+                        <div class="padText">
+                            <h1>This browser is not comptible with WebGL, please try another.</h1>
+                            <hr>
+                            <p>Either use a supported browser (Chrome, Firefox, Opera, IE 11) or enable WebGL in the developer tools if your browser is supposed to be compatible.</p>
+                        </div>
+                    </div>
                 </div>
                 <a class="exit-off-canvas"></a>
             </div>
         </div>
 </body>
-<script src="js/libs/handlebars/handlebars-v3.0.0.js"></script>
 
 <script src="js/libs/require/require.js"></script>
 <script src="js/libs/three/three.min.js"></script>
@@ -340,5 +337,6 @@ require.config({
 });
 require(["main"]);
 </script>
+<script src="js/site/webGLCheck.js"></script>
 
 </html>

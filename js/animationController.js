@@ -6,8 +6,8 @@
  * @class AnimationController
  * @constructor
  */
-define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImportProjects'],
-    function($, ParseJson, ManoeuvreController, HtmlHandler, ExportImportProjects) {
+define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImportProjects', 'utilities'],
+    function($, ParseJson, ManoeuvreController, HtmlHandler, ExportImportProjects, Utilities) {
 
         var cameraController;
         var renderer;
@@ -53,7 +53,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
          * @name AnimationController#refreshManoeuvres
          * @function
          *
-         * @param {Array[Manoeuvres]} manoeuvres  Array holding the manoeuvres entered from OLAN
+         * @param {Array} manoeuvres  Array holding the manoeuvres entered from OLAN
          */
         function refreshManoeuvres(manoeuvres) {
             if (manoeuvres.length < 1) {
@@ -152,7 +152,8 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                         pause(!paused); // Reverse current setting(pause / un-pause)
             });
             $("#input").keyup(function(event) {
-                    $('#input').val($('#input').val().toLowerCase());
+                    if (Utilities.hasUpperCase($('#input').val()))
+                        $('#input').val($('#input').val().toLowerCase());
                     var keycode = event.keyCode;
                     if (keycode == '13') {
                         pause(!paused);

@@ -16,6 +16,6 @@
             document.body.style.cursor = "default";
             visible = true;
         }
-        mouseTimer = window.setTimeout(hideMouse, 3000);
+        mouseTimer = window.setTimeout(hideMouse, 2000);
     };
 })();

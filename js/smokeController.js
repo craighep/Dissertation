@@ -61,10 +61,14 @@ define(function() {
         cube.rotateOnAxis(new THREE.Vector3(0, 1, 0),  Math.PI );
         cube.rotation.setFromRotationMatrix(splineCamera.matrix, splineCamera.rotation.order);
 
-        if (alt > 0)
+        if (alt > 0){
             cube.position.x += 19;
-        else 
+            cube.position.y += 3;
+        }
+        else {
             cube.position.x -= 19;
+            cube.position.y += 3;
+        }
     }
 
     /**

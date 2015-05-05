@@ -88,39 +88,43 @@ define(['htmlHandler'],function(HtmlHandler) {
      * @param {Integer} length  Length of the manoeuvre after translation
      */
     function calculateVector(vector, pitch, roll, yaw, length) {
-        
-        
         var pitchAngle = Math.PI / 180 * 15 * pitch;
         var yawAngle = Math.PI / 180 * 15 * yaw;
         var rollAngle = Math.PI / 180 * 15 * roll;
-
-        var m = new THREE.Matrix4();
-        var m1 = new THREE.Matrix4();
-        var m2 = new THREE.Matrix4();
-        var m3 = new THREE.Matrix4();
-
-        m1.makeRotationX( pitchAngle );
-        m2.makeRotationY( rollAngle );
-        m3.makeRotationZ( yawAngle );
-        m.multiplyMatrices( m1, m2 );
-        m.multiply( m3 );
-        vector.applyMatrix4(m);
-     // var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
-    //  vector.applyEuler(a);
+        var a = new THREE.Euler( pitchAngle, rollAngle, yawAngle, 'XYZ' );
+        vector.applyEuler(a);
         vector.setZ(vector.z + length);
     }
 
+    /**
+     * Function for creating the vectors for spacers entered by the user. Gets the 
+     * amount of X and Y to move the next vector by, in order to create a virtual 'spacer'.
+     * @name ManoeuvreController#calculateSpacer
+     * @function
+     *
+     * @param {Array} spacer  An array containing the amount to move the proceeding vector by in X and Y.
+     * @param {Array} linePoints  Array of current vectors for the manoeuvre.
+     */
     function calculateSpacer(spacer, linePoints) {
-                if (spacer != null){    
-                    var prevVector = new THREE.Vector3(0, 0, 0);
+        if (spacer != null){    
+            var spacerVector = new THREE.Vector3(0, 0, 0);
 
-                    if (linePoints.length > 0)
-                        prevVector = linePoints[linePoints.length - 1].clone();                
-                    prevVector.add(new THREE.Vector3(0, parseInt(spacer[1]), parseInt(spacer[0])));
-                    linePoints.push(prevVector);
-                }
+            if (linePoints.length > 0)
+                spacerVector = linePoints[linePoints.length - 1].clone();                
+            spacerVector.add(new THREE.Vector3(0, parseInt(spacer[1]), parseInt(spacer[0])));
+            linePoints.push(spacerVector);
+        }
     }
 
+    /**
+     * Method for checking if any points along the manoeuvre are negative, or below the ground level.
+     * If so, true is returned, and then used to show the GUI warning pop up to the user.
+     * @name ManoeuvreController#checkWarning
+     * @function
+     *
+     * @param {SplineCurve3} extrudePath  The current spline cuvre representing the manoeuvre.
+     * @return {Boolean} bool  Whether the manoeuvre triggers the warning of negative values.
+     */
     function checkWarning(extrudePath) {
         for(var p in extrudePath.points){
             var point = extrudePath.points[p];
@@ -137,7 +141,7 @@ define(['htmlHandler'],function(HtmlHandler) {
          * @name ManoeuvreController#getTube
          * @function
          *
-         * @returns {Array[tube]} tube  Array of tubes to move the aeroplace along
+         * @returns {Array} tube  Array of tubes to move the aeroplace along
          */
         getTube: function() {
             return tube;
@@ -147,7 +151,7 @@ define(['htmlHandler'],function(HtmlHandler) {
          * @name ManoeuvreController#getTubeMesh
          * @function
          *
-         * @returns {Array[tube mesh]} tubeMesh  An array of meshes to be drawn on the canvas representing
+         * @returns {Array} tubeMesh  An array of meshes to be drawn on the canvas representing
          * manoeuvres
          */
         getTubeMesh: function() {
@@ -161,7 +165,7 @@ define(['htmlHandler'],function(HtmlHandler) {
          * @name ManoeuvreController#addTube
          * @function
          *
-         * @param {Array[manoeuvres]} values  Array of objects represting a move, containing name, description and instructions
+         * @param {Array} values  Array of objects represting a move, containing name, description and instructions
          * @param {Parent} parent  The parent object containing all the manoeuvres and cameras
          */
         addTube: function(values, parent) {
@@ -190,11 +194,6 @@ define(['htmlHandler'],function(HtmlHandler) {
                         var before = prevVector.clone();
                         calculateVector(prevVector, pitch, roll, yaw, length)
                         linePoints.push(prevVector);   
-
-                        var x = prevVector.x - before.x;
-                        var y = prevVector.y - before.y;
-                        var total =  (x * x)+ (y*y);
-                        console.log("loop"+m+ " "+Math.sqrt(total));
                 }
                 var extrudePath = new THREE.SplineCurve3(linePoints);
                 warn = checkWarning(extrudePath);
