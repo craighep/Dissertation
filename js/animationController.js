@@ -161,6 +161,7 @@ define(['jquery', 'parseJson', 'manoeuvreController', 'htmlHandler', 'exportImpo
                         refreshScene();
                     }
                     event.stopPropagation();
+                    refreshScene();
             });
         }
 
